@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestMedia:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_upload_url(self, client: PostForMe) -> None:
         media = client.media.create_upload_url()
         assert_matches_type(MediaCreateUploadURLResponse, media, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_upload_url(self, client: PostForMe) -> None:
         response = client.media.with_raw_response.create_upload_url()
@@ -33,7 +33,7 @@ class TestMedia:
         media = response.parse()
         assert_matches_type(MediaCreateUploadURLResponse, media, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_upload_url(self, client: PostForMe) -> None:
         with client.media.with_streaming_response.create_upload_url() as response:
@@ -51,13 +51,13 @@ class TestAsyncMedia:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_upload_url(self, async_client: AsyncPostForMe) -> None:
         media = await async_client.media.create_upload_url()
         assert_matches_type(MediaCreateUploadURLResponse, media, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_upload_url(self, async_client: AsyncPostForMe) -> None:
         response = await async_client.media.with_raw_response.create_upload_url()
@@ -67,7 +67,7 @@ class TestAsyncMedia:
         media = await response.parse()
         assert_matches_type(MediaCreateUploadURLResponse, media, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_upload_url(self, async_client: AsyncPostForMe) -> None:
         async with async_client.media.with_streaming_response.create_upload_url() as response:
