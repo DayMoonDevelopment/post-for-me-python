@@ -11,13 +11,13 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
-The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [api.postforme.dev](https://api.postforme.dev/docs). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
 ```sh
 # install from the production repo
-pip install git+ssh://git@github.com/DayMoonDevelopment/post-for-me-typescript.git
+pip install git+ssh://git@github.com/DayMoonDevelopment/post-for-me-python.git
 ```
 
 > [!NOTE]
@@ -35,8 +35,12 @@ client = PostForMe(
     api_key=os.environ.get("POST_FOR_ME_API_KEY"),  # This is the default and can be omitted
 )
 
-response = client.media.create_upload_url()
-print(response.media_url)
+social_post = client.social_posts.create(
+    caption="My first post!",
+    social_accounts=["sa_1234"],
+    media=[{"url": "https://picsum.photos/1080"}],
+)
+print(social_post.id)
 ```
 
 While you can provide an `api_key` keyword argument,
@@ -59,8 +63,12 @@ client = AsyncPostForMe(
 
 
 async def main() -> None:
-    response = await client.media.create_upload_url()
-    print(response.media_url)
+    social_post = await client.social_posts.create(
+        caption="My first post!",
+        social_accounts=["sa_1234"],
+        media=[{"url": "https://picsum.photos/1080"}],
+    )
+    print(social_post.id)
 
 
 asyncio.run(main())
@@ -76,7 +84,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from the production repo
-pip install 'post_for_me[aiohttp] @ git+ssh://git@github.com/DayMoonDevelopment/post-for-me-typescript.git'
+pip install 'post_for_me[aiohttp] @ git+ssh://git@github.com/DayMoonDevelopment/post-for-me-python.git'
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
@@ -92,8 +100,12 @@ async def main() -> None:
         api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
-        response = await client.media.create_upload_url()
-        print(response.media_url)
+        social_post = await client.social_posts.create(
+            caption="My first post!",
+            social_accounts=["sa_1234"],
+            media=[{"url": "https://picsum.photos/1080"}],
+        )
+        print(social_post.id)
 
 
 asyncio.run(main())
@@ -141,7 +153,11 @@ from post_for_me import PostForMe
 client = PostForMe()
 
 try:
-    client.media.create_upload_url()
+    client.social_posts.create(
+        caption="My first post!",
+        social_accounts=["sa_1234"],
+        media=[{"url": "https://picsum.photos/1080"}],
+    )
 except post_for_me.APIConnectionError as e:
     print("The server could not be reached")
     print(e.__cause__)  # an underlying Exception, likely raised within httpx.
@@ -184,7 +200,11 @@ client = PostForMe(
 )
 
 # Or, configure per-request:
-client.with_options(max_retries=5).media.create_upload_url()
+client.with_options(max_retries=5).social_posts.create(
+    caption="My first post!",
+    social_accounts=["sa_1234"],
+    media=[{"url": "https://picsum.photos/1080"}],
+)
 ```
 
 ### Timeouts
@@ -207,7 +227,11 @@ client = PostForMe(
 )
 
 # Override per-request:
-client.with_options(timeout=5.0).media.create_upload_url()
+client.with_options(timeout=5.0).social_posts.create(
+    caption="My first post!",
+    social_accounts=["sa_1234"],
+    media=[{"url": "https://picsum.photos/1080"}],
+)
 ```
 
 On timeout, an `APITimeoutError` is thrown.
@@ -248,16 +272,22 @@ The "raw" Response object can be accessed by prefixing `.with_raw_response.` to 
 from post_for_me import PostForMe
 
 client = PostForMe()
-response = client.media.with_raw_response.create_upload_url()
+response = client.social_posts.with_raw_response.create(
+    caption="My first post!",
+    social_accounts=["sa_1234"],
+    media=[{
+        "url": "https://picsum.photos/1080"
+    }],
+)
 print(response.headers.get('X-My-Header'))
 
-media = response.parse()  # get the object that `media.create_upload_url()` would have returned
-print(media.media_url)
+social_post = response.parse()  # get the object that `social_posts.create()` would have returned
+print(social_post.id)
 ```
 
-These methods return an [`APIResponse`](https://github.com/DayMoonDevelopment/post-for-me-typescript/tree/main/src/post_for_me/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/DayMoonDevelopment/post-for-me-python/tree/main/src/post_for_me/_response.py) object.
 
-The async client returns an [`AsyncAPIResponse`](https://github.com/DayMoonDevelopment/post-for-me-typescript/tree/main/src/post_for_me/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
+The async client returns an [`AsyncAPIResponse`](https://github.com/DayMoonDevelopment/post-for-me-python/tree/main/src/post_for_me/_response.py) with the same structure, the only difference being `await`able methods for reading the response content.
 
 #### `.with_streaming_response`
 
@@ -266,7 +296,11 @@ The above interface eagerly reads the full response body when you make the reque
 To stream the response body, use `.with_streaming_response` instead, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()` or `.parse()`. In the async client, these are async methods.
 
 ```python
-with client.media.with_streaming_response.create_upload_url() as response:
+with client.social_posts.with_streaming_response.create(
+    caption="My first post!",
+    social_accounts=["sa_1234"],
+    media=[{"url": "https://picsum.photos/1080"}],
+) as response:
     print(response.headers.get("X-My-Header"))
 
     for line in response.iter_lines():
@@ -361,7 +395,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/DayMoonDevelopment/post-for-me-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/DayMoonDevelopment/post-for-me-python/issues) with questions, bugs, or suggestions.
 
 ### Determining the installed version
 

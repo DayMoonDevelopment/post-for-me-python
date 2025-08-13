@@ -5,7 +5,7 @@ description = "The official Python library for the post-for-me API"
 dynamic = ["readme"]
 license = "Apache-2.0"
 authors = [
-{ name = "Post For Me", email = "" },
+{ name = "Post For Me", email = "postforme@daymoon.dev" },
 ]
 dependencies = [
     "httpx>=0.23.0, <1",
@@ -35,8 +35,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/DayMoonDevelopment/post-for-me-typescript"
-Repository = "https://github.com/DayMoonDevelopment/post-for-me-typescript"
+Homepage = "https://github.com/DayMoonDevelopment/post-for-me-python"
+Repository = "https://github.com/DayMoonDevelopment/post-for-me-python"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.8"]
@@ -125,7 +125,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/DayMoonDevelopment/post-for-me-typescript/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/DayMoonDevelopment/post-for-me-python/tree/main/\g<2>)'
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
