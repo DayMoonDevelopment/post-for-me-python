@@ -156,7 +156,7 @@ class SocialAccountsResource(SyncAPIResource):
           offset: Number of items to skip
 
           platform: Filter by platform(s). Multiple values imply OR logic (e.g.,
-              ?platform=x&platform=twitter).
+              ?platform=x&platform=facebook).
 
           username: Filter by username(s). Multiple values imply OR logic (e.g.,
               ?username=test&username=test2).
@@ -403,7 +403,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
           offset: Number of items to skip
 
           platform: Filter by platform(s). Multiple values imply OR logic (e.g.,
-              ?platform=x&platform=twitter).
+              ?platform=x&platform=facebook).
 
           username: Filter by username(s). Multiple values imply OR logic (e.g.,
               ?username=test&username=test2).

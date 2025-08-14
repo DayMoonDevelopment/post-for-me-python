@@ -19,7 +19,7 @@ class SocialPostListParams(TypedDict, total=False):
     """Number of items to skip"""
 
     platform: List[
-        Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "twitter", "youtube"]
+        Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
     ]
     """Filter by platforms. Multiple values imply OR logic."""
 

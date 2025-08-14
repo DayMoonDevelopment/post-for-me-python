@@ -30,7 +30,7 @@ class SocialAccountListParams(TypedDict, total=False):
     platform: List[str]
     """Filter by platform(s).
 
-    Multiple values imply OR logic (e.g., ?platform=x&platform=twitter).
+    Multiple values imply OR logic (e.g., ?platform=x&platform=facebook).
     """
 
     username: List[str]

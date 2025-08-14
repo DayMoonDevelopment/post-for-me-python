@@ -27,6 +27,9 @@ class TiktokConfigurationParam(TypedDict, total=False):
     disclose_your_brand: Optional[bool]
     """Disclose your brand on TikTok"""
 
+    is_ai_generated: Optional[bool]
+    """Flag content as AI generated on TikTok"""
+
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
 

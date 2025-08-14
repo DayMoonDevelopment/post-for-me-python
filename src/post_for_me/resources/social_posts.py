@@ -228,9 +228,7 @@ class SocialPostsResource(SyncAPIResource):
         limit: float | NotGiven = NOT_GIVEN,
         offset: float | NotGiven = NOT_GIVEN,
         platform: List[
-            Literal[
-                "bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "twitter", "youtube"
-            ]
+            Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
         | NotGiven = NOT_GIVEN,
         status: List[Literal["draft", "scheduled", "processing", "processed"]] | NotGiven = NOT_GIVEN,
@@ -519,9 +517,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         limit: float | NotGiven = NOT_GIVEN,
         offset: float | NotGiven = NOT_GIVEN,
         platform: List[
-            Literal[
-                "bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "twitter", "youtube"
-            ]
+            Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
         | NotGiven = NOT_GIVEN,
         status: List[Literal["draft", "scheduled", "processing", "processed"]] | NotGiven = NOT_GIVEN,
