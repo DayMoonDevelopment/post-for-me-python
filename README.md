@@ -17,7 +17,7 @@ The REST API documentation can be found on [api.postforme.dev](https://api.postf
 
 ```sh
 # install from PyPI
-pip install --pre post_for_me
+pip install post_for_me
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install --pre post_for_me[aiohttp]
+pip install post_for_me[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
