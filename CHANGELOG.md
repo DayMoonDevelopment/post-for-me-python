@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2025-08-14)
+
+Full Changelog: [v0.1.0-alpha.2...v1.0.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v0.1.0-alpha.2...v1.0.0)
+
+### Chores
+
+* update SDK settings ([b8082a0](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b8082a090eed686047e8cda9fd4dcfaaf3416b23))
+
 ## 0.1.0-alpha.2 (2025-08-14)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
