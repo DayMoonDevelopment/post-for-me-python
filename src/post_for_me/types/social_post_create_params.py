@@ -80,11 +80,11 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     link: Optional[str]
     """Pinterest post link"""
 
-    location: Optional[Literal["reels", "timeline"]]
-    """Threads post location"""
-
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
+
+    placement: Optional[Literal["reels", "timeline", "stories"]]
+    """Post placement for Facebook/Instagram/Threads"""
 
     privacy_status: Optional[str]
     """Sets the privacy status for TikTok (private, public)"""
@@ -127,13 +127,22 @@ class PlatformConfigurationsFacebook(TypedDict, total=False):
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
 
+    placement: Optional[Literal["reels", "stories", "timeline"]]
+    """Facebook post placement"""
+
 
 class PlatformConfigurationsInstagram(TypedDict, total=False):
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
+    collaborators: Optional[List[str]]
+    """Instagram usernames to be tagged as a collaborator"""
+
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
+
+    placement: Optional[Literal["reels", "stories", "timeline"]]
+    """Instagram post placement"""
 
 
 class PlatformConfigurationsLinkedin(TypedDict, total=False):
@@ -162,11 +171,11 @@ class PlatformConfigurationsThreads(TypedDict, total=False):
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
-    location: Optional[Literal["reels", "timeline"]]
-    """Threads post location"""
-
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
+
+    placement: Optional[Literal["reels", "timeline"]]
+    """Threads post placement"""
 
 
 class PlatformConfigurationsX(TypedDict, total=False):
