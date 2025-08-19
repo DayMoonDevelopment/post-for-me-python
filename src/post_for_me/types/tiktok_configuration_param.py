@@ -30,6 +30,12 @@ class TiktokConfigurationParam(TypedDict, total=False):
     is_ai_generated: Optional[bool]
     """Flag content as AI generated on TikTok"""
 
+    is_draft: Optional[bool]
+    """
+    Will create a draft upload to TikTok, posting will need to be completed from
+    within the app
+    """
+
     media: Optional[List[str]]
     """Overrides the `media` from the post"""
 
