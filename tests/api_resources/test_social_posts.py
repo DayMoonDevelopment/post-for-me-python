@@ -48,8 +48,8 @@ class TestSocialPosts:
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "link": "link",
-                        "location": "reels",
                         "media": ["string"],
+                        "placement": "reels",
                         "privacy_status": "privacy_status",
                         "title": "title",
                     },
@@ -73,10 +73,13 @@ class TestSocialPosts:
                 "facebook": {
                     "caption": {},
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
+                    "collaborators": ["string"],
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
@@ -90,8 +93,8 @@ class TestSocialPosts:
                 },
                 "threads": {
                     "caption": {},
-                    "location": "reels",
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "tiktok": {
                     "allow_comment": True,
@@ -229,8 +232,8 @@ class TestSocialPosts:
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "link": "link",
-                        "location": "reels",
                         "media": ["string"],
+                        "placement": "reels",
                         "privacy_status": "privacy_status",
                         "title": "title",
                     },
@@ -254,10 +257,13 @@ class TestSocialPosts:
                 "facebook": {
                     "caption": {},
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
+                    "collaborators": ["string"],
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
@@ -271,8 +277,8 @@ class TestSocialPosts:
                 },
                 "threads": {
                     "caption": {},
-                    "location": "reels",
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "tiktok": {
                     "allow_comment": True,
@@ -466,8 +472,8 @@ class TestAsyncSocialPosts:
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "link": "link",
-                        "location": "reels",
                         "media": ["string"],
+                        "placement": "reels",
                         "privacy_status": "privacy_status",
                         "title": "title",
                     },
@@ -491,10 +497,13 @@ class TestAsyncSocialPosts:
                 "facebook": {
                     "caption": {},
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
+                    "collaborators": ["string"],
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
@@ -508,8 +517,8 @@ class TestAsyncSocialPosts:
                 },
                 "threads": {
                     "caption": {},
-                    "location": "reels",
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "tiktok": {
                     "allow_comment": True,
@@ -647,8 +656,8 @@ class TestAsyncSocialPosts:
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "link": "link",
-                        "location": "reels",
                         "media": ["string"],
+                        "placement": "reels",
                         "privacy_status": "privacy_status",
                         "title": "title",
                     },
@@ -672,10 +681,13 @@ class TestAsyncSocialPosts:
                 "facebook": {
                     "caption": {},
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
+                    "collaborators": ["string"],
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
@@ -689,8 +701,8 @@ class TestAsyncSocialPosts:
                 },
                 "threads": {
                     "caption": {},
-                    "location": "reels",
                     "media": ["string"],
+                    "placement": "reels",
                 },
                 "tiktok": {
                     "allow_comment": True,
