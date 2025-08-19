@@ -77,6 +77,15 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     disclose_your_brand: Optional[bool]
     """Disclose your brand on TikTok"""
 
+    is_ai_generated: Optional[bool]
+    """Flag content as AI generated on TikTok"""
+
+    is_draft: Optional[bool]
+    """
+    Will create a draft upload to TikTok, posting will need to be completed from
+    within the app
+    """
+
     link: Optional[str]
     """Pinterest post link"""
 
