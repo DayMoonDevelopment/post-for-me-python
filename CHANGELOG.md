@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0 (2025-08-22)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** api update ([150ee93](https://github.com/DayMoonDevelopment/post-for-me-python/commit/150ee93ecb5e62f045ac04e08aad624c07ae5cf6))
+
+
+### Chores
+
+* update github action ([ed866c4](https://github.com/DayMoonDevelopment/post-for-me-python/commit/ed866c48e9898609bad238f2d47aa1e4e125a804))
+
 ## 1.1.0 (2025-08-18)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.0.0...v1.1.0)
