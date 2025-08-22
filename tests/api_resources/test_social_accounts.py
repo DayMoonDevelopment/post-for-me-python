@@ -170,6 +170,7 @@ class TestSocialAccounts:
     def test_method_create_auth_url_with_all_params(self, client: PostForMe) -> None:
         social_account = client.social_accounts.create_auth_url(
             platform="platform",
+            external_id="external_id",
             platform_data={
                 "bluesky": {
                     "app_password": "app_password",
@@ -402,6 +403,7 @@ class TestAsyncSocialAccounts:
     async def test_method_create_auth_url_with_all_params(self, async_client: AsyncPostForMe) -> None:
         social_account = await async_client.social_accounts.create_auth_url(
             platform="platform",
+            external_id="external_id",
             platform_data={
                 "bluesky": {
                     "app_password": "app_password",

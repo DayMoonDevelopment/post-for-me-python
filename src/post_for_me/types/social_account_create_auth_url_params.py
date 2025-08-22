@@ -11,6 +11,9 @@ class SocialAccountCreateAuthURLParams(TypedDict, total=False):
     platform: Required[str]
     """The social account provider"""
 
+    external_id: str
+    """Your unique identifier for the social account"""
+
     platform_data: PlatformData
     """Additional data needed for the provider"""
 
