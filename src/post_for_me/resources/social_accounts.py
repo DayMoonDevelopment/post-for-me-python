@@ -195,6 +195,7 @@ class SocialAccountsResource(SyncAPIResource):
         self,
         *,
         platform: str,
+        external_id: str | NotGiven = NOT_GIVEN,
         platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -212,6 +213,8 @@ class SocialAccountsResource(SyncAPIResource):
         Args:
           platform: The social account provider
 
+          external_id: Your unique identifier for the social account
+
           platform_data: Additional data needed for the provider
 
           extra_headers: Send extra headers
@@ -227,6 +230,7 @@ class SocialAccountsResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "platform": platform,
+                    "external_id": external_id,
                     "platform_data": platform_data,
                 },
                 social_account_create_auth_url_params.SocialAccountCreateAuthURLParams,
@@ -442,6 +446,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         self,
         *,
         platform: str,
+        external_id: str | NotGiven = NOT_GIVEN,
         platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -459,6 +464,8 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         Args:
           platform: The social account provider
 
+          external_id: Your unique identifier for the social account
+
           platform_data: Additional data needed for the provider
 
           extra_headers: Send extra headers
@@ -474,6 +481,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "platform": platform,
+                    "external_id": external_id,
                     "platform_data": platform_data,
                 },
                 social_account_create_auth_url_params.SocialAccountCreateAuthURLParams,
