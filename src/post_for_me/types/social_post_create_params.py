@@ -7,23 +7,9 @@ from datetime import datetime
 from typing_extensions import Literal, Required, Annotated, TypedDict
 
 from .._utils import PropertyInfo
-from .tiktok_configuration_param import TiktokConfigurationParam
+from .platform_configurations_dto_param import PlatformConfigurationsDtoParam
 
-__all__ = [
-    "SocialPostCreateParams",
-    "AccountConfiguration",
-    "AccountConfigurationConfiguration",
-    "Media",
-    "PlatformConfigurations",
-    "PlatformConfigurationsBluesky",
-    "PlatformConfigurationsFacebook",
-    "PlatformConfigurationsInstagram",
-    "PlatformConfigurationsLinkedin",
-    "PlatformConfigurationsPinterest",
-    "PlatformConfigurationsThreads",
-    "PlatformConfigurationsX",
-    "PlatformConfigurationsYoutube",
-]
+__all__ = ["SocialPostCreateParams", "AccountConfiguration", "AccountConfigurationConfiguration", "Media"]
 
 
 class SocialPostCreateParams(TypedDict, total=False):
@@ -45,7 +31,7 @@ class SocialPostCreateParams(TypedDict, total=False):
     media: Optional[Iterable[Media]]
     """Array of media URLs associated with the post"""
 
-    platform_configurations: Optional[PlatformConfigurations]
+    platform_configurations: Optional[PlatformConfigurationsDtoParam]
     """Platform-specific configurations for the post"""
 
     scheduled_at: Annotated[Union[str, datetime, None], PropertyInfo(format="iso8601")]
@@ -119,120 +105,3 @@ class Media(TypedDict, total=False):
 
     thumbnail_url: Optional[object]
     """Public URL of the thumbnail for the media"""
-
-
-class PlatformConfigurationsBluesky(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-
-class PlatformConfigurationsFacebook(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-    placement: Optional[Literal["reels", "stories", "timeline"]]
-    """Facebook post placement"""
-
-
-class PlatformConfigurationsInstagram(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    collaborators: Optional[List[str]]
-    """Instagram usernames to be tagged as a collaborator"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-    placement: Optional[Literal["reels", "stories", "timeline"]]
-    """Instagram post placement"""
-
-
-class PlatformConfigurationsLinkedin(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-
-class PlatformConfigurationsPinterest(TypedDict, total=False):
-    board_ids: Optional[List[str]]
-    """Pinterest board IDs"""
-
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    link: Optional[str]
-    """Pinterest post link"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-
-class PlatformConfigurationsThreads(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-    placement: Optional[Literal["reels", "timeline"]]
-    """Threads post placement"""
-
-
-class PlatformConfigurationsX(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-
-class PlatformConfigurationsYoutube(TypedDict, total=False):
-    caption: Optional[object]
-    """Overrides the `caption` from the post"""
-
-    media: Optional[List[str]]
-    """Overrides the `media` from the post"""
-
-    title: Optional[str]
-    """Overrides the `title` from the post"""
-
-
-class PlatformConfigurations(TypedDict, total=False):
-    bluesky: Optional[PlatformConfigurationsBluesky]
-    """Bluesky configuration"""
-
-    facebook: Optional[PlatformConfigurationsFacebook]
-    """Facebook configuration"""
-
-    instagram: Optional[PlatformConfigurationsInstagram]
-    """Instagram configuration"""
-
-    linkedin: Optional[PlatformConfigurationsLinkedin]
-    """LinkedIn configuration"""
-
-    pinterest: Optional[PlatformConfigurationsPinterest]
-    """Pinterest configuration"""
-
-    threads: Optional[PlatformConfigurationsThreads]
-    """Threads configuration"""
-
-    tiktok: Optional[TiktokConfigurationParam]
-    """TikTok configuration"""
-
-    tiktok_business: Optional[TiktokConfigurationParam]
-    """TikTok configuration"""
-
-    x: Optional[PlatformConfigurationsX]
-    """Twitter configuration"""
-
-    youtube: Optional[PlatformConfigurationsYoutube]
-    """YouTube configuration"""
