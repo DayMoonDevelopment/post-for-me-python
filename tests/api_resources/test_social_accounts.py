@@ -15,12 +15,72 @@ from post_for_me.types import (
     SocialAccountDisconnectResponse,
     SocialAccountCreateAuthURLResponse,
 )
+from post_for_me._utils import parse_datetime
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
 
 class TestSocialAccounts:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    def test_method_create(self, client: PostForMe) -> None:
+        social_account = client.social_accounts.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        )
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    def test_method_create_with_all_params(self, client: PostForMe) -> None:
+        social_account = client.social_accounts.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+            external_id="external_id",
+            metadata={},
+            refresh_token="refresh_token",
+            refresh_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            username="username",
+        )
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    def test_raw_response_create(self, client: PostForMe) -> None:
+        response = client.social_accounts.with_raw_response.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        social_account = response.parse()
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    def test_streaming_response_create(self, client: PostForMe) -> None:
+        with client.social_accounts.with_streaming_response.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            social_account = response.parse()
+            assert_matches_type(SocialAccount, social_account, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
@@ -254,6 +314,65 @@ class TestAsyncSocialAccounts:
     parametrize = pytest.mark.parametrize(
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    async def test_method_create(self, async_client: AsyncPostForMe) -> None:
+        social_account = await async_client.social_accounts.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        )
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    async def test_method_create_with_all_params(self, async_client: AsyncPostForMe) -> None:
+        social_account = await async_client.social_accounts.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+            external_id="external_id",
+            metadata={},
+            refresh_token="refresh_token",
+            refresh_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            username="username",
+        )
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    async def test_raw_response_create(self, async_client: AsyncPostForMe) -> None:
+        response = await async_client.social_accounts.with_raw_response.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        social_account = await response.parse()
+        assert_matches_type(SocialAccount, social_account, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
+    async def test_streaming_response_create(self, async_client: AsyncPostForMe) -> None:
+        async with async_client.social_accounts.with_streaming_response.create(
+            access_token="access_token",
+            access_token_expires_at=parse_datetime("2019-12-27T18:11:19.117Z"),
+            platform="facebook",
+            user_id="user_id",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            social_account = await response.parse()
+            assert_matches_type(SocialAccount, social_account, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
