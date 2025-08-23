@@ -16,9 +16,18 @@ Types:
 
 ```python
 from post_for_me.types import (
+    BlueskyConfigurationDto,
     CreateSocialPost,
+    FacebookConfigurationDto,
+    InstagramConfigurationDto,
+    LinkedinConfigurationDto,
+    PinterestConfigurationDto,
+    PlatformConfigurationsDto,
     SocialPost,
+    ThreadsConfigurationDto,
     TiktokConfiguration,
+    TwitterConfigurationDto,
+    YoutubeConfigurationDto,
     SocialPostListResponse,
     SocialPostDeleteResponse,
 )
