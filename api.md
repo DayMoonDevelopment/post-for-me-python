@@ -16,9 +16,18 @@ Types:
 
 ```python
 from post_for_me.types import (
+    BlueskyConfigurationDto,
     CreateSocialPost,
+    FacebookConfigurationDto,
+    InstagramConfigurationDto,
+    LinkedinConfigurationDto,
+    PinterestConfigurationDto,
+    PlatformConfigurationsDto,
     SocialPost,
+    ThreadsConfigurationDto,
     TiktokConfiguration,
+    TwitterConfigurationDto,
+    YoutubeConfigurationDto,
     SocialPostListResponse,
     SocialPostDeleteResponse,
 )
@@ -60,6 +69,7 @@ from post_for_me.types import (
 
 Methods:
 
+- <code title="post /v1/social-accounts">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">create</a>(\*\*<a href="src/post_for_me/types/social_account_create_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account.py">SocialAccount</a></code>
 - <code title="get /v1/social-accounts/{id}">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">retrieve</a>(id) -> <a href="./src/post_for_me/types/social_account.py">SocialAccount</a></code>
 - <code title="patch /v1/social-accounts/{id}">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">update</a>(id, \*\*<a href="src/post_for_me/types/social_account_update_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account.py">SocialAccount</a></code>
 - <code title="get /v1/social-accounts">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">list</a>(\*\*<a href="src/post_for_me/types/social_account_list_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account_list_response.py">SocialAccountListResponse</a></code>

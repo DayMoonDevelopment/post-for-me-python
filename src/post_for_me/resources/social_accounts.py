@@ -2,11 +2,18 @@
 
 from __future__ import annotations
 
-from typing import List
+from typing import List, Union, Optional
+from datetime import datetime
+from typing_extensions import Literal
 
 import httpx
 
-from ..types import social_account_list_params, social_account_update_params, social_account_create_auth_url_params
+from ..types import (
+    social_account_list_params,
+    social_account_create_params,
+    social_account_update_params,
+    social_account_create_auth_url_params,
+)
 from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
@@ -45,6 +52,89 @@ class SocialAccountsResource(SyncAPIResource):
         For more information, see https://www.github.com/DayMoonDevelopment/post-for-me-python#with_streaming_response
         """
         return SocialAccountsResourceWithStreamingResponse(self)
+
+    def create(
+        self,
+        *,
+        access_token: str,
+        access_token_expires_at: Union[str, datetime],
+        platform: Literal[
+            "facebook",
+            "instagram",
+            "x",
+            "tiktok",
+            "youtube",
+            "pinterest",
+            "linkedin",
+            "bluesky",
+            "threads",
+            "tiktok_business",
+        ],
+        user_id: str,
+        external_id: Optional[str] | NotGiven = NOT_GIVEN,
+        metadata: object | NotGiven = NOT_GIVEN,
+        refresh_token: Optional[str] | NotGiven = NOT_GIVEN,
+        refresh_token_expires_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        username: Optional[str] | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> SocialAccount:
+        """
+        If a social account with the same platform and user_id already exists, it will
+        be updated. If not, a new social account will be created.
+
+        Args:
+          access_token: The access token of the social account
+
+          access_token_expires_at: The access token expiration date of the social account
+
+          platform: The platform of the social account
+
+          user_id: The user id of the social account
+
+          external_id: The external id of the social account
+
+          metadata: The metadata of the social account
+
+          refresh_token: The refresh token of the social account
+
+          refresh_token_expires_at: The refresh token expiration date of the social account
+
+          username: The platform's username of the social account
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return self._post(
+            "/v1/social-accounts",
+            body=maybe_transform(
+                {
+                    "access_token": access_token,
+                    "access_token_expires_at": access_token_expires_at,
+                    "platform": platform,
+                    "user_id": user_id,
+                    "external_id": external_id,
+                    "metadata": metadata,
+                    "refresh_token": refresh_token,
+                    "refresh_token_expires_at": refresh_token_expires_at,
+                    "username": username,
+                },
+                social_account_create_params.SocialAccountCreateParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=SocialAccount,
+        )
 
     def retrieve(
         self,
@@ -195,6 +285,7 @@ class SocialAccountsResource(SyncAPIResource):
         self,
         *,
         platform: str,
+        external_id: str | NotGiven = NOT_GIVEN,
         platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -212,6 +303,8 @@ class SocialAccountsResource(SyncAPIResource):
         Args:
           platform: The social account provider
 
+          external_id: Your unique identifier for the social account
+
           platform_data: Additional data needed for the provider
 
           extra_headers: Send extra headers
@@ -227,6 +320,7 @@ class SocialAccountsResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "platform": platform,
+                    "external_id": external_id,
                     "platform_data": platform_data,
                 },
                 social_account_create_auth_url_params.SocialAccountCreateAuthURLParams,
@@ -292,6 +386,89 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         For more information, see https://www.github.com/DayMoonDevelopment/post-for-me-python#with_streaming_response
         """
         return AsyncSocialAccountsResourceWithStreamingResponse(self)
+
+    async def create(
+        self,
+        *,
+        access_token: str,
+        access_token_expires_at: Union[str, datetime],
+        platform: Literal[
+            "facebook",
+            "instagram",
+            "x",
+            "tiktok",
+            "youtube",
+            "pinterest",
+            "linkedin",
+            "bluesky",
+            "threads",
+            "tiktok_business",
+        ],
+        user_id: str,
+        external_id: Optional[str] | NotGiven = NOT_GIVEN,
+        metadata: object | NotGiven = NOT_GIVEN,
+        refresh_token: Optional[str] | NotGiven = NOT_GIVEN,
+        refresh_token_expires_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        username: Optional[str] | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> SocialAccount:
+        """
+        If a social account with the same platform and user_id already exists, it will
+        be updated. If not, a new social account will be created.
+
+        Args:
+          access_token: The access token of the social account
+
+          access_token_expires_at: The access token expiration date of the social account
+
+          platform: The platform of the social account
+
+          user_id: The user id of the social account
+
+          external_id: The external id of the social account
+
+          metadata: The metadata of the social account
+
+          refresh_token: The refresh token of the social account
+
+          refresh_token_expires_at: The refresh token expiration date of the social account
+
+          username: The platform's username of the social account
+
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return await self._post(
+            "/v1/social-accounts",
+            body=await async_maybe_transform(
+                {
+                    "access_token": access_token,
+                    "access_token_expires_at": access_token_expires_at,
+                    "platform": platform,
+                    "user_id": user_id,
+                    "external_id": external_id,
+                    "metadata": metadata,
+                    "refresh_token": refresh_token,
+                    "refresh_token_expires_at": refresh_token_expires_at,
+                    "username": username,
+                },
+                social_account_create_params.SocialAccountCreateParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=SocialAccount,
+        )
 
     async def retrieve(
         self,
@@ -442,6 +619,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         self,
         *,
         platform: str,
+        external_id: str | NotGiven = NOT_GIVEN,
         platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -459,6 +637,8 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         Args:
           platform: The social account provider
 
+          external_id: Your unique identifier for the social account
+
           platform_data: Additional data needed for the provider
 
           extra_headers: Send extra headers
@@ -474,6 +654,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "platform": platform,
+                    "external_id": external_id,
                     "platform_data": platform_data,
                 },
                 social_account_create_auth_url_params.SocialAccountCreateAuthURLParams,
@@ -524,6 +705,9 @@ class SocialAccountsResourceWithRawResponse:
     def __init__(self, social_accounts: SocialAccountsResource) -> None:
         self._social_accounts = social_accounts
 
+        self.create = to_raw_response_wrapper(
+            social_accounts.create,
+        )
         self.retrieve = to_raw_response_wrapper(
             social_accounts.retrieve,
         )
@@ -545,6 +729,9 @@ class AsyncSocialAccountsResourceWithRawResponse:
     def __init__(self, social_accounts: AsyncSocialAccountsResource) -> None:
         self._social_accounts = social_accounts
 
+        self.create = async_to_raw_response_wrapper(
+            social_accounts.create,
+        )
         self.retrieve = async_to_raw_response_wrapper(
             social_accounts.retrieve,
         )
@@ -566,6 +753,9 @@ class SocialAccountsResourceWithStreamingResponse:
     def __init__(self, social_accounts: SocialAccountsResource) -> None:
         self._social_accounts = social_accounts
 
+        self.create = to_streamed_response_wrapper(
+            social_accounts.create,
+        )
         self.retrieve = to_streamed_response_wrapper(
             social_accounts.retrieve,
         )
@@ -587,6 +777,9 @@ class AsyncSocialAccountsResourceWithStreamingResponse:
     def __init__(self, social_accounts: AsyncSocialAccountsResource) -> None:
         self._social_accounts = social_accounts
 
+        self.create = async_to_streamed_response_wrapper(
+            social_accounts.create,
+        )
         self.retrieve = async_to_streamed_response_wrapper(
             social_accounts.retrieve,
         )

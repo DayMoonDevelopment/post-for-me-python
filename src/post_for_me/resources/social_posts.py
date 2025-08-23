@@ -8,7 +8,11 @@ from typing_extensions import Literal
 
 import httpx
 
-from ..types import social_post_list_params, social_post_create_params, social_post_update_params
+from ..types import (
+    social_post_list_params,
+    social_post_create_params,
+    social_post_update_params,
+)
 from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
@@ -23,6 +27,7 @@ from .._base_client import make_request_options
 from ..types.social_post import SocialPost
 from ..types.social_post_list_response import SocialPostListResponse
 from ..types.social_post_delete_response import SocialPostDeleteResponse
+from ..types.platform_configurations_dto_param import PlatformConfigurationsDtoParam
 
 __all__ = ["SocialPostsResource", "AsyncSocialPostsResource"]
 
@@ -57,7 +62,7 @@ class SocialPostsResource(SyncAPIResource):
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
         is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
         media: Optional[Iterable[social_post_create_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[social_post_create_params.PlatformConfigurations] | NotGiven = NOT_GIVEN,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
         scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -160,7 +165,7 @@ class SocialPostsResource(SyncAPIResource):
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
         is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
         media: Optional[Iterable[social_post_update_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[social_post_update_params.PlatformConfigurations] | NotGiven = NOT_GIVEN,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
         scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -346,7 +351,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
         is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
         media: Optional[Iterable[social_post_create_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[social_post_create_params.PlatformConfigurations] | NotGiven = NOT_GIVEN,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
         scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -449,7 +454,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
         is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
         media: Optional[Iterable[social_post_update_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[social_post_update_params.PlatformConfigurations] | NotGiven = NOT_GIVEN,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
         scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
