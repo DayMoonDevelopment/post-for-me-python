@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.1 (2025-08-27)
+
+Full Changelog: [v1.3.0...v1.3.1](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.0...v1.3.1)
+
+### Bug Fixes
+
+* avoid newer type syntax ([661702e](https://github.com/DayMoonDevelopment/post-for-me-python/commit/661702eaaba92300e23fb8e51a1be1e7947e7334))
+
+
+### Chores
+
+* **internal:** change ci workflow machines ([a6439a8](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a6439a8669521cd4bcc0cba15bedacd5ef3c57bd))
+* **internal:** update pyright exclude list ([f16087e](https://github.com/DayMoonDevelopment/post-for-me-python/commit/f16087ebe62442d3dabac24fb00c08fed940c6df))
+
 ## 1.3.0 (2025-08-23)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.2.0...v1.3.0)
