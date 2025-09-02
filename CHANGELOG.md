@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.2 (2025-09-01)
+
+Full Changelog: [v1.3.1...v1.3.2](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.1...v1.3.2)
+
+### Chores
+
+* **internal:** add Sequence related utils ([94bd093](https://github.com/DayMoonDevelopment/post-for-me-python/commit/94bd093d74c2cdb4e4e60eaaeae932480460c92a))
+
 ## 1.3.1 (2025-08-27)
 
 Full Changelog: [v1.3.0...v1.3.1](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.0...v1.3.1)
