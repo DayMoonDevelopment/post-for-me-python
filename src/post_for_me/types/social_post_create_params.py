@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from typing import List, Union, Iterable, Optional
+from typing import Union, Iterable, Optional
 from datetime import datetime
 from typing_extensions import Literal, Required, Annotated, TypedDict
 
+from .._types import SequenceNotStr
 from .._utils import PropertyInfo
 from .platform_configurations_dto_param import PlatformConfigurationsDtoParam
 
@@ -16,7 +17,7 @@ class SocialPostCreateParams(TypedDict, total=False):
     caption: Required[str]
     """Caption text for the post"""
 
-    social_accounts: Required[List[str]]
+    social_accounts: Required[SequenceNotStr[str]]
     """Array of social account IDs for posting"""
 
     account_configurations: Optional[Iterable[AccountConfiguration]]
@@ -51,7 +52,7 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     allow_stitch: Optional[bool]
     """Allow stitch on TikTok"""
 
-    board_ids: Optional[List[str]]
+    board_ids: Optional[SequenceNotStr[str]]
     """Pinterest board IDs"""
 
     caption: Optional[object]
@@ -75,7 +76,7 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     link: Optional[str]
     """Pinterest post link"""
 
-    media: Optional[List[str]]
+    media: Optional[SequenceNotStr[str]]
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline", "stories"]]

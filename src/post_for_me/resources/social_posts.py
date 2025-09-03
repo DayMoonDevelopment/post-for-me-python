@@ -13,7 +13,7 @@ from ..types import (
     social_post_create_params,
     social_post_update_params,
 )
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -56,7 +56,7 @@ class SocialPostsResource(SyncAPIResource):
         self,
         *,
         caption: str,
-        social_accounts: List[str],
+        social_accounts: SequenceNotStr[str],
         account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]]
         | NotGiven = NOT_GIVEN,
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
@@ -159,7 +159,7 @@ class SocialPostsResource(SyncAPIResource):
         id: str,
         *,
         caption: str,
-        social_accounts: List[str],
+        social_accounts: SequenceNotStr[str],
         account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]]
         | NotGiven = NOT_GIVEN,
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
@@ -229,7 +229,7 @@ class SocialPostsResource(SyncAPIResource):
     def list(
         self,
         *,
-        external_id: List[str] | NotGiven = NOT_GIVEN,
+        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
         limit: float | NotGiven = NOT_GIVEN,
         offset: float | NotGiven = NOT_GIVEN,
         platform: List[
@@ -345,7 +345,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         self,
         *,
         caption: str,
-        social_accounts: List[str],
+        social_accounts: SequenceNotStr[str],
         account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]]
         | NotGiven = NOT_GIVEN,
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
@@ -448,7 +448,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         id: str,
         *,
         caption: str,
-        social_accounts: List[str],
+        social_accounts: SequenceNotStr[str],
         account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]]
         | NotGiven = NOT_GIVEN,
         external_id: Optional[str] | NotGiven = NOT_GIVEN,
@@ -518,7 +518,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        external_id: List[str] | NotGiven = NOT_GIVEN,
+        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
         limit: float | NotGiven = NOT_GIVEN,
         offset: float | NotGiven = NOT_GIVEN,
         platform: List[

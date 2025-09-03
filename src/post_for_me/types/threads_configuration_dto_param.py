@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 from typing_extensions import Literal, TypedDict
+
+from .._types import SequenceNotStr
 
 __all__ = ["ThreadsConfigurationDtoParam"]
 
@@ -12,7 +14,7 @@ class ThreadsConfigurationDtoParam(TypedDict, total=False):
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
-    media: Optional[List[str]]
+    media: Optional[SequenceNotStr[str]]
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline"]]

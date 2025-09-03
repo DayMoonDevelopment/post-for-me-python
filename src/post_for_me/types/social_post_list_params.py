@@ -5,11 +5,13 @@ from __future__ import annotations
 from typing import List
 from typing_extensions import Literal, TypedDict
 
+from .._types import SequenceNotStr
+
 __all__ = ["SocialPostListParams"]
 
 
 class SocialPostListParams(TypedDict, total=False):
-    external_id: List[str]
+    external_id: SequenceNotStr[str]
     """Filter by external ID. Multiple values imply OR logic."""
 
     limit: float
