@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 from typing_extensions import TypedDict
+
+from .._types import SequenceNotStr
 
 __all__ = ["TiktokConfigurationParam"]
 
@@ -36,7 +38,7 @@ class TiktokConfigurationParam(TypedDict, total=False):
     within the app
     """
 
-    media: Optional[List[str]]
+    media: Optional[SequenceNotStr[str]]
     """Overrides the `media` from the post"""
 
     privacy_status: Optional[str]
