@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from typing import List
 from typing_extensions import TypedDict
+
+from .._types import SequenceNotStr
 
 __all__ = ["SocialPostResultListParams"]
 
@@ -15,13 +16,13 @@ class SocialPostResultListParams(TypedDict, total=False):
     offset: float
     """Number of items to skip"""
 
-    platform: List[str]
+    platform: SequenceNotStr[str]
     """Filter by platform(s).
 
     Multiple values imply OR logic (e.g., ?platform=x&platform=facebook).
     """
 
-    post_id: List[str]
+    post_id: SequenceNotStr[str]
     """Filter by post IDs.
 
     Multiple values imply OR logic (e.g., ?post_id=123&post_id=456).

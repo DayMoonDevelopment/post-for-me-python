@@ -5,14 +5,25 @@ from typing_extensions import Literal
 
 from .._models import BaseModel
 
-__all__ = ["ThreadsConfigurationDto"]
+__all__ = ["ThreadsConfigurationDto", "Media"]
+
+
+class Media(BaseModel):
+    url: str
+    """Public URL of the media"""
+
+    thumbnail_timestamp_ms: Optional[object] = None
+    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
+
+    thumbnail_url: Optional[object] = None
+    """Public URL of the thumbnail for the media"""
 
 
 class ThreadsConfigurationDto(BaseModel):
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 
-    media: Optional[List[str]] = None
+    media: Optional[List[Media]] = None
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline"]] = None

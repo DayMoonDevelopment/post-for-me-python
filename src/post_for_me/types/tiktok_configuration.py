@@ -4,7 +4,18 @@ from typing import List, Optional
 
 from .._models import BaseModel
 
-__all__ = ["TiktokConfiguration"]
+__all__ = ["TiktokConfiguration", "Media"]
+
+
+class Media(BaseModel):
+    url: str
+    """Public URL of the media"""
+
+    thumbnail_timestamp_ms: Optional[object] = None
+    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
+
+    thumbnail_url: Optional[object] = None
+    """Public URL of the thumbnail for the media"""
 
 
 class TiktokConfiguration(BaseModel):
@@ -35,7 +46,7 @@ class TiktokConfiguration(BaseModel):
     within the app
     """
 
-    media: Optional[List[str]] = None
+    media: Optional[List[Media]] = None
     """Overrides the `media` from the post"""
 
     privacy_status: Optional[str] = None

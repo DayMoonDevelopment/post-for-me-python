@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.0 (2025-09-06)
+
+Full Changelog: [v1.3.2...v1.4.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.2...v1.4.0)
+
+### Features
+
+* **api:** api update ([9bf8f24](https://github.com/DayMoonDevelopment/post-for-me-python/commit/9bf8f24fc98784e5b6f921eb6a44c9587e2f96c5))
+* improve future compat with pydantic v3 ([4d3284d](https://github.com/DayMoonDevelopment/post-for-me-python/commit/4d3284d053169b65488822ac5670e18fd550451e))
+* **types:** replace List[str] with SequenceNotStr in params ([8610c17](https://github.com/DayMoonDevelopment/post-for-me-python/commit/8610c1757bd442d5b9c0aa9b3a956780265f2923))
+
+
+### Chores
+
+* **internal:** move mypy configurations to `pyproject.toml` file ([708524d](https://github.com/DayMoonDevelopment/post-for-me-python/commit/708524d4fbe2701adf3eb3bfee19b0a7b65883c6))
+* **tests:** simplify `get_platform` test ([bae6cdd](https://github.com/DayMoonDevelopment/post-for-me-python/commit/bae6cddec04ea04eb60829df7f758d0978778915))
+
 ## 1.3.2 (2025-09-01)
 
 Full Changelog: [v1.3.1...v1.3.2](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.1...v1.3.2)

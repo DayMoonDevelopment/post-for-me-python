@@ -70,32 +70,68 @@ class TestSocialPosts:
             platform_configurations={
                 "bluesky": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "facebook": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "pinterest": {
                     "board_ids": ["string"],
                     "caption": {},
                     "link": "link",
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "threads": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "tiktok": {
@@ -107,7 +143,13 @@ class TestSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
@@ -120,17 +162,35 @@ class TestSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
                 "x": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "youtube": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "title": "title",
                 },
             },
@@ -258,32 +318,68 @@ class TestSocialPosts:
             platform_configurations={
                 "bluesky": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "facebook": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "pinterest": {
                     "board_ids": ["string"],
                     "caption": {},
                     "link": "link",
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "threads": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "tiktok": {
@@ -295,7 +391,13 @@ class TestSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
@@ -308,17 +410,35 @@ class TestSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
                 "x": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "youtube": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "title": "title",
                 },
             },
@@ -502,32 +622,68 @@ class TestAsyncSocialPosts:
             platform_configurations={
                 "bluesky": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "facebook": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "pinterest": {
                     "board_ids": ["string"],
                     "caption": {},
                     "link": "link",
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "threads": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "tiktok": {
@@ -539,7 +695,13 @@ class TestAsyncSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
@@ -552,17 +714,35 @@ class TestAsyncSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
                 "x": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "youtube": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "title": "title",
                 },
             },
@@ -690,32 +870,68 @@ class TestAsyncSocialPosts:
             platform_configurations={
                 "bluesky": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "facebook": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "linkedin": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "pinterest": {
                     "board_ids": ["string"],
                     "caption": {},
                     "link": "link",
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "threads": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "placement": "reels",
                 },
                 "tiktok": {
@@ -727,7 +943,13 @@ class TestAsyncSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
@@ -740,17 +962,35 @@ class TestAsyncSocialPosts:
                     "disclose_your_brand": True,
                     "is_ai_generated": True,
                     "is_draft": True,
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "privacy_status": "privacy_status",
                     "title": "title",
                 },
                 "x": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                 },
                 "youtube": {
                     "caption": {},
-                    "media": ["string"],
+                    "media": [
+                        {
+                            "url": "url",
+                            "thumbnail_timestamp_ms": {},
+                            "thumbnail_url": {},
+                        }
+                    ],
                     "title": "title",
                 },
             },
