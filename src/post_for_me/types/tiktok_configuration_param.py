@@ -29,6 +29,9 @@ class TiktokConfigurationParam(TypedDict, total=False):
     allow_stitch: Optional[bool]
     """Allow stitch on TikTok"""
 
+    auto_add_music: Optional[bool]
+    """Will automatically add music to photo posts"""
+
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 

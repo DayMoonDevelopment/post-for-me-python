@@ -28,6 +28,9 @@ class TiktokConfiguration(BaseModel):
     allow_stitch: Optional[bool] = None
     """Allow stitch on TikTok"""
 
+    auto_add_music: Optional[bool] = None
+    """Will automatically add music to photo posts"""
+
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 

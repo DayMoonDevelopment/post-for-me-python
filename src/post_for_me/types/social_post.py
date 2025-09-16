@@ -20,6 +20,9 @@ class AccountConfigurationConfiguration(BaseModel):
     allow_stitch: Optional[bool] = None
     """Allow stitch on TikTok"""
 
+    auto_add_music: Optional[bool] = None
+    """Will automatically add music to photo posts on TikTok"""
+
     board_ids: Optional[List[str]] = None
     """Pinterest board IDs"""
 
