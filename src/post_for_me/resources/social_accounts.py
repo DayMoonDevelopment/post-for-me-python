@@ -14,7 +14,7 @@ from ..types import (
     social_account_update_params,
     social_account_create_auth_url_params,
 )
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -71,17 +71,17 @@ class SocialAccountsResource(SyncAPIResource):
             "tiktok_business",
         ],
         user_id: str,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        metadata: object | NotGiven = NOT_GIVEN,
-        refresh_token: Optional[str] | NotGiven = NOT_GIVEN,
-        refresh_token_expires_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        username: Optional[str] | NotGiven = NOT_GIVEN,
+        external_id: Optional[str] | Omit = omit,
+        metadata: object | Omit = omit,
+        refresh_token: Optional[str] | Omit = omit,
+        refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
+        username: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         If a social account with the same platform and user_id already exists, it will
@@ -145,7 +145,7 @@ class SocialAccountsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         Get social account by ID
@@ -173,14 +173,14 @@ class SocialAccountsResource(SyncAPIResource):
         self,
         id: str,
         *,
-        external_id: str | NotGiven = NOT_GIVEN,
-        username: str | NotGiven = NOT_GIVEN,
+        external_id: str | Omit = omit,
+        username: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         Update social account
@@ -218,18 +218,18 @@ class SocialAccountsResource(SyncAPIResource):
     def list(
         self,
         *,
-        id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
-        platform: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        username: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
+        id: SequenceNotStr[str] | Omit = omit,
+        external_id: SequenceNotStr[str] | Omit = omit,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
+        platform: SequenceNotStr[str] | Omit = omit,
+        username: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountListResponse:
         """
         Get a paginated result for social accounts based on the applied filters
@@ -285,14 +285,14 @@ class SocialAccountsResource(SyncAPIResource):
         self,
         *,
         platform: str,
-        external_id: str | NotGiven = NOT_GIVEN,
-        platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
+        external_id: str | Omit = omit,
+        platform_data: social_account_create_auth_url_params.PlatformData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountCreateAuthURLResponse:
         """
         Generates a URL that initiates the authentication flow for a user's social media
@@ -340,7 +340,7 @@ class SocialAccountsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountDisconnectResponse:
         """
         Disconnecting an account with remove all auth tokens and mark the account as
@@ -405,17 +405,17 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
             "tiktok_business",
         ],
         user_id: str,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        metadata: object | NotGiven = NOT_GIVEN,
-        refresh_token: Optional[str] | NotGiven = NOT_GIVEN,
-        refresh_token_expires_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
-        username: Optional[str] | NotGiven = NOT_GIVEN,
+        external_id: Optional[str] | Omit = omit,
+        metadata: object | Omit = omit,
+        refresh_token: Optional[str] | Omit = omit,
+        refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
+        username: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         If a social account with the same platform and user_id already exists, it will
@@ -479,7 +479,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         Get social account by ID
@@ -507,14 +507,14 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         self,
         id: str,
         *,
-        external_id: str | NotGiven = NOT_GIVEN,
-        username: str | NotGiven = NOT_GIVEN,
+        external_id: str | Omit = omit,
+        username: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccount:
         """
         Update social account
@@ -552,18 +552,18 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
-        platform: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        username: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
+        id: SequenceNotStr[str] | Omit = omit,
+        external_id: SequenceNotStr[str] | Omit = omit,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
+        platform: SequenceNotStr[str] | Omit = omit,
+        username: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountListResponse:
         """
         Get a paginated result for social accounts based on the applied filters
@@ -619,14 +619,14 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         self,
         *,
         platform: str,
-        external_id: str | NotGiven = NOT_GIVEN,
-        platform_data: social_account_create_auth_url_params.PlatformData | NotGiven = NOT_GIVEN,
+        external_id: str | Omit = omit,
+        platform_data: social_account_create_auth_url_params.PlatformData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountCreateAuthURLResponse:
         """
         Generates a URL that initiates the authentication flow for a user's social media
@@ -674,7 +674,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialAccountDisconnectResponse:
         """
         Disconnecting an account with remove all auth tokens and mark the account as
