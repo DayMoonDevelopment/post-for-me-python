@@ -236,6 +236,7 @@ class TestSocialAccounts:
                     "app_password": "app_password",
                     "handle": "handle",
                 },
+                "instagram": {"connection_type": "instagram"},
                 "linkedin": {"connection_type": "personal"},
             },
         )
@@ -528,6 +529,7 @@ class TestAsyncSocialAccounts:
                     "app_password": "app_password",
                     "handle": "handle",
                 },
+                "instagram": {"connection_type": "instagram"},
                 "linkedin": {"connection_type": "personal"},
             },
         )
