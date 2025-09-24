@@ -4,7 +4,13 @@ from __future__ import annotations
 
 from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["SocialAccountCreateAuthURLParams", "PlatformData", "PlatformDataBluesky", "PlatformDataLinkedin"]
+__all__ = [
+    "SocialAccountCreateAuthURLParams",
+    "PlatformData",
+    "PlatformDataBluesky",
+    "PlatformDataInstagram",
+    "PlatformDataLinkedin",
+]
 
 
 class SocialAccountCreateAuthURLParams(TypedDict, total=False):
@@ -26,6 +32,14 @@ class PlatformDataBluesky(TypedDict, total=False):
     """The handle of the account"""
 
 
+class PlatformDataInstagram(TypedDict, total=False):
+    connection_type: Required[Literal["instagram", "facebook"]]
+    """
+    The type of connection; instagram for using login with instagram, facebook for
+    using login with facebook.
+    """
+
+
 class PlatformDataLinkedin(TypedDict, total=False):
     connection_type: Required[Literal["personal", "organization"]]
     """
@@ -37,6 +51,9 @@ class PlatformDataLinkedin(TypedDict, total=False):
 class PlatformData(TypedDict, total=False):
     bluesky: PlatformDataBluesky
     """Additional data needed for connecting bluesky accounts"""
+
+    instagram: PlatformDataInstagram
+    """Additional data for connecting instagram accounts"""
 
     linkedin: PlatformDataLinkedin
     """Additional data for connecting linkedin accounts"""
