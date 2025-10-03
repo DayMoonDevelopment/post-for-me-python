@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.5.0 (2025-10-03)
+
+Full Changelog: [v1.4.0...v1.5.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.4.0...v1.5.0)
+
+### Features
+
+* **api:** api update ([11ee33e](https://github.com/DayMoonDevelopment/post-for-me-python/commit/11ee33e297a5547023f1a275d4e5c47e61c875a7))
+* **api:** api update ([1f7bc28](https://github.com/DayMoonDevelopment/post-for-me-python/commit/1f7bc28044cb554918c4fffd667d7379538e6ddb))
+* **api:** api update ([a6e5319](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a6e53194e5b8460f6446aa8e53d60da9072c2a2b))
+
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([c847232](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c847232c41fc4df1119f7dc6032875425262e5cc))
+* **internal:** update pydantic dependency ([feee153](https://github.com/DayMoonDevelopment/post-for-me-python/commit/feee153b47eb97eb2cc24e192dd5a7d074b7668a))
+* **types:** change optional parameter type from NotGiven to Omit ([a2e29a6](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a2e29a686feb9a61e208bcf99b7e6e813cac4c42))
+
 ## 1.4.0 (2025-09-06)
 
 Full Changelog: [v1.3.2...v1.4.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.3.2...v1.4.0)
