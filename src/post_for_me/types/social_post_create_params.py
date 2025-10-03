@@ -10,7 +10,14 @@ from .._types import SequenceNotStr
 from .._utils import PropertyInfo
 from .platform_configurations_dto_param import PlatformConfigurationsDtoParam
 
-__all__ = ["SocialPostCreateParams", "AccountConfiguration", "AccountConfigurationConfiguration", "Media"]
+__all__ = [
+    "SocialPostCreateParams",
+    "AccountConfiguration",
+    "AccountConfigurationConfiguration",
+    "AccountConfigurationConfigurationPoll",
+    "Media",
+    "MediaTag",
+]
 
 
 class SocialPostCreateParams(TypedDict, total=False):
@@ -42,6 +49,17 @@ class SocialPostCreateParams(TypedDict, total=False):
     """
 
 
+class AccountConfigurationConfigurationPoll(TypedDict, total=False):
+    duration_minutes: Required[float]
+    """Duration of the poll in minutes"""
+
+    options: Required[SequenceNotStr[str]]
+    """The choices of the poll, requiring 2-4 options"""
+
+    reply_settings: Literal["following", "mentionedUsers", "subscribers", "verified"]
+    """Who can reply to the tweet"""
+
+
 class AccountConfigurationConfiguration(TypedDict, total=False):
     allow_comment: Optional[bool]
     """Allow comments on TikTok"""
@@ -61,6 +79,15 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
+    collaborators: Optional[Iterable[Iterable[object]]]
+    """
+    List of page ids or users to invite as collaborators for a Video Reel (Instagram
+    and Facebook)
+    """
+
+    community_id: str
+    """Id of the twitter community to post to"""
+
     disclose_branded_content: Optional[bool]
     """Disclose branded content on TikTok"""
 
@@ -79,14 +106,32 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     link: Optional[str]
     """Pinterest post link"""
 
+    location: Optional[str]
+    """
+    Page id with a location that you want to tag the image or video with (Instagram
+    and Facebook)
+    """
+
     media: Optional[SequenceNotStr[str]]
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline", "stories"]]
     """Post placement for Facebook/Instagram/Threads"""
 
+    poll: AccountConfigurationConfigurationPoll
+    """Poll options for the twitter"""
+
     privacy_status: Optional[str]
     """Sets the privacy status for TikTok (private, public)"""
+
+    quote_tweet_id: str
+    """Id of the tweet you want to quote"""
+
+    reply_settings: Optional[Literal["following", "mentionedUsers", "subscribers", "verified"]]
+    """Who can reply to the tweet"""
+
+    share_to_feed: Optional[bool]
+    """If false Instagram video posts will only be shown in the Reels tab"""
 
     title: Optional[str]
     """Overrides the `title` from the post"""
@@ -100,9 +145,38 @@ class AccountConfiguration(TypedDict, total=False):
     """ID of the social account, you want to apply the configuration to"""
 
 
+class MediaTag(TypedDict, total=False):
+    id: Required[str]
+    """Facebook User ID, Instagram Username or Instagram product id to tag"""
+
+    platform: Required[Literal["facebook", "instagram"]]
+    """The platform for the tags"""
+
+    type: Required[Literal["user", "product"]]
+    """
+    The type of tag, user to tag accounts, product to tag products (only supported
+    for instagram)
+    """
+
+    x: float
+    """
+    Percentage distance from left edge of the image, Not required for videos or
+    stories
+    """
+
+    y: float
+    """
+    Percentage distance from top edge of the image, Not required for videos or
+    stories
+    """
+
+
 class Media(TypedDict, total=False):
     url: Required[str]
     """Public URL of the media"""
+
+    tags: Optional[Iterable[MediaTag]]
+    """List of tags to attach to the media"""
 
     thumbnail_timestamp_ms: Optional[object]
     """Timestamp in milliseconds of frame to use as thumbnail for the media"""
