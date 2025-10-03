@@ -3,14 +3,43 @@
 from __future__ import annotations
 
 from typing import Iterable, Optional
-from typing_extensions import Required, TypedDict
+from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["TiktokConfigurationParam", "Media"]
+__all__ = ["TiktokConfigurationParam", "Media", "MediaTag"]
+
+
+class MediaTag(TypedDict, total=False):
+    id: Required[str]
+    """Facebook User ID, Instagram Username or Instagram product id to tag"""
+
+    platform: Required[Literal["facebook", "instagram"]]
+    """The platform for the tags"""
+
+    type: Required[Literal["user", "product"]]
+    """
+    The type of tag, user to tag accounts, product to tag products (only supported
+    for instagram)
+    """
+
+    x: float
+    """
+    Percentage distance from left edge of the image, Not required for videos or
+    stories
+    """
+
+    y: float
+    """
+    Percentage distance from top edge of the image, Not required for videos or
+    stories
+    """
 
 
 class Media(TypedDict, total=False):
     url: Required[str]
     """Public URL of the media"""
+
+    tags: Optional[Iterable[MediaTag]]
+    """List of tags to attach to the media"""
 
     thumbnail_timestamp_ms: Optional[object]
     """Timestamp in milliseconds of frame to use as thumbnail for the media"""
@@ -28,6 +57,9 @@ class TiktokConfigurationParam(TypedDict, total=False):
 
     allow_stitch: Optional[bool]
     """Allow stitch on TikTok"""
+
+    auto_add_music: Optional[bool]
+    """Will automatically add music to photo posts"""
 
     caption: Optional[object]
     """Overrides the `caption` from the post"""

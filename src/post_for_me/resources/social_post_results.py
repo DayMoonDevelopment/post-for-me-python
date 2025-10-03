@@ -5,7 +5,7 @@ from __future__ import annotations
 import httpx
 
 from ..types import social_post_result_list_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -51,7 +51,7 @@ class SocialPostResultsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostResult:
         """
         Get post result by ID
@@ -78,16 +78,16 @@ class SocialPostResultsResource(SyncAPIResource):
     def list(
         self,
         *,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
-        platform: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        post_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
+        platform: SequenceNotStr[str] | Omit = omit,
+        post_id: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostResultListResponse:
         """
         Get a paginated result for post results based on the applied filters
@@ -161,7 +161,7 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostResult:
         """
         Get post result by ID
@@ -188,16 +188,16 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
-        platform: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        post_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
+        platform: SequenceNotStr[str] | Omit = omit,
+        post_id: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostResultListResponse:
         """
         Get a paginated result for post results based on the applied filters

@@ -13,7 +13,7 @@ from ..types import (
     social_post_create_params,
     social_post_update_params,
 )
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -57,19 +57,18 @@ class SocialPostsResource(SyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]]
-        | NotGiven = NOT_GIVEN,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
-        media: Optional[Iterable[social_post_create_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
-        scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]] | Omit = omit,
+        external_id: Optional[str] | Omit = omit,
+        is_draft: Optional[bool] | Omit = omit,
+        media: Optional[Iterable[social_post_create_params.Media]] | Omit = omit,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
+        scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Create Post
@@ -130,7 +129,7 @@ class SocialPostsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Get Post by ID
@@ -160,19 +159,18 @@ class SocialPostsResource(SyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]]
-        | NotGiven = NOT_GIVEN,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
-        media: Optional[Iterable[social_post_update_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
-        scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]] | Omit = omit,
+        external_id: Optional[str] | Omit = omit,
+        is_draft: Optional[bool] | Omit = omit,
+        media: Optional[Iterable[social_post_update_params.Media]] | Omit = omit,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
+        scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Update Post
@@ -229,20 +227,20 @@ class SocialPostsResource(SyncAPIResource):
     def list(
         self,
         *,
-        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
+        external_id: SequenceNotStr[str] | Omit = omit,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
         platform: List[
             Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
-        | NotGiven = NOT_GIVEN,
-        status: List[Literal["draft", "scheduled", "processing", "processed"]] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        status: List[Literal["draft", "scheduled", "processing", "processed"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostListResponse:
         """
         Get a paginated result for posts based on the applied filters
@@ -296,7 +294,7 @@ class SocialPostsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostDeleteResponse:
         """
         Delete Post
@@ -346,19 +344,18 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]]
-        | NotGiven = NOT_GIVEN,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
-        media: Optional[Iterable[social_post_create_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
-        scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]] | Omit = omit,
+        external_id: Optional[str] | Omit = omit,
+        is_draft: Optional[bool] | Omit = omit,
+        media: Optional[Iterable[social_post_create_params.Media]] | Omit = omit,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
+        scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Create Post
@@ -419,7 +416,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Get Post by ID
@@ -449,19 +446,18 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]]
-        | NotGiven = NOT_GIVEN,
-        external_id: Optional[str] | NotGiven = NOT_GIVEN,
-        is_draft: Optional[bool] | NotGiven = NOT_GIVEN,
-        media: Optional[Iterable[social_post_update_params.Media]] | NotGiven = NOT_GIVEN,
-        platform_configurations: Optional[PlatformConfigurationsDtoParam] | NotGiven = NOT_GIVEN,
-        scheduled_at: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]] | Omit = omit,
+        external_id: Optional[str] | Omit = omit,
+        is_draft: Optional[bool] | Omit = omit,
+        media: Optional[Iterable[social_post_update_params.Media]] | Omit = omit,
+        platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
+        scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPost:
         """
         Update Post
@@ -518,20 +514,20 @@ class AsyncSocialPostsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        external_id: SequenceNotStr[str] | NotGiven = NOT_GIVEN,
-        limit: float | NotGiven = NOT_GIVEN,
-        offset: float | NotGiven = NOT_GIVEN,
+        external_id: SequenceNotStr[str] | Omit = omit,
+        limit: float | Omit = omit,
+        offset: float | Omit = omit,
         platform: List[
             Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
-        | NotGiven = NOT_GIVEN,
-        status: List[Literal["draft", "scheduled", "processing", "processed"]] | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        status: List[Literal["draft", "scheduled", "processing", "processed"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostListResponse:
         """
         Get a paginated result for posts based on the applied filters
@@ -585,7 +581,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> SocialPostDeleteResponse:
         """
         Delete Post
