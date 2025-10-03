@@ -46,14 +46,25 @@ class TestSocialPosts:
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "collaborators": [[{}]],
+                        "community_id": "community_id",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
                         "is_draft": True,
                         "link": "link",
+                        "location": "location",
                         "media": ["string"],
                         "placement": "reels",
+                        "poll": {
+                            "duration_minutes": 0,
+                            "options": ["string"],
+                            "reply_settings": "following",
+                        },
                         "privacy_status": "privacy_status",
+                        "quote_tweet_id": "quote_tweet_id",
+                        "reply_settings": "following",
+                        "share_to_feed": True,
                         "title": "title",
                     },
                     "social_account_id": "social_account_id",
@@ -64,6 +75,15 @@ class TestSocialPosts:
             media=[
                 {
                     "url": "url",
+                    "tags": [
+                        {
+                            "id": "id",
+                            "platform": "facebook",
+                            "type": "user",
+                            "x": 0,
+                            "y": 0,
+                        }
+                    ],
                     "thumbnail_timestamp_ms": {},
                     "thumbnail_url": {},
                 }
@@ -74,6 +94,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -81,9 +110,20 @@ class TestSocialPosts:
                 },
                 "facebook": {
                     "caption": {},
+                    "collaborators": [[{}]],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -93,20 +133,40 @@ class TestSocialPosts:
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
                     "placement": "reels",
+                    "share_to_feed": True,
                 },
                 "linkedin": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -119,6 +179,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -129,6 +198,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -148,6 +226,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -168,6 +255,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -177,19 +273,45 @@ class TestSocialPosts:
                 },
                 "x": {
                     "caption": {},
+                    "community_id": "community_id",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
+                    "poll": {
+                        "duration_minutes": 0,
+                        "options": ["string"],
+                        "reply_settings": "following",
+                    },
+                    "quote_tweet_id": "quote_tweet_id",
+                    "reply_settings": "following",
                 },
                 "youtube": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -297,14 +419,25 @@ class TestSocialPosts:
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "collaborators": [[{}]],
+                        "community_id": "community_id",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
                         "is_draft": True,
                         "link": "link",
+                        "location": "location",
                         "media": ["string"],
                         "placement": "reels",
+                        "poll": {
+                            "duration_minutes": 0,
+                            "options": ["string"],
+                            "reply_settings": "following",
+                        },
                         "privacy_status": "privacy_status",
+                        "quote_tweet_id": "quote_tweet_id",
+                        "reply_settings": "following",
+                        "share_to_feed": True,
                         "title": "title",
                     },
                     "social_account_id": "social_account_id",
@@ -315,6 +448,15 @@ class TestSocialPosts:
             media=[
                 {
                     "url": "url",
+                    "tags": [
+                        {
+                            "id": "id",
+                            "platform": "facebook",
+                            "type": "user",
+                            "x": 0,
+                            "y": 0,
+                        }
+                    ],
                     "thumbnail_timestamp_ms": {},
                     "thumbnail_url": {},
                 }
@@ -325,6 +467,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -332,9 +483,20 @@ class TestSocialPosts:
                 },
                 "facebook": {
                     "caption": {},
+                    "collaborators": [[{}]],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -344,20 +506,40 @@ class TestSocialPosts:
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
                     "placement": "reels",
+                    "share_to_feed": True,
                 },
                 "linkedin": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -370,6 +552,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -380,6 +571,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -399,6 +599,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -419,6 +628,15 @@ class TestSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -428,19 +646,45 @@ class TestSocialPosts:
                 },
                 "x": {
                     "caption": {},
+                    "community_id": "community_id",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
+                    "poll": {
+                        "duration_minutes": 0,
+                        "options": ["string"],
+                        "reply_settings": "following",
+                    },
+                    "quote_tweet_id": "quote_tweet_id",
+                    "reply_settings": "following",
                 },
                 "youtube": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -604,14 +848,25 @@ class TestAsyncSocialPosts:
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "collaborators": [[{}]],
+                        "community_id": "community_id",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
                         "is_draft": True,
                         "link": "link",
+                        "location": "location",
                         "media": ["string"],
                         "placement": "reels",
+                        "poll": {
+                            "duration_minutes": 0,
+                            "options": ["string"],
+                            "reply_settings": "following",
+                        },
                         "privacy_status": "privacy_status",
+                        "quote_tweet_id": "quote_tweet_id",
+                        "reply_settings": "following",
+                        "share_to_feed": True,
                         "title": "title",
                     },
                     "social_account_id": "social_account_id",
@@ -622,6 +877,15 @@ class TestAsyncSocialPosts:
             media=[
                 {
                     "url": "url",
+                    "tags": [
+                        {
+                            "id": "id",
+                            "platform": "facebook",
+                            "type": "user",
+                            "x": 0,
+                            "y": 0,
+                        }
+                    ],
                     "thumbnail_timestamp_ms": {},
                     "thumbnail_url": {},
                 }
@@ -632,6 +896,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -639,9 +912,20 @@ class TestAsyncSocialPosts:
                 },
                 "facebook": {
                     "caption": {},
+                    "collaborators": [[{}]],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -651,20 +935,40 @@ class TestAsyncSocialPosts:
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
                     "placement": "reels",
+                    "share_to_feed": True,
                 },
                 "linkedin": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -677,6 +981,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -687,6 +1000,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -706,6 +1028,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -726,6 +1057,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -735,19 +1075,45 @@ class TestAsyncSocialPosts:
                 },
                 "x": {
                     "caption": {},
+                    "community_id": "community_id",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
+                    "poll": {
+                        "duration_minutes": 0,
+                        "options": ["string"],
+                        "reply_settings": "following",
+                    },
+                    "quote_tweet_id": "quote_tweet_id",
+                    "reply_settings": "following",
                 },
                 "youtube": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -855,14 +1221,25 @@ class TestAsyncSocialPosts:
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "collaborators": [[{}]],
+                        "community_id": "community_id",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
                         "is_draft": True,
                         "link": "link",
+                        "location": "location",
                         "media": ["string"],
                         "placement": "reels",
+                        "poll": {
+                            "duration_minutes": 0,
+                            "options": ["string"],
+                            "reply_settings": "following",
+                        },
                         "privacy_status": "privacy_status",
+                        "quote_tweet_id": "quote_tweet_id",
+                        "reply_settings": "following",
+                        "share_to_feed": True,
                         "title": "title",
                     },
                     "social_account_id": "social_account_id",
@@ -873,6 +1250,15 @@ class TestAsyncSocialPosts:
             media=[
                 {
                     "url": "url",
+                    "tags": [
+                        {
+                            "id": "id",
+                            "platform": "facebook",
+                            "type": "user",
+                            "x": 0,
+                            "y": 0,
+                        }
+                    ],
                     "thumbnail_timestamp_ms": {},
                     "thumbnail_url": {},
                 }
@@ -883,6 +1269,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -890,9 +1285,20 @@ class TestAsyncSocialPosts:
                 },
                 "facebook": {
                     "caption": {},
+                    "collaborators": [[{}]],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -902,20 +1308,40 @@ class TestAsyncSocialPosts:
                 "instagram": {
                     "caption": {},
                     "collaborators": ["string"],
+                    "location": "location",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
                     "placement": "reels",
+                    "share_to_feed": True,
                 },
                 "linkedin": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -928,6 +1354,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -938,6 +1373,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -957,6 +1401,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -977,6 +1430,15 @@ class TestAsyncSocialPosts:
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
@@ -986,19 +1448,45 @@ class TestAsyncSocialPosts:
                 },
                 "x": {
                     "caption": {},
+                    "community_id": "community_id",
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
                     ],
+                    "poll": {
+                        "duration_minutes": 0,
+                        "options": ["string"],
+                        "reply_settings": "following",
+                    },
+                    "quote_tweet_id": "quote_tweet_id",
+                    "reply_settings": "following",
                 },
                 "youtube": {
                     "caption": {},
                     "media": [
                         {
                             "url": "url",
+                            "tags": [
+                                {
+                                    "id": "id",
+                                    "platform": "facebook",
+                                    "type": "user",
+                                    "x": 0,
+                                    "y": 0,
+                                }
+                            ],
                             "thumbnail_timestamp_ms": {},
                             "thumbnail_url": {},
                         }
