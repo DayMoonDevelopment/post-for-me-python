@@ -28,6 +28,9 @@ class SocialAccountDisconnectResponse(BaseModel):
     platform: str
     """The platform of the social account"""
 
+    profile_photo_url: Optional[str] = None
+    """The platform's profile photo of the social account"""
+
     refresh_token: Optional[str] = None
     """The refresh token of the social account"""
 

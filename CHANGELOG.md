@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.6.0 (2025-11-12)
+
+Full Changelog: [v1.5.0...v1.6.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.5.0...v1.6.0)
+
+### Features
+
+* **api:** api update ([6bc15d2](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6bc15d200226afebd297bdc398b74f6a54ca6a9a))
+
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([93f9dc2](https://github.com/DayMoonDevelopment/post-for-me-python/commit/93f9dc2aa7bf9d3da8df93107a74ec96368dbd37))
+* compat with Python 3.14 ([c4ed401](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c4ed4019478494d2b9bfd474a6851ca7fa16518b))
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([002cbf6](https://github.com/DayMoonDevelopment/post-for-me-python/commit/002cbf67c69e00b7a871f4660ccd6fb2e5e5bf80))
+
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([803870f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/803870fd29b269828428d7cffefac4c64fe8c3c1))
+* **internal/tests:** avoid race condition with implicit client cleanup ([bf2dc61](https://github.com/DayMoonDevelopment/post-for-me-python/commit/bf2dc611bc0ef2cf5589764757be4b7cd07ede22))
+* **internal:** detect missing future annotations with ruff ([b8bd28f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b8bd28f2b5b291d5c2f0ca1c7e61633ad2483479))
+* **internal:** grammar fix (it's -&gt; its) ([b897bea](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b897bea001d0d9fd1014057c93a162212b384c50))
+* **package:** drop Python 3.8 support ([4310a3b](https://github.com/DayMoonDevelopment/post-for-me-python/commit/4310a3b2acf2b53fd87ff12ac466b1185570c5c1))
+
 ## 1.5.0 (2025-10-03)
 
 Full Changelog: [v1.4.0...v1.5.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.4.0...v1.5.0)
