@@ -23,6 +23,14 @@ class SocialAccountCreateAuthURLParams(TypedDict, total=False):
     platform_data: PlatformData
     """Additional data needed for the provider"""
 
+    redirect_url_override: str
+    """Override the default redirect URL for the OAuth flow.
+
+    If provided, this URL will be used instead of our redirect URL. Make sure this
+    URL is included in your app's authorized redirect urls. This override will not
+    work when using our system credientals.
+    """
+
 
 class PlatformDataBluesky(TypedDict, total=False):
     app_password: Required[str]
