@@ -239,6 +239,7 @@ class TestSocialAccounts:
                 "instagram": {"connection_type": "instagram"},
                 "linkedin": {"connection_type": "personal"},
             },
+            redirect_url_override="redirect_url_override",
         )
         assert_matches_type(SocialAccountCreateAuthURLResponse, social_account, path=["response"])
 
@@ -532,6 +533,7 @@ class TestAsyncSocialAccounts:
                 "instagram": {"connection_type": "instagram"},
                 "linkedin": {"connection_type": "personal"},
             },
+            redirect_url_override="redirect_url_override",
         )
         assert_matches_type(SocialAccountCreateAuthURLResponse, social_account, path=["response"])
 
