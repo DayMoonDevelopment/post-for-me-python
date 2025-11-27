@@ -51,8 +51,9 @@ class PlatformDataInstagram(TypedDict, total=False):
 class PlatformDataLinkedin(TypedDict, total=False):
     connection_type: Required[Literal["personal", "organization"]]
     """
-    The type of connection; personal for posting on behalf of the user only,
-    organization for posting on behalf of both an organization and the user
+    The type of connection; If using our provided credentials always use
+    "organization". If using your own crednetials then only use "organization" if
+    you are using the Community API
     """
 
 
