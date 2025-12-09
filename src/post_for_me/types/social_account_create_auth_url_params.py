@@ -33,6 +33,8 @@ class SocialAccountCreateAuthURLParams(TypedDict, total=False):
 
 
 class PlatformDataBluesky(TypedDict, total=False):
+    """Additional data needed for connecting bluesky accounts"""
+
     app_password: Required[str]
     """The app password of the account"""
 
@@ -41,6 +43,8 @@ class PlatformDataBluesky(TypedDict, total=False):
 
 
 class PlatformDataInstagram(TypedDict, total=False):
+    """Additional data for connecting instagram accounts"""
+
     connection_type: Required[Literal["instagram", "facebook"]]
     """
     The type of connection; instagram for using login with instagram, facebook for
@@ -49,6 +53,8 @@ class PlatformDataInstagram(TypedDict, total=False):
 
 
 class PlatformDataLinkedin(TypedDict, total=False):
+    """Additional data for connecting linkedin accounts"""
+
     connection_type: Required[Literal["personal", "organization"]]
     """
     The type of connection; If using our provided credentials always use
@@ -58,6 +64,8 @@ class PlatformDataLinkedin(TypedDict, total=False):
 
 
 class PlatformData(TypedDict, total=False):
+    """Additional data needed for the provider"""
+
     bluesky: PlatformDataBluesky
     """Additional data needed for connecting bluesky accounts"""
 

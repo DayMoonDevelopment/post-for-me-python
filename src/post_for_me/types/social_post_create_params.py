@@ -50,6 +50,8 @@ class SocialPostCreateParams(TypedDict, total=False):
 
 
 class AccountConfigurationConfigurationPoll(TypedDict, total=False):
+    """Poll options for the twitter"""
+
     duration_minutes: Required[float]
     """Duration of the poll in minutes"""
 
@@ -61,6 +63,8 @@ class AccountConfigurationConfigurationPoll(TypedDict, total=False):
 
 
 class AccountConfigurationConfiguration(TypedDict, total=False):
+    """Configuration for the social account"""
+
     allow_comment: Optional[bool]
     """Allow comments on TikTok"""
 
