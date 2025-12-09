@@ -8,6 +8,8 @@ __all__ = ["SocialPostResult", "PlatformData"]
 
 
 class PlatformData(BaseModel):
+    """Platform-specific data"""
+
     id: Optional[str] = None
     """Platform-specific ID"""
 

@@ -49,6 +49,8 @@ class Media(BaseModel):
 
 
 class Poll(BaseModel):
+    """Poll options for the tweet"""
+
     duration_minutes: float
     """Duration of the poll in minutes"""
 
