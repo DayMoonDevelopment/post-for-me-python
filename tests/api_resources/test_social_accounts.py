@@ -231,13 +231,26 @@ class TestSocialAccounts:
         social_account = client.social_accounts.create_auth_url(
             platform="platform",
             external_id="external_id",
+            permissions=["posts", "feeds"],
             platform_data={
                 "bluesky": {
                     "app_password": "app_password",
                     "handle": "handle",
                 },
-                "instagram": {"connection_type": "instagram"},
-                "linkedin": {"connection_type": "personal"},
+                "facebook": {"permission_overrides": [[{}]]},
+                "instagram": {
+                    "connection_type": "instagram",
+                    "permission_overrides": [[{}]],
+                },
+                "linkedin": {
+                    "connection_type": "personal",
+                    "permission_overrides": [[{}]],
+                },
+                "pinterest": {"permission_overrides": [[{}]]},
+                "threads": {"permission_overrides": [[{}]]},
+                "tiktok": {"permission_overrides": [[{}]]},
+                "tiktok_business": {"permission_overrides": [[{}]]},
+                "youtube": {"permission_overrides": [[{}]]},
             },
             redirect_url_override="redirect_url_override",
         )
@@ -525,13 +538,26 @@ class TestAsyncSocialAccounts:
         social_account = await async_client.social_accounts.create_auth_url(
             platform="platform",
             external_id="external_id",
+            permissions=["posts", "feeds"],
             platform_data={
                 "bluesky": {
                     "app_password": "app_password",
                     "handle": "handle",
                 },
-                "instagram": {"connection_type": "instagram"},
-                "linkedin": {"connection_type": "personal"},
+                "facebook": {"permission_overrides": [[{}]]},
+                "instagram": {
+                    "connection_type": "instagram",
+                    "permission_overrides": [[{}]],
+                },
+                "linkedin": {
+                    "connection_type": "personal",
+                    "permission_overrides": [[{}]],
+                },
+                "pinterest": {"permission_overrides": [[{}]]},
+                "threads": {"permission_overrides": [[{}]]},
+                "tiktok": {"permission_overrides": [[{}]]},
+                "tiktok_business": {"permission_overrides": [[{}]]},
+                "youtube": {"permission_overrides": [[{}]]},
             },
             redirect_url_override="redirect_url_override",
         )

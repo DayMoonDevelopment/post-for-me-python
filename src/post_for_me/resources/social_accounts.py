@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Union, Optional
+from typing import List, Union, Optional
 from datetime import datetime
 from typing_extensions import Literal
 
@@ -286,6 +286,7 @@ class SocialAccountsResource(SyncAPIResource):
         *,
         platform: str,
         external_id: str | Omit = omit,
+        permissions: List[Literal["posts", "feeds"]] | Omit = omit,
         platform_data: social_account_create_auth_url_params.PlatformData | Omit = omit,
         redirect_url_override: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -305,6 +306,9 @@ class SocialAccountsResource(SyncAPIResource):
           platform: The social account provider
 
           external_id: Your unique identifier for the social account
+
+          permissions: List of permissions you want to allow. Will default to only post permissions.
+              You must include the "feeds" permission to request an account feed and metrics
 
           platform_data: Additional data needed for the provider
 
@@ -327,6 +331,7 @@ class SocialAccountsResource(SyncAPIResource):
                 {
                     "platform": platform,
                     "external_id": external_id,
+                    "permissions": permissions,
                     "platform_data": platform_data,
                     "redirect_url_override": redirect_url_override,
                 },
@@ -627,6 +632,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         *,
         platform: str,
         external_id: str | Omit = omit,
+        permissions: List[Literal["posts", "feeds"]] | Omit = omit,
         platform_data: social_account_create_auth_url_params.PlatformData | Omit = omit,
         redirect_url_override: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -646,6 +652,9 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
           platform: The social account provider
 
           external_id: Your unique identifier for the social account
+
+          permissions: List of permissions you want to allow. Will default to only post permissions.
+              You must include the "feeds" permission to request an account feed and metrics
 
           platform_data: Additional data needed for the provider
 
@@ -668,6 +677,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
                 {
                     "platform": platform,
                     "external_id": external_id,
+                    "permissions": permissions,
                     "platform_data": platform_data,
                     "redirect_url_override": redirect_url_override,
                 },
