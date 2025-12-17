@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,8 +20,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import media, social_posts, social_accounts, social_post_results
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, PostForMeError
 from ._base_client import (
@@ -29,6 +29,13 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
+
+if TYPE_CHECKING:
+    from .resources import media, social_posts, social_accounts, social_post_results
+    from .resources.media import MediaResource, AsyncMediaResource
+    from .resources.social_posts import SocialPostsResource, AsyncSocialPostsResource
+    from .resources.social_accounts import SocialAccountsResource, AsyncSocialAccountsResource
+    from .resources.social_post_results import SocialPostResultsResource, AsyncSocialPostResultsResource
 
 __all__ = [
     "Timeout",
@@ -43,13 +50,6 @@ __all__ = [
 
 
 class PostForMe(SyncAPIClient):
-    media: media.MediaResource
-    social_posts: social_posts.SocialPostsResource
-    social_post_results: social_post_results.SocialPostResultsResource
-    social_accounts: social_accounts.SocialAccountsResource
-    with_raw_response: PostForMeWithRawResponse
-    with_streaming_response: PostForMeWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -104,12 +104,37 @@ class PostForMe(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.media = media.MediaResource(self)
-        self.social_posts = social_posts.SocialPostsResource(self)
-        self.social_post_results = social_post_results.SocialPostResultsResource(self)
-        self.social_accounts = social_accounts.SocialAccountsResource(self)
-        self.with_raw_response = PostForMeWithRawResponse(self)
-        self.with_streaming_response = PostForMeWithStreamedResponse(self)
+    @cached_property
+    def media(self) -> MediaResource:
+        from .resources.media import MediaResource
+
+        return MediaResource(self)
+
+    @cached_property
+    def social_posts(self) -> SocialPostsResource:
+        from .resources.social_posts import SocialPostsResource
+
+        return SocialPostsResource(self)
+
+    @cached_property
+    def social_post_results(self) -> SocialPostResultsResource:
+        from .resources.social_post_results import SocialPostResultsResource
+
+        return SocialPostResultsResource(self)
+
+    @cached_property
+    def social_accounts(self) -> SocialAccountsResource:
+        from .resources.social_accounts import SocialAccountsResource
+
+        return SocialAccountsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> PostForMeWithRawResponse:
+        return PostForMeWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> PostForMeWithStreamedResponse:
+        return PostForMeWithStreamedResponse(self)
 
     @property
     @override
@@ -217,13 +242,6 @@ class PostForMe(SyncAPIClient):
 
 
 class AsyncPostForMe(AsyncAPIClient):
-    media: media.AsyncMediaResource
-    social_posts: social_posts.AsyncSocialPostsResource
-    social_post_results: social_post_results.AsyncSocialPostResultsResource
-    social_accounts: social_accounts.AsyncSocialAccountsResource
-    with_raw_response: AsyncPostForMeWithRawResponse
-    with_streaming_response: AsyncPostForMeWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -278,12 +296,37 @@ class AsyncPostForMe(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.media = media.AsyncMediaResource(self)
-        self.social_posts = social_posts.AsyncSocialPostsResource(self)
-        self.social_post_results = social_post_results.AsyncSocialPostResultsResource(self)
-        self.social_accounts = social_accounts.AsyncSocialAccountsResource(self)
-        self.with_raw_response = AsyncPostForMeWithRawResponse(self)
-        self.with_streaming_response = AsyncPostForMeWithStreamedResponse(self)
+    @cached_property
+    def media(self) -> AsyncMediaResource:
+        from .resources.media import AsyncMediaResource
+
+        return AsyncMediaResource(self)
+
+    @cached_property
+    def social_posts(self) -> AsyncSocialPostsResource:
+        from .resources.social_posts import AsyncSocialPostsResource
+
+        return AsyncSocialPostsResource(self)
+
+    @cached_property
+    def social_post_results(self) -> AsyncSocialPostResultsResource:
+        from .resources.social_post_results import AsyncSocialPostResultsResource
+
+        return AsyncSocialPostResultsResource(self)
+
+    @cached_property
+    def social_accounts(self) -> AsyncSocialAccountsResource:
+        from .resources.social_accounts import AsyncSocialAccountsResource
+
+        return AsyncSocialAccountsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncPostForMeWithRawResponse:
+        return AsyncPostForMeWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncPostForMeWithStreamedResponse:
+        return AsyncPostForMeWithStreamedResponse(self)
 
     @property
     @override
@@ -391,43 +434,127 @@ class AsyncPostForMe(AsyncAPIClient):
 
 
 class PostForMeWithRawResponse:
+    _client: PostForMe
+
     def __init__(self, client: PostForMe) -> None:
-        self.media = media.MediaResourceWithRawResponse(client.media)
-        self.social_posts = social_posts.SocialPostsResourceWithRawResponse(client.social_posts)
-        self.social_post_results = social_post_results.SocialPostResultsResourceWithRawResponse(
-            client.social_post_results
-        )
-        self.social_accounts = social_accounts.SocialAccountsResourceWithRawResponse(client.social_accounts)
+        self._client = client
+
+    @cached_property
+    def media(self) -> media.MediaResourceWithRawResponse:
+        from .resources.media import MediaResourceWithRawResponse
+
+        return MediaResourceWithRawResponse(self._client.media)
+
+    @cached_property
+    def social_posts(self) -> social_posts.SocialPostsResourceWithRawResponse:
+        from .resources.social_posts import SocialPostsResourceWithRawResponse
+
+        return SocialPostsResourceWithRawResponse(self._client.social_posts)
+
+    @cached_property
+    def social_post_results(self) -> social_post_results.SocialPostResultsResourceWithRawResponse:
+        from .resources.social_post_results import SocialPostResultsResourceWithRawResponse
+
+        return SocialPostResultsResourceWithRawResponse(self._client.social_post_results)
+
+    @cached_property
+    def social_accounts(self) -> social_accounts.SocialAccountsResourceWithRawResponse:
+        from .resources.social_accounts import SocialAccountsResourceWithRawResponse
+
+        return SocialAccountsResourceWithRawResponse(self._client.social_accounts)
 
 
 class AsyncPostForMeWithRawResponse:
+    _client: AsyncPostForMe
+
     def __init__(self, client: AsyncPostForMe) -> None:
-        self.media = media.AsyncMediaResourceWithRawResponse(client.media)
-        self.social_posts = social_posts.AsyncSocialPostsResourceWithRawResponse(client.social_posts)
-        self.social_post_results = social_post_results.AsyncSocialPostResultsResourceWithRawResponse(
-            client.social_post_results
-        )
-        self.social_accounts = social_accounts.AsyncSocialAccountsResourceWithRawResponse(client.social_accounts)
+        self._client = client
+
+    @cached_property
+    def media(self) -> media.AsyncMediaResourceWithRawResponse:
+        from .resources.media import AsyncMediaResourceWithRawResponse
+
+        return AsyncMediaResourceWithRawResponse(self._client.media)
+
+    @cached_property
+    def social_posts(self) -> social_posts.AsyncSocialPostsResourceWithRawResponse:
+        from .resources.social_posts import AsyncSocialPostsResourceWithRawResponse
+
+        return AsyncSocialPostsResourceWithRawResponse(self._client.social_posts)
+
+    @cached_property
+    def social_post_results(self) -> social_post_results.AsyncSocialPostResultsResourceWithRawResponse:
+        from .resources.social_post_results import AsyncSocialPostResultsResourceWithRawResponse
+
+        return AsyncSocialPostResultsResourceWithRawResponse(self._client.social_post_results)
+
+    @cached_property
+    def social_accounts(self) -> social_accounts.AsyncSocialAccountsResourceWithRawResponse:
+        from .resources.social_accounts import AsyncSocialAccountsResourceWithRawResponse
+
+        return AsyncSocialAccountsResourceWithRawResponse(self._client.social_accounts)
 
 
 class PostForMeWithStreamedResponse:
+    _client: PostForMe
+
     def __init__(self, client: PostForMe) -> None:
-        self.media = media.MediaResourceWithStreamingResponse(client.media)
-        self.social_posts = social_posts.SocialPostsResourceWithStreamingResponse(client.social_posts)
-        self.social_post_results = social_post_results.SocialPostResultsResourceWithStreamingResponse(
-            client.social_post_results
-        )
-        self.social_accounts = social_accounts.SocialAccountsResourceWithStreamingResponse(client.social_accounts)
+        self._client = client
+
+    @cached_property
+    def media(self) -> media.MediaResourceWithStreamingResponse:
+        from .resources.media import MediaResourceWithStreamingResponse
+
+        return MediaResourceWithStreamingResponse(self._client.media)
+
+    @cached_property
+    def social_posts(self) -> social_posts.SocialPostsResourceWithStreamingResponse:
+        from .resources.social_posts import SocialPostsResourceWithStreamingResponse
+
+        return SocialPostsResourceWithStreamingResponse(self._client.social_posts)
+
+    @cached_property
+    def social_post_results(self) -> social_post_results.SocialPostResultsResourceWithStreamingResponse:
+        from .resources.social_post_results import SocialPostResultsResourceWithStreamingResponse
+
+        return SocialPostResultsResourceWithStreamingResponse(self._client.social_post_results)
+
+    @cached_property
+    def social_accounts(self) -> social_accounts.SocialAccountsResourceWithStreamingResponse:
+        from .resources.social_accounts import SocialAccountsResourceWithStreamingResponse
+
+        return SocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
 
 
 class AsyncPostForMeWithStreamedResponse:
+    _client: AsyncPostForMe
+
     def __init__(self, client: AsyncPostForMe) -> None:
-        self.media = media.AsyncMediaResourceWithStreamingResponse(client.media)
-        self.social_posts = social_posts.AsyncSocialPostsResourceWithStreamingResponse(client.social_posts)
-        self.social_post_results = social_post_results.AsyncSocialPostResultsResourceWithStreamingResponse(
-            client.social_post_results
-        )
-        self.social_accounts = social_accounts.AsyncSocialAccountsResourceWithStreamingResponse(client.social_accounts)
+        self._client = client
+
+    @cached_property
+    def media(self) -> media.AsyncMediaResourceWithStreamingResponse:
+        from .resources.media import AsyncMediaResourceWithStreamingResponse
+
+        return AsyncMediaResourceWithStreamingResponse(self._client.media)
+
+    @cached_property
+    def social_posts(self) -> social_posts.AsyncSocialPostsResourceWithStreamingResponse:
+        from .resources.social_posts import AsyncSocialPostsResourceWithStreamingResponse
+
+        return AsyncSocialPostsResourceWithStreamingResponse(self._client.social_posts)
+
+    @cached_property
+    def social_post_results(self) -> social_post_results.AsyncSocialPostResultsResourceWithStreamingResponse:
+        from .resources.social_post_results import AsyncSocialPostResultsResourceWithStreamingResponse
+
+        return AsyncSocialPostResultsResourceWithStreamingResponse(self._client.social_post_results)
+
+    @cached_property
+    def social_accounts(self) -> social_accounts.AsyncSocialAccountsResourceWithStreamingResponse:
+        from .resources.social_accounts import AsyncSocialAccountsResourceWithStreamingResponse
+
+        return AsyncSocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
 
 
 Client = PostForMe
