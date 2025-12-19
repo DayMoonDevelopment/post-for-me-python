@@ -18,6 +18,8 @@ __all__ = [
 
 
 class AccountConfigurationConfigurationPoll(BaseModel):
+    """Poll options for the twitter"""
+
     duration_minutes: float
     """Duration of the poll in minutes"""
 
@@ -29,6 +31,8 @@ class AccountConfigurationConfigurationPoll(BaseModel):
 
 
 class AccountConfigurationConfiguration(BaseModel):
+    """Configuration for the social account"""
+
     allow_comment: Optional[bool] = None
     """Allow comments on TikTok"""
 

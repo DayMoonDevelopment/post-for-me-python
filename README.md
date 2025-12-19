@@ -87,6 +87,7 @@ pip install post_for_me[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from post_for_me import DefaultAioHttpClient
 from post_for_me import AsyncPostForMe
@@ -94,7 +95,7 @@ from post_for_me import AsyncPostForMe
 
 async def main() -> None:
     async with AsyncPostForMe(
-        api_key="My API Key",
+        api_key=os.environ.get("POST_FOR_ME_API_KEY"),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         social_post = await client.social_posts.create(

@@ -51,6 +51,8 @@ class Media(TypedDict, total=False):
 
 
 class Poll(TypedDict, total=False):
+    """Poll options for the tweet"""
+
     duration_minutes: Required[float]
     """Duration of the poll in minutes"""
 

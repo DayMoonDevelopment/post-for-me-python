@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.7.0 (2025-12-19)
+
+Full Changelog: [v1.6.0...v1.7.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.6.0...v1.7.0)
+
+### Features
+
+* **api:** api update ([b10441f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b10441fbe73159828b922db73a927e7ee4094d5d))
+* **api:** api update ([8e3c40e](https://github.com/DayMoonDevelopment/post-for-me-python/commit/8e3c40ed2facc80ed39429a6fb10dd2187020674))
+* **api:** api update ([003a675](https://github.com/DayMoonDevelopment/post-for-me-python/commit/003a6752f3a51bbe7866854d138abe1be27251c1))
+
+
+### Bug Fixes
+
+* ensure streams are always closed ([a171a01](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a171a0112b0faf99b5fc4ad7078a7fbe0608cc02))
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([89a8bb8](https://github.com/DayMoonDevelopment/post-for-me-python/commit/89a8bb8642ee306aabf34bcc90603db223f820c0))
+* use async_to_httpx_files in patch method ([589b159](https://github.com/DayMoonDevelopment/post-for-me-python/commit/589b1591864e46f1809c041a10cbf384c8545a96))
+
+
+### Chores
+
+* add missing docstrings ([6fa5f8f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6fa5f8fa84e3413c03da1e221cbeb74c5dcdb69d))
+* add Python 3.14 classifier and testing ([3142214](https://github.com/DayMoonDevelopment/post-for-me-python/commit/31422143660cf5f54b09e1b51b0855f4de7b58d5))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([c8696fc](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c8696fcc1ff72c5d8697e0d467dbee1e81e9c791))
+* **docs:** use environment variables for authentication in code snippets ([6ad651b](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6ad651bbe10c2c88390f710c1c332b5ad84a08b0))
+* **internal:** add `--fix` argument to lint script ([c03c497](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c03c49736ac20dcfb60e4bcc2e56287ddda7a035))
+* **internal:** add missing files argument to base client ([69bc0df](https://github.com/DayMoonDevelopment/post-for-me-python/commit/69bc0df9f100c2f28f5205c516cbf436a1b41ecd))
+* speedup initial import ([be813dd](https://github.com/DayMoonDevelopment/post-for-me-python/commit/be813dda3e151562ffacb1f8737263823e2b4014))
+* update lockfile ([b624e7f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b624e7f31df287a028c83414bffe346fb20d0849))
+
 ## 1.6.0 (2025-11-12)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.5.0...v1.6.0)
