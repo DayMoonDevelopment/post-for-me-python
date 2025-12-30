@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.0 (2025-12-30)
+
+Full Changelog: [v1.7.0...v1.8.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.7.0...v1.8.0)
+
+### Features
+
+* **api:** Adding account feed endpoint ([6fe6d50](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6fe6d50676b6f4a6f9d5f48a870bbef400930029))
+
 ## 1.7.0 (2025-12-19)
 
 Full Changelog: [v1.6.0...v1.7.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.6.0...v1.7.0)
