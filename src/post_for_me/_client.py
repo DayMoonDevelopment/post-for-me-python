@@ -31,11 +31,12 @@ from ._base_client import (
 )
 
 if TYPE_CHECKING:
-    from .resources import media, social_posts, social_accounts, social_post_results
+    from .resources import media, social_posts, social_accounts, social_post_results, social_account_feeds
     from .resources.media import MediaResource, AsyncMediaResource
     from .resources.social_posts import SocialPostsResource, AsyncSocialPostsResource
     from .resources.social_accounts import SocialAccountsResource, AsyncSocialAccountsResource
     from .resources.social_post_results import SocialPostResultsResource, AsyncSocialPostResultsResource
+    from .resources.social_account_feeds import SocialAccountFeedsResource, AsyncSocialAccountFeedsResource
 
 __all__ = [
     "Timeout",
@@ -127,6 +128,12 @@ class PostForMe(SyncAPIClient):
         from .resources.social_accounts import SocialAccountsResource
 
         return SocialAccountsResource(self)
+
+    @cached_property
+    def social_account_feeds(self) -> SocialAccountFeedsResource:
+        from .resources.social_account_feeds import SocialAccountFeedsResource
+
+        return SocialAccountFeedsResource(self)
 
     @cached_property
     def with_raw_response(self) -> PostForMeWithRawResponse:
@@ -321,6 +328,12 @@ class AsyncPostForMe(AsyncAPIClient):
         return AsyncSocialAccountsResource(self)
 
     @cached_property
+    def social_account_feeds(self) -> AsyncSocialAccountFeedsResource:
+        from .resources.social_account_feeds import AsyncSocialAccountFeedsResource
+
+        return AsyncSocialAccountFeedsResource(self)
+
+    @cached_property
     def with_raw_response(self) -> AsyncPostForMeWithRawResponse:
         return AsyncPostForMeWithRawResponse(self)
 
@@ -463,6 +476,12 @@ class PostForMeWithRawResponse:
 
         return SocialAccountsResourceWithRawResponse(self._client.social_accounts)
 
+    @cached_property
+    def social_account_feeds(self) -> social_account_feeds.SocialAccountFeedsResourceWithRawResponse:
+        from .resources.social_account_feeds import SocialAccountFeedsResourceWithRawResponse
+
+        return SocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
+
 
 class AsyncPostForMeWithRawResponse:
     _client: AsyncPostForMe
@@ -493,6 +512,12 @@ class AsyncPostForMeWithRawResponse:
         from .resources.social_accounts import AsyncSocialAccountsResourceWithRawResponse
 
         return AsyncSocialAccountsResourceWithRawResponse(self._client.social_accounts)
+
+    @cached_property
+    def social_account_feeds(self) -> social_account_feeds.AsyncSocialAccountFeedsResourceWithRawResponse:
+        from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithRawResponse
+
+        return AsyncSocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
 
 
 class PostForMeWithStreamedResponse:
@@ -525,6 +550,12 @@ class PostForMeWithStreamedResponse:
 
         return SocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
 
+    @cached_property
+    def social_account_feeds(self) -> social_account_feeds.SocialAccountFeedsResourceWithStreamingResponse:
+        from .resources.social_account_feeds import SocialAccountFeedsResourceWithStreamingResponse
+
+        return SocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)
+
 
 class AsyncPostForMeWithStreamedResponse:
     _client: AsyncPostForMe
@@ -555,6 +586,12 @@ class AsyncPostForMeWithStreamedResponse:
         from .resources.social_accounts import AsyncSocialAccountsResourceWithStreamingResponse
 
         return AsyncSocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
+
+    @cached_property
+    def social_account_feeds(self) -> social_account_feeds.AsyncSocialAccountFeedsResourceWithStreamingResponse:
+        from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithStreamingResponse
+
+        return AsyncSocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)
 
 
 Client = PostForMe

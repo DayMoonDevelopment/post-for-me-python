@@ -75,3 +75,15 @@ Methods:
 - <code title="get /v1/social-accounts">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">list</a>(\*\*<a href="src/post_for_me/types/social_account_list_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account_list_response.py">SocialAccountListResponse</a></code>
 - <code title="post /v1/social-accounts/auth-url">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">create_auth_url</a>(\*\*<a href="src/post_for_me/types/social_account_create_auth_url_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account_create_auth_url_response.py">SocialAccountCreateAuthURLResponse</a></code>
 - <code title="post /v1/social-accounts/{id}/disconnect">client.social_accounts.<a href="./src/post_for_me/resources/social_accounts.py">disconnect</a>(id) -> <a href="./src/post_for_me/types/social_account_disconnect_response.py">SocialAccountDisconnectResponse</a></code>
+
+# SocialAccountFeeds
+
+Types:
+
+```python
+from post_for_me.types import PlatformPost, SocialAccountFeedListResponse
+```
+
+Methods:
+
+- <code title="get /v1/social-account-feeds/{social_account_id}">client.social_account_feeds.<a href="./src/post_for_me/resources/social_account_feeds.py">list</a>(social_account_id, \*\*<a href="src/post_for_me/types/social_account_feed_list_params.py">params</a>) -> <a href="./src/post_for_me/types/social_account_feed_list_response.py">SocialAccountFeedListResponse</a></code>
