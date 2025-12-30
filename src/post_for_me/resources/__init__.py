@@ -32,6 +32,14 @@ from .social_post_results import (
     SocialPostResultsResourceWithStreamingResponse,
     AsyncSocialPostResultsResourceWithStreamingResponse,
 )
+from .social_account_feeds import (
+    SocialAccountFeedsResource,
+    AsyncSocialAccountFeedsResource,
+    SocialAccountFeedsResourceWithRawResponse,
+    AsyncSocialAccountFeedsResourceWithRawResponse,
+    SocialAccountFeedsResourceWithStreamingResponse,
+    AsyncSocialAccountFeedsResourceWithStreamingResponse,
+)
 
 __all__ = [
     "MediaResource",
@@ -58,4 +66,10 @@ __all__ = [
     "AsyncSocialAccountsResourceWithRawResponse",
     "SocialAccountsResourceWithStreamingResponse",
     "AsyncSocialAccountsResourceWithStreamingResponse",
+    "SocialAccountFeedsResource",
+    "AsyncSocialAccountFeedsResource",
+    "SocialAccountFeedsResourceWithRawResponse",
+    "AsyncSocialAccountFeedsResourceWithRawResponse",
+    "SocialAccountFeedsResourceWithStreamingResponse",
+    "AsyncSocialAccountFeedsResourceWithStreamingResponse",
 ]

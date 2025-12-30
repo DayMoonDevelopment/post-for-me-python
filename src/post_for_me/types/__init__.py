@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from .social_post import SocialPost as SocialPost
+from .platform_post import PlatformPost as PlatformPost
 from .social_account import SocialAccount as SocialAccount
 from .social_post_result import SocialPostResult as SocialPostResult
 from .tiktok_configuration import TiktokConfiguration as TiktokConfiguration
@@ -27,6 +28,7 @@ from .social_account_list_response import SocialAccountListResponse as SocialAcc
 from .social_account_update_params import SocialAccountUpdateParams as SocialAccountUpdateParams
 from .social_post_result_list_params import SocialPostResultListParams as SocialPostResultListParams
 from .bluesky_configuration_dto_param import BlueskyConfigurationDtoParam as BlueskyConfigurationDtoParam
+from .social_account_feed_list_params import SocialAccountFeedListParams as SocialAccountFeedListParams
 from .threads_configuration_dto_param import ThreadsConfigurationDtoParam as ThreadsConfigurationDtoParam
 from .twitter_configuration_dto_param import TwitterConfigurationDtoParam as TwitterConfigurationDtoParam
 from .youtube_configuration_dto_param import YoutubeConfigurationDtoParam as YoutubeConfigurationDtoParam
@@ -37,6 +39,7 @@ from .social_post_result_list_response import SocialPostResultListResponse as So
 from .instagram_configuration_dto_param import InstagramConfigurationDtoParam as InstagramConfigurationDtoParam
 from .pinterest_configuration_dto_param import PinterestConfigurationDtoParam as PinterestConfigurationDtoParam
 from .platform_configurations_dto_param import PlatformConfigurationsDtoParam as PlatformConfigurationsDtoParam
+from .social_account_feed_list_response import SocialAccountFeedListResponse as SocialAccountFeedListResponse
 from .social_account_disconnect_response import SocialAccountDisconnectResponse as SocialAccountDisconnectResponse
 from .social_account_create_auth_url_params import SocialAccountCreateAuthURLParams as SocialAccountCreateAuthURLParams
 from .social_account_create_auth_url_response import (
