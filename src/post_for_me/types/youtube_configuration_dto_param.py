@@ -52,8 +52,14 @@ class YoutubeConfigurationDtoParam(TypedDict, total=False):
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
+    made_for_kids: Optional[bool]
+    """If true will notify YouTube the video is intended for kids, defaults to false"""
+
     media: Optional[Iterable[Media]]
     """Overrides the `media` from the post"""
+
+    privacy_status: Optional[Literal["public", "private", "unlisted"]]
+    """Sets the privacy status of the video, will default to public"""
 
     title: Optional[str]
     """Overrides the `title` from the post"""

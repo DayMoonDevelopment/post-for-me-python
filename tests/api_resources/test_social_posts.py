@@ -54,6 +54,7 @@ class TestSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
+                        "made_for_kids": True,
                         "media": ["string"],
                         "placement": "reels",
                         "poll": {
@@ -61,7 +62,7 @@ class TestSocialPosts:
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -300,6 +301,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -316,6 +318,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -427,6 +430,7 @@ class TestSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
+                        "made_for_kids": True,
                         "media": ["string"],
                         "placement": "reels",
                         "poll": {
@@ -434,7 +438,7 @@ class TestSocialPosts:
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -673,6 +677,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -689,6 +694,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -856,6 +862,7 @@ class TestAsyncSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
+                        "made_for_kids": True,
                         "media": ["string"],
                         "placement": "reels",
                         "poll": {
@@ -863,7 +870,7 @@ class TestAsyncSocialPosts:
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -1102,6 +1109,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -1118,6 +1126,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -1229,6 +1238,7 @@ class TestAsyncSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
+                        "made_for_kids": True,
                         "media": ["string"],
                         "placement": "reels",
                         "poll": {
@@ -1236,7 +1246,7 @@ class TestAsyncSocialPosts:
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -1475,6 +1485,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -1491,6 +1502,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },

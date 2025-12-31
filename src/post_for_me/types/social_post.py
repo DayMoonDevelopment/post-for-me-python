@@ -84,6 +84,9 @@ class AccountConfigurationConfiguration(BaseModel):
     and Facebook)
     """
 
+    made_for_kids: Optional[bool] = None
+    """If true will notify YouTube the video is intended for kids, defaults to false"""
+
     media: Optional[List[str]] = None
     """Overrides the `media` from the post"""
 
@@ -93,8 +96,11 @@ class AccountConfigurationConfiguration(BaseModel):
     poll: Optional[AccountConfigurationConfigurationPoll] = None
     """Poll options for the twitter"""
 
-    privacy_status: Optional[str] = None
-    """Sets the privacy status for TikTok (private, public)"""
+    privacy_status: Optional[Literal["public", "private", "unlisted"]] = None
+    """
+    Sets the privacy status for TikTok (private, public), or YouTube (private,
+    public, unlisted)
+    """
 
     quote_tweet_id: Optional[str] = None
     """Id of the tweet you want to quote"""
