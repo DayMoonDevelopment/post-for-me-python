@@ -14,6 +14,8 @@ __all__ = [
     "SocialPostUpdateParams",
     "AccountConfiguration",
     "AccountConfigurationConfiguration",
+    "AccountConfigurationConfigurationMedia",
+    "AccountConfigurationConfigurationMediaTag",
     "AccountConfigurationConfigurationPoll",
     "Media",
     "MediaTag",
@@ -47,6 +49,46 @@ class SocialPostUpdateParams(TypedDict, total=False):
     Scheduled date and time for the post, setting to null or undefined will post
     instantly
     """
+
+
+class AccountConfigurationConfigurationMediaTag(TypedDict, total=False):
+    id: Required[str]
+    """Facebook User ID, Instagram Username or Instagram product id to tag"""
+
+    platform: Required[Literal["facebook", "instagram"]]
+    """The platform for the tags"""
+
+    type: Required[Literal["user", "product"]]
+    """
+    The type of tag, user to tag accounts, product to tag products (only supported
+    for instagram)
+    """
+
+    x: float
+    """
+    Percentage distance from left edge of the image, Not required for videos or
+    stories
+    """
+
+    y: float
+    """
+    Percentage distance from top edge of the image, Not required for videos or
+    stories
+    """
+
+
+class AccountConfigurationConfigurationMedia(TypedDict, total=False):
+    url: Required[str]
+    """Public URL of the media"""
+
+    tags: Optional[Iterable[AccountConfigurationConfigurationMediaTag]]
+    """List of tags to attach to the media"""
+
+    thumbnail_timestamp_ms: Optional[object]
+    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
+
+    thumbnail_url: Optional[object]
+    """Public URL of the thumbnail for the media"""
 
 
 class AccountConfigurationConfigurationPoll(TypedDict, total=False):
@@ -119,7 +161,7 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     made_for_kids: Optional[bool]
     """If true will notify YouTube the video is intended for kids, defaults to false"""
 
-    media: Optional[SequenceNotStr[str]]
+    media: Optional[Iterable[AccountConfigurationConfigurationMedia]]
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline", "stories"]]

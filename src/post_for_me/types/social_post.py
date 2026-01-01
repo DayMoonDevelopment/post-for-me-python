@@ -11,10 +11,52 @@ __all__ = [
     "SocialPost",
     "AccountConfiguration",
     "AccountConfigurationConfiguration",
+    "AccountConfigurationConfigurationMedia",
+    "AccountConfigurationConfigurationMediaTag",
     "AccountConfigurationConfigurationPoll",
     "Media",
     "MediaTag",
 ]
+
+
+class AccountConfigurationConfigurationMediaTag(BaseModel):
+    id: str
+    """Facebook User ID, Instagram Username or Instagram product id to tag"""
+
+    platform: Literal["facebook", "instagram"]
+    """The platform for the tags"""
+
+    type: Literal["user", "product"]
+    """
+    The type of tag, user to tag accounts, product to tag products (only supported
+    for instagram)
+    """
+
+    x: Optional[float] = None
+    """
+    Percentage distance from left edge of the image, Not required for videos or
+    stories
+    """
+
+    y: Optional[float] = None
+    """
+    Percentage distance from top edge of the image, Not required for videos or
+    stories
+    """
+
+
+class AccountConfigurationConfigurationMedia(BaseModel):
+    url: str
+    """Public URL of the media"""
+
+    tags: Optional[List[AccountConfigurationConfigurationMediaTag]] = None
+    """List of tags to attach to the media"""
+
+    thumbnail_timestamp_ms: Optional[object] = None
+    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
+
+    thumbnail_url: Optional[object] = None
+    """Public URL of the thumbnail for the media"""
 
 
 class AccountConfigurationConfigurationPoll(BaseModel):
@@ -87,7 +129,7 @@ class AccountConfigurationConfiguration(BaseModel):
     made_for_kids: Optional[bool] = None
     """If true will notify YouTube the video is intended for kids, defaults to false"""
 
-    media: Optional[List[str]] = None
+    media: Optional[List[AccountConfigurationConfigurationMedia]] = None
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "timeline", "stories"]] = None

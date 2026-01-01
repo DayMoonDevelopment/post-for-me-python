@@ -55,7 +55,22 @@ class TestSocialPosts:
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
-                        "media": ["string"],
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
@@ -431,7 +446,22 @@ class TestSocialPosts:
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
-                        "media": ["string"],
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
@@ -863,7 +893,22 @@ class TestAsyncSocialPosts:
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
-                        "media": ["string"],
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
@@ -1239,7 +1284,22 @@ class TestAsyncSocialPosts:
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
-                        "media": ["string"],
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
