@@ -27,3 +27,10 @@ class SocialPostResultListParams(TypedDict, total=False):
 
     Multiple values imply OR logic (e.g., ?post_id=123&post_id=456).
     """
+
+    social_account_id: SequenceNotStr[str]
+    """Filter by social account ID(s).
+
+    Multiple values imply OR logic (e.g.,
+    ?social_account_id=123&social_account_id=456).
+    """

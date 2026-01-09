@@ -82,6 +82,7 @@ class SocialPostResultsResource(SyncAPIResource):
         offset: float | Omit = omit,
         platform: SequenceNotStr[str] | Omit = omit,
         post_id: SequenceNotStr[str] | Omit = omit,
+        social_account_id: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -102,6 +103,9 @@ class SocialPostResultsResource(SyncAPIResource):
 
           post_id: Filter by post IDs. Multiple values imply OR logic (e.g.,
               ?post_id=123&post_id=456).
+
+          social_account_id: Filter by social account ID(s). Multiple values imply OR logic (e.g.,
+              ?social_account_id=123&social_account_id=456).
 
           extra_headers: Send extra headers
 
@@ -124,6 +128,7 @@ class SocialPostResultsResource(SyncAPIResource):
                         "offset": offset,
                         "platform": platform,
                         "post_id": post_id,
+                        "social_account_id": social_account_id,
                     },
                     social_post_result_list_params.SocialPostResultListParams,
                 ),
@@ -192,6 +197,7 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
         offset: float | Omit = omit,
         platform: SequenceNotStr[str] | Omit = omit,
         post_id: SequenceNotStr[str] | Omit = omit,
+        social_account_id: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -212,6 +218,9 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
 
           post_id: Filter by post IDs. Multiple values imply OR logic (e.g.,
               ?post_id=123&post_id=456).
+
+          social_account_id: Filter by social account ID(s). Multiple values imply OR logic (e.g.,
+              ?social_account_id=123&social_account_id=456).
 
           extra_headers: Send extra headers
 
@@ -234,6 +243,7 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
                         "offset": offset,
                         "platform": platform,
                         "post_id": post_id,
+                        "social_account_id": social_account_id,
                     },
                     social_post_result_list_params.SocialPostResultListParams,
                 ),
