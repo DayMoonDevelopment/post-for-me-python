@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.9.0 (2026-01-09)
+
+Full Changelog: [v1.8.0...v1.9.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.8.0...v1.9.0)
+
+### Features
+
+* **api:** api update ([c64cacc](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c64cacc7fd481d300d735ce1a540d63290fc029b))
+* **api:** api update ([774a595](https://github.com/DayMoonDevelopment/post-for-me-python/commit/774a595a328fea260b2f95af104f24520880c45d))
+* **api:** api update ([46a3c1b](https://github.com/DayMoonDevelopment/post-for-me-python/commit/46a3c1b53620ab0f44b0532c148400e87829c2ef))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([205c722](https://github.com/DayMoonDevelopment/post-for-me-python/commit/205c72259b191067290f9295115ca9ceaebabac2))
+
 ## 1.8.0 (2025-12-30)
 
 Full Changelog: [v1.7.0...v1.8.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.7.0...v1.8.0)
