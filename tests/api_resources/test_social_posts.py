@@ -786,6 +786,7 @@ class TestSocialPosts:
             limit=0,
             offset=0,
             platform=["bluesky"],
+            social_account_id=["string"],
             status=["draft"],
         )
         assert_matches_type(SocialPostListResponse, social_post, path=["response"])
@@ -1624,6 +1625,7 @@ class TestAsyncSocialPosts:
             limit=0,
             offset=0,
             platform=["bluesky"],
+            social_account_id=["string"],
             status=["draft"],
         )
         assert_matches_type(SocialPostListResponse, social_post, path=["response"])
