@@ -25,5 +25,8 @@ class SocialPostListParams(TypedDict, total=False):
     ]
     """Filter by platforms. Multiple values imply OR logic."""
 
+    social_account_id: SequenceNotStr[str]
+    """Filter by social account ID. Multiple values imply OR logic."""
+
     status: List[Literal["draft", "scheduled", "processing", "processed"]]
     """Filter by post status. Multiple values imply OR logic."""

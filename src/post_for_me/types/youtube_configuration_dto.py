@@ -52,8 +52,14 @@ class YoutubeConfigurationDto(BaseModel):
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 
+    made_for_kids: Optional[bool] = None
+    """If true will notify YouTube the video is intended for kids, defaults to false"""
+
     media: Optional[List[Media]] = None
     """Overrides the `media` from the post"""
+
+    privacy_status: Optional[Literal["public", "private", "unlisted"]] = None
+    """Sets the privacy status of the video, will default to public"""
 
     title: Optional[str] = None
     """Overrides the `title` from the post"""

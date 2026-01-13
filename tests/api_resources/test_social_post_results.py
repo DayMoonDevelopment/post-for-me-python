@@ -73,6 +73,7 @@ class TestSocialPostResults:
             offset=0,
             platform=["string"],
             post_id=["string"],
+            social_account_id=["string"],
         )
         assert_matches_type(SocialPostResultListResponse, social_post_result, path=["response"])
 
@@ -160,6 +161,7 @@ class TestAsyncSocialPostResults:
             offset=0,
             platform=["string"],
             post_id=["string"],
+            social_account_id=["string"],
         )
         assert_matches_type(SocialPostResultListResponse, social_post_result, path=["response"])
 

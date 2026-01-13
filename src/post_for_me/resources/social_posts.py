@@ -234,6 +234,7 @@ class SocialPostsResource(SyncAPIResource):
             Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
         | Omit = omit,
+        social_account_id: SequenceNotStr[str] | Omit = omit,
         status: List[Literal["draft", "scheduled", "processing", "processed"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -253,6 +254,8 @@ class SocialPostsResource(SyncAPIResource):
           offset: Number of items to skip
 
           platform: Filter by platforms. Multiple values imply OR logic.
+
+          social_account_id: Filter by social account ID. Multiple values imply OR logic.
 
           status: Filter by post status. Multiple values imply OR logic.
 
@@ -277,6 +280,7 @@ class SocialPostsResource(SyncAPIResource):
                         "limit": limit,
                         "offset": offset,
                         "platform": platform,
+                        "social_account_id": social_account_id,
                         "status": status,
                     },
                     social_post_list_params.SocialPostListParams,
@@ -521,6 +525,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
             Literal["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "x", "youtube"]
         ]
         | Omit = omit,
+        social_account_id: SequenceNotStr[str] | Omit = omit,
         status: List[Literal["draft", "scheduled", "processing", "processed"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -540,6 +545,8 @@ class AsyncSocialPostsResource(AsyncAPIResource):
           offset: Number of items to skip
 
           platform: Filter by platforms. Multiple values imply OR logic.
+
+          social_account_id: Filter by social account ID. Multiple values imply OR logic.
 
           status: Filter by post status. Multiple values imply OR logic.
 
@@ -564,6 +571,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
                         "limit": limit,
                         "offset": offset,
                         "platform": platform,
+                        "social_account_id": social_account_id,
                         "status": status,
                     },
                     social_post_list_params.SocialPostListParams,

@@ -54,14 +54,30 @@ class TestSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
-                        "media": ["string"],
+                        "made_for_kids": True,
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -300,6 +316,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -316,6 +333,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -427,14 +445,30 @@ class TestSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
-                        "media": ["string"],
+                        "made_for_kids": True,
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -673,6 +707,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -689,6 +724,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -750,6 +786,7 @@ class TestSocialPosts:
             limit=0,
             offset=0,
             platform=["bluesky"],
+            social_account_id=["string"],
             status=["draft"],
         )
         assert_matches_type(SocialPostListResponse, social_post, path=["response"])
@@ -856,14 +893,30 @@ class TestAsyncSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
-                        "media": ["string"],
+                        "made_for_kids": True,
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -1102,6 +1155,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -1118,6 +1172,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -1229,14 +1284,30 @@ class TestAsyncSocialPosts:
                         "is_draft": True,
                         "link": "link",
                         "location": "location",
-                        "media": ["string"],
+                        "made_for_kids": True,
+                        "media": [
+                            {
+                                "url": "url",
+                                "tags": [
+                                    {
+                                        "id": "id",
+                                        "platform": "facebook",
+                                        "type": "user",
+                                        "x": 0,
+                                        "y": 0,
+                                    }
+                                ],
+                                "thumbnail_timestamp_ms": {},
+                                "thumbnail_url": {},
+                            }
+                        ],
                         "placement": "reels",
                         "poll": {
                             "duration_minutes": 0,
                             "options": ["string"],
                             "reply_settings": "following",
                         },
-                        "privacy_status": "privacy_status",
+                        "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
                         "share_to_feed": True,
@@ -1475,6 +1546,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "made_for_kids": True,
                     "media": [
                         {
                             "url": "url",
@@ -1491,6 +1563,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "privacy_status": "public",
                     "title": "title",
                 },
             },
@@ -1552,6 +1625,7 @@ class TestAsyncSocialPosts:
             limit=0,
             offset=0,
             platform=["bluesky"],
+            social_account_id=["string"],
             status=["draft"],
         )
         assert_matches_type(SocialPostListResponse, social_post, path=["response"])
