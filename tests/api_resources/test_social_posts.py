@@ -82,6 +82,7 @@ class TestSocialPosts:
                         "reply_settings": "following",
                         "share_to_feed": True,
                         "title": "title",
+                        "trial_reel_type": "manual",
                     },
                     "social_account_id": "social_account_id",
                 }
@@ -168,6 +169,7 @@ class TestSocialPosts:
                     ],
                     "placement": "reels",
                     "share_to_feed": True,
+                    "trial_reel_type": "manual",
                 },
                 "linkedin": {
                     "caption": {},
@@ -473,6 +475,7 @@ class TestSocialPosts:
                         "reply_settings": "following",
                         "share_to_feed": True,
                         "title": "title",
+                        "trial_reel_type": "manual",
                     },
                     "social_account_id": "social_account_id",
                 }
@@ -559,6 +562,7 @@ class TestSocialPosts:
                     ],
                     "placement": "reels",
                     "share_to_feed": True,
+                    "trial_reel_type": "manual",
                 },
                 "linkedin": {
                     "caption": {},
@@ -921,6 +925,7 @@ class TestAsyncSocialPosts:
                         "reply_settings": "following",
                         "share_to_feed": True,
                         "title": "title",
+                        "trial_reel_type": "manual",
                     },
                     "social_account_id": "social_account_id",
                 }
@@ -1007,6 +1012,7 @@ class TestAsyncSocialPosts:
                     ],
                     "placement": "reels",
                     "share_to_feed": True,
+                    "trial_reel_type": "manual",
                 },
                 "linkedin": {
                     "caption": {},
@@ -1312,6 +1318,7 @@ class TestAsyncSocialPosts:
                         "reply_settings": "following",
                         "share_to_feed": True,
                         "title": "title",
+                        "trial_reel_type": "manual",
                     },
                     "social_account_id": "social_account_id",
                 }
@@ -1398,6 +1405,7 @@ class TestAsyncSocialPosts:
                     ],
                     "placement": "reels",
                     "share_to_feed": True,
+                    "trial_reel_type": "manual",
                 },
                 "linkedin": {
                     "caption": {},
