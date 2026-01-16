@@ -68,3 +68,11 @@ class InstagramConfigurationDtoParam(TypedDict, total=False):
 
     share_to_feed: Optional[bool]
     """If false video posts will only be shown in the Reels tab"""
+
+    trial_reel_type: Optional[Literal["manual", "performance"]]
+    """Instagram trial reel type, when passed will be created as a trial reel.
+
+    If manual the trial reel can be manually graduated in the native app. If
+    perfomance the trial reel will be automatically graduated if the trial reel
+    performs well.
+    """

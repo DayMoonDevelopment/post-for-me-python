@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.0 (2026-01-14)
+
+Full Changelog: [v1.9.0...v1.10.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.9.0...v1.10.0)
+
+### Features
+
+* **api:** api update ([02f46bc](https://github.com/DayMoonDevelopment/post-for-me-python/commit/02f46bc1e5a223a724fb900d2e28fc1fa4eac90f))
+* **client:** add support for binary request streaming ([f5210a2](https://github.com/DayMoonDevelopment/post-for-me-python/commit/f5210a2a8c749e97a0f250cd807d34edfb9c844a))
+
 ## 1.9.0 (2026-01-09)
 
 Full Changelog: [v1.8.0...v1.9.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.8.0...v1.9.0)
