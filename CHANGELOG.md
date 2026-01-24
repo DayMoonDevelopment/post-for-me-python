@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.1 (2026-01-24)
+
+Full Changelog: [v1.10.0...v1.10.1](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.10.0...v1.10.1)
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([9e076a0](https://github.com/DayMoonDevelopment/post-for-me-python/commit/9e076a06afc895a84675e28c7786107efeaf5772))
+* **internal:** update `actions/checkout` version ([b893306](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b893306e4e476f5aaeade58b689d14ed50272022))
+
 ## 1.10.0 (2026-01-14)
 
 Full Changelog: [v1.9.0...v1.10.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.9.0...v1.10.0)
