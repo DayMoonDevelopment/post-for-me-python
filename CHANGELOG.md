@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.11.0 (2026-02-02)
+
+Full Changelog: [v1.10.1...v1.11.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.10.1...v1.11.0)
+
+### Features
+
+* **api:** api update ([852cb29](https://github.com/DayMoonDevelopment/post-for-me-python/commit/852cb29c19dfe240e7190fe98c4f5381a8916eed))
+* **api:** api update ([2f31456](https://github.com/DayMoonDevelopment/post-for-me-python/commit/2f314566f5051317566d9d9182f50de0c84892ad))
+* **client:** add custom JSON encoder for extended type support ([c71ec5e](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c71ec5ea2cdcd2c49a63e36de896bf3f17d0603e))
+
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([fd3b451](https://github.com/DayMoonDevelopment/post-for-me-python/commit/fd3b45115079d4f21abab259705ab1ea7cafa7f8))
+
 ## 1.10.1 (2026-01-24)
 
 Full Changelog: [v1.10.0...v1.10.1](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.10.0...v1.10.1)
