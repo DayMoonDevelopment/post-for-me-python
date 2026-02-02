@@ -35,6 +35,11 @@ __all__ = [
     "MetricsTwitterPostMetricsDtoOrganicMetrics",
     "MetricsTwitterPostMetricsDtoPublicMetrics",
     "MetricsThreadsPostMetricsDto",
+    "MetricsLinkedInPostMetricsDto",
+    "MetricsBlueskyPostMetricsDto",
+    "MetricsPinterestPostMetricsDto",
+    "MetricsPinterestPostMetricsDto_90d",
+    "MetricsPinterestPostMetricsDtoLifetimeMetrics",
 ]
 
 
@@ -604,6 +609,171 @@ class MetricsThreadsPostMetricsDto(BaseModel):
     """Number of views on the post"""
 
 
+class MetricsLinkedInPostMetricsDto(BaseModel):
+    click_count: Optional[float] = FieldInfo(alias="clickCount", default=None)
+    """Number of clicks"""
+
+    comment_count: Optional[float] = FieldInfo(alias="commentCount", default=None)
+    """Number of comments"""
+
+    engagement: Optional[float] = None
+    """Engagement rate"""
+
+    impression_count: Optional[float] = FieldInfo(alias="impressionCount", default=None)
+    """Number of impressions"""
+
+    like_count: Optional[float] = FieldInfo(alias="likeCount", default=None)
+    """Number of likes"""
+
+    share_count: Optional[float] = FieldInfo(alias="shareCount", default=None)
+    """Number of shares"""
+
+    time_watched: Optional[float] = FieldInfo(alias="timeWatched", default=None)
+    """TIME_WATCHED: The time the video was watched in milliseconds.
+
+    Video auto-looping will continue to increase this metric for each subsequent
+    play
+    """
+
+    time_watched_for_video_views: Optional[float] = FieldInfo(alias="timeWatchedForVideoViews", default=None)
+    """
+    TIME_WATCHED_FOR_VIDEO_VIEWS: The time watched in milliseconds for video
+    play-pause cycles that are at least 3 seconds. Video auto-looping will continue
+    to increase this metric for each subsequent play. Analytics data for this metric
+    will be available for six months
+    """
+
+    video_view: Optional[float] = FieldInfo(alias="videoView", default=None)
+    """VIDEO_VIEW: Video views with play-pause cycles for at least 3 seconds.
+
+    Auto-looping videos are counted as one when loaded. Each subsequent auto-looped
+    play doesn't increase this metric. Analytics data for this metric won't be
+    available after six months
+    """
+
+    viewer: Optional[float] = None
+    """VIEWER: Unique viewers who made engaged plays on the video.
+
+    Auto-looping videos are counted as one when loaded. Each subsequent auto-looped
+    play doesn't increase this metric. Analytics data for this metric won't be
+    available after six months
+    """
+
+
+class MetricsBlueskyPostMetricsDto(BaseModel):
+    like_count: float = FieldInfo(alias="likeCount")
+    """Number of likes on the post"""
+
+    quote_count: float = FieldInfo(alias="quoteCount")
+    """Number of quotes of the post"""
+
+    reply_count: float = FieldInfo(alias="replyCount")
+    """Number of replies on the post"""
+
+    repost_count: float = FieldInfo(alias="repostCount")
+    """Number of reposts of the post"""
+
+
+class MetricsPinterestPostMetricsDto_90d(BaseModel):
+    """Last 90 days of Pin metrics"""
+
+    comment: Optional[float] = None
+    """Number of comments on the Pin"""
+
+    impression: Optional[float] = None
+    """Number of times the Pin was shown (impressions)"""
+
+    last_updated: Optional[str] = None
+    """The last time Pinterest updated these metrics"""
+
+    outbound_click: Optional[float] = None
+    """Number of clicks from the Pin to an external destination (outbound clicks)"""
+
+    pin_click: Optional[float] = None
+    """Number of clicks on the Pin to view it in closeup (Pin clicks)"""
+
+    profile_visit: Optional[object] = None
+    """Number of visits to the author's profile driven from the Pin"""
+
+    reaction: Optional[float] = None
+    """Total number of reactions on the Pin"""
+
+    save: Optional[float] = None
+    """Number of saves of the Pin"""
+
+    user_follow: Optional[object] = None
+    """Number of follows driven from the Pin"""
+
+    video_10s_views: Optional[float] = None
+    """Number of video views of at least 10 seconds"""
+
+    video_average_time: Optional[float] = None
+    """Average watch time for the video"""
+
+    video_p95_views: Optional[float] = None
+    """Number of video views that reached 95% completion"""
+
+    video_total_time: Optional[float] = None
+    """Total watch time for the video"""
+
+    video_views: Optional[float] = None
+    """Number of video views"""
+
+
+class MetricsPinterestPostMetricsDtoLifetimeMetrics(BaseModel):
+    """Lifetime Pin metrics"""
+
+    comment: Optional[float] = None
+    """Number of comments on the Pin"""
+
+    impression: Optional[float] = None
+    """Number of times the Pin was shown (impressions)"""
+
+    last_updated: Optional[str] = None
+    """The last time Pinterest updated these metrics"""
+
+    outbound_click: Optional[float] = None
+    """Number of clicks from the Pin to an external destination (outbound clicks)"""
+
+    pin_click: Optional[float] = None
+    """Number of clicks on the Pin to view it in closeup (Pin clicks)"""
+
+    profile_visit: Optional[object] = None
+    """Number of visits to the author's profile driven from the Pin"""
+
+    reaction: Optional[float] = None
+    """Total number of reactions on the Pin"""
+
+    save: Optional[float] = None
+    """Number of saves of the Pin"""
+
+    user_follow: Optional[object] = None
+    """Number of follows driven from the Pin"""
+
+    video_10s_views: Optional[float] = None
+    """Number of video views of at least 10 seconds"""
+
+    video_average_time: Optional[float] = None
+    """Average watch time for the video"""
+
+    video_p95_views: Optional[float] = None
+    """Number of video views that reached 95% completion"""
+
+    video_total_time: Optional[float] = None
+    """Total watch time for the video"""
+
+    video_views: Optional[float] = None
+    """Number of video views"""
+
+
+class MetricsPinterestPostMetricsDto(BaseModel):
+    api_90d: Optional[MetricsPinterestPostMetricsDto_90d] = FieldInfo(alias="90d", default=None)
+    """Last 90 days of Pin metrics"""
+
+    lifetime_metrics: Optional[MetricsPinterestPostMetricsDtoLifetimeMetrics] = None
+    """Lifetime Pin metrics"""
+
+
 Metrics: TypeAlias = Union[
     MetricsTikTokBusinessMetricsDto,
     MetricsTikTokPostMetricsDto,
@@ -612,7 +782,9 @@ Metrics: TypeAlias = Union[
     MetricsFacebookPostMetricsDto,
     MetricsTwitterPostMetricsDto,
     MetricsThreadsPostMetricsDto,
-    object,
+    MetricsLinkedInPostMetricsDto,
+    MetricsBlueskyPostMetricsDto,
+    MetricsPinterestPostMetricsDto,
 ]
 
 
