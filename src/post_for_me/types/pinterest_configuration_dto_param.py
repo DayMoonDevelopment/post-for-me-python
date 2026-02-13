@@ -40,6 +40,13 @@ class Media(TypedDict, total=False):
     url: Required[str]
     """Public URL of the media"""
 
+    skip_processing: Optional[bool]
+    """
+    If true the media will not be processed at all and instead be posted as is, this
+    may increase chance of post failure if media does not meet platform's
+    requirements. Best used for larger files.
+    """
+
     tags: Optional[Iterable[MediaTag]]
     """List of tags to attach to the media"""
 
