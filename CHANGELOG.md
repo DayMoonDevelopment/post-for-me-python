@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.12.0 (2026-02-13)
+
+Full Changelog: [v1.11.0...v1.12.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.11.0...v1.12.0)
+
+### Features
+
+* **api:** api update ([d91a8e3](https://github.com/DayMoonDevelopment/post-for-me-python/commit/d91a8e39682416bb358e56fc80017fac4e1cff60))
+
+
+### Chores
+
+* format all `api.md` files ([2cfe2d8](https://github.com/DayMoonDevelopment/post-for-me-python/commit/2cfe2d85b6bef68bf4b598335d035e10f8f7c1ba))
+* **internal:** bump dependencies ([ac94ac4](https://github.com/DayMoonDevelopment/post-for-me-python/commit/ac94ac46c15e7ef85282438b4e4b5e2966f331dd))
+* **internal:** fix lint error on Python 3.14 ([894f3e3](https://github.com/DayMoonDevelopment/post-for-me-python/commit/894f3e30d6849d3e13e8ef976ab0e7b25942c67b))
+
 ## 1.11.0 (2026-02-02)
 
 Full Changelog: [v1.10.1...v1.11.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.10.1...v1.11.0)
