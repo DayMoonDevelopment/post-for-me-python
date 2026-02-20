@@ -191,6 +191,7 @@ class TestSocialAccounts:
             limit=0,
             offset=0,
             platform=["string"],
+            status=["connected"],
             username=["string"],
         )
         assert_matches_type(SocialAccountListResponse, social_account, path=["response"])
@@ -498,6 +499,7 @@ class TestAsyncSocialAccounts:
             limit=0,
             offset=0,
             platform=["string"],
+            status=["connected"],
             username=["string"],
         )
         assert_matches_type(SocialAccountListResponse, social_account, path=["response"])
