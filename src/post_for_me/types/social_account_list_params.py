@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from typing_extensions import TypedDict
+from typing import List
+from typing_extensions import Literal, TypedDict
 
 from .._types import SequenceNotStr
 
@@ -32,6 +33,12 @@ class SocialAccountListParams(TypedDict, total=False):
     """Filter by platform(s).
 
     Multiple values imply OR logic (e.g., ?platform=x&platform=facebook).
+    """
+
+    status: List[Literal["connected", "disconnected"]]
+    """Filter by status.
+
+    Multiple values imply OR logic (e.g., ?status=connected&status=disconnected).
     """
 
     username: SequenceNotStr[str]
