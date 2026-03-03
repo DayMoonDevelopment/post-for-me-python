@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.13.0 (2026-02-25)
+
+Full Changelog: [v1.12.0...v1.13.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.12.0...v1.13.0)
+
+### Features
+
+* **api:** api update ([4627efa](https://github.com/DayMoonDevelopment/post-for-me-python/commit/4627efa369f6ed14e07ab5f6d99f4fb86f770a96))
+
+
+### Chores
+
+* **internal:** codegen related update ([cb31a6c](https://github.com/DayMoonDevelopment/post-for-me-python/commit/cb31a6c1aa8e21052c8eabf8e284d577445b739c))
+* **internal:** make `test_proxy_environment_variables` more resilient ([f0910f4](https://github.com/DayMoonDevelopment/post-for-me-python/commit/f0910f438f9f9da9f5f73ab05d3e2aa1d458b154))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([5682c8a](https://github.com/DayMoonDevelopment/post-for-me-python/commit/5682c8a9cfa0ee4514c7cf59ec2a824fceddc373))
+* **internal:** remove mock server code ([6aa40b5](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6aa40b5a67e1153f9245f1118b58efd9925b0c3e))
+* update mock server docs ([f7ef17f](https://github.com/DayMoonDevelopment/post-for-me-python/commit/f7ef17fe40dfd7635285e6783be4197d30d2bf3b))
+
 ## 1.12.0 (2026-02-13)
 
 Full Changelog: [v1.11.0...v1.12.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.11.0...v1.12.0)

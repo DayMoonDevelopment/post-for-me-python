@@ -223,6 +223,7 @@ class SocialAccountsResource(SyncAPIResource):
         limit: float | Omit = omit,
         offset: float | Omit = omit,
         platform: SequenceNotStr[str] | Omit = omit,
+        status: List[Literal["connected", "disconnected"]] | Omit = omit,
         username: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -247,6 +248,9 @@ class SocialAccountsResource(SyncAPIResource):
 
           platform: Filter by platform(s). Multiple values imply OR logic (e.g.,
               ?platform=x&platform=facebook).
+
+          status: Filter by status. Multiple values imply OR logic (e.g.,
+              ?status=connected&status=disconnected).
 
           username: Filter by username(s). Multiple values imply OR logic (e.g.,
               ?username=test&username=test2).
@@ -273,6 +277,7 @@ class SocialAccountsResource(SyncAPIResource):
                         "limit": limit,
                         "offset": offset,
                         "platform": platform,
+                        "status": status,
                         "username": username,
                     },
                     social_account_list_params.SocialAccountListParams,
@@ -569,6 +574,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         limit: float | Omit = omit,
         offset: float | Omit = omit,
         platform: SequenceNotStr[str] | Omit = omit,
+        status: List[Literal["connected", "disconnected"]] | Omit = omit,
         username: SequenceNotStr[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -593,6 +599,9 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
 
           platform: Filter by platform(s). Multiple values imply OR logic (e.g.,
               ?platform=x&platform=facebook).
+
+          status: Filter by status. Multiple values imply OR logic (e.g.,
+              ?status=connected&status=disconnected).
 
           username: Filter by username(s). Multiple values imply OR logic (e.g.,
               ?username=test&username=test2).
@@ -619,6 +628,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
                         "limit": limit,
                         "offset": offset,
                         "platform": platform,
+                        "status": status,
                         "username": username,
                     },
                     social_account_list_params.SocialAccountListParams,
