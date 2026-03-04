@@ -23,6 +23,13 @@ __all__ = ["SocialPostResultsResource", "AsyncSocialPostResultsResource"]
 
 
 class SocialPostResultsResource(SyncAPIResource):
+    """
+    Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+    - Publication status (success/failure)
+    - Any errors or issues encountered during posting
+    - Platform url to view the published post
+    """
+
     @cached_property
     def with_raw_response(self) -> SocialPostResultsResourceWithRawResponse:
         """
@@ -138,6 +145,13 @@ class SocialPostResultsResource(SyncAPIResource):
 
 
 class AsyncSocialPostResultsResource(AsyncAPIResource):
+    """
+    Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+    - Publication status (success/failure)
+    - Any errors or issues encountered during posting
+    - Platform url to view the published post
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncSocialPostResultsResourceWithRawResponse:
         """

@@ -107,30 +107,77 @@ class PostForMe(SyncAPIClient):
 
     @cached_property
     def media(self) -> MediaResource:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import MediaResource
 
         return MediaResource(self)
 
     @cached_property
     def social_posts(self) -> SocialPostsResource:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import SocialPostsResource
 
         return SocialPostsResource(self)
 
     @cached_property
     def social_post_results(self) -> SocialPostResultsResource:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import SocialPostResultsResource
 
         return SocialPostResultsResource(self)
 
     @cached_property
     def social_accounts(self) -> SocialAccountsResource:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import SocialAccountsResource
 
         return SocialAccountsResource(self)
 
     @cached_property
     def social_account_feeds(self) -> SocialAccountFeedsResource:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import SocialAccountFeedsResource
 
         return SocialAccountFeedsResource(self)
@@ -305,30 +352,77 @@ class AsyncPostForMe(AsyncAPIClient):
 
     @cached_property
     def media(self) -> AsyncMediaResource:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import AsyncMediaResource
 
         return AsyncMediaResource(self)
 
     @cached_property
     def social_posts(self) -> AsyncSocialPostsResource:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import AsyncSocialPostsResource
 
         return AsyncSocialPostsResource(self)
 
     @cached_property
     def social_post_results(self) -> AsyncSocialPostResultsResource:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import AsyncSocialPostResultsResource
 
         return AsyncSocialPostResultsResource(self)
 
     @cached_property
     def social_accounts(self) -> AsyncSocialAccountsResource:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import AsyncSocialAccountsResource
 
         return AsyncSocialAccountsResource(self)
 
     @cached_property
     def social_account_feeds(self) -> AsyncSocialAccountFeedsResource:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import AsyncSocialAccountFeedsResource
 
         return AsyncSocialAccountFeedsResource(self)
@@ -454,30 +548,77 @@ class PostForMeWithRawResponse:
 
     @cached_property
     def media(self) -> media.MediaResourceWithRawResponse:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import MediaResourceWithRawResponse
 
         return MediaResourceWithRawResponse(self._client.media)
 
     @cached_property
     def social_posts(self) -> social_posts.SocialPostsResourceWithRawResponse:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import SocialPostsResourceWithRawResponse
 
         return SocialPostsResourceWithRawResponse(self._client.social_posts)
 
     @cached_property
     def social_post_results(self) -> social_post_results.SocialPostResultsResourceWithRawResponse:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import SocialPostResultsResourceWithRawResponse
 
         return SocialPostResultsResourceWithRawResponse(self._client.social_post_results)
 
     @cached_property
     def social_accounts(self) -> social_accounts.SocialAccountsResourceWithRawResponse:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import SocialAccountsResourceWithRawResponse
 
         return SocialAccountsResourceWithRawResponse(self._client.social_accounts)
 
     @cached_property
     def social_account_feeds(self) -> social_account_feeds.SocialAccountFeedsResourceWithRawResponse:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import SocialAccountFeedsResourceWithRawResponse
 
         return SocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
@@ -491,30 +632,77 @@ class AsyncPostForMeWithRawResponse:
 
     @cached_property
     def media(self) -> media.AsyncMediaResourceWithRawResponse:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import AsyncMediaResourceWithRawResponse
 
         return AsyncMediaResourceWithRawResponse(self._client.media)
 
     @cached_property
     def social_posts(self) -> social_posts.AsyncSocialPostsResourceWithRawResponse:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import AsyncSocialPostsResourceWithRawResponse
 
         return AsyncSocialPostsResourceWithRawResponse(self._client.social_posts)
 
     @cached_property
     def social_post_results(self) -> social_post_results.AsyncSocialPostResultsResourceWithRawResponse:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import AsyncSocialPostResultsResourceWithRawResponse
 
         return AsyncSocialPostResultsResourceWithRawResponse(self._client.social_post_results)
 
     @cached_property
     def social_accounts(self) -> social_accounts.AsyncSocialAccountsResourceWithRawResponse:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import AsyncSocialAccountsResourceWithRawResponse
 
         return AsyncSocialAccountsResourceWithRawResponse(self._client.social_accounts)
 
     @cached_property
     def social_account_feeds(self) -> social_account_feeds.AsyncSocialAccountFeedsResourceWithRawResponse:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithRawResponse
 
         return AsyncSocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
@@ -528,30 +716,77 @@ class PostForMeWithStreamedResponse:
 
     @cached_property
     def media(self) -> media.MediaResourceWithStreamingResponse:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import MediaResourceWithStreamingResponse
 
         return MediaResourceWithStreamingResponse(self._client.media)
 
     @cached_property
     def social_posts(self) -> social_posts.SocialPostsResourceWithStreamingResponse:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import SocialPostsResourceWithStreamingResponse
 
         return SocialPostsResourceWithStreamingResponse(self._client.social_posts)
 
     @cached_property
     def social_post_results(self) -> social_post_results.SocialPostResultsResourceWithStreamingResponse:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import SocialPostResultsResourceWithStreamingResponse
 
         return SocialPostResultsResourceWithStreamingResponse(self._client.social_post_results)
 
     @cached_property
     def social_accounts(self) -> social_accounts.SocialAccountsResourceWithStreamingResponse:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import SocialAccountsResourceWithStreamingResponse
 
         return SocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
 
     @cached_property
     def social_account_feeds(self) -> social_account_feeds.SocialAccountFeedsResourceWithStreamingResponse:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import SocialAccountFeedsResourceWithStreamingResponse
 
         return SocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)
@@ -565,30 +800,77 @@ class AsyncPostForMeWithStreamedResponse:
 
     @cached_property
     def media(self) -> media.AsyncMediaResourceWithStreamingResponse:
+        """
+        Media are media assets (images, videos, etc.) that can be attached to posts using the media url. These endpoints are only needed if your media is not already available on a publicly accessible URL.
+        Media assets are stored temporarily and are automatically deleted in the following scenarios:
+        - When the associated post is published
+        - After 24 hours if not attached to any post
+        - When the scheduled post is deleted
+        """
         from .resources.media import AsyncMediaResourceWithStreamingResponse
 
         return AsyncMediaResourceWithStreamingResponse(self._client.media)
 
     @cached_property
     def social_posts(self) -> social_posts.AsyncSocialPostsResourceWithStreamingResponse:
+        """
+        Posts represent content that can be published across multiple social media platforms. Each post can have platform-specific content variations, allowing customization for different platforms and accounts. Content can be defined at three levels:
+
+        1. Default content for all platforms
+        2. Platform-specific content overrides
+        3. Account-specific content overrides
+
+        The system will use the most specific content override available when publishing to each platform and account.
+        """
         from .resources.social_posts import AsyncSocialPostsResourceWithStreamingResponse
 
         return AsyncSocialPostsResourceWithStreamingResponse(self._client.social_posts)
 
     @cached_property
     def social_post_results(self) -> social_post_results.AsyncSocialPostResultsResourceWithStreamingResponse:
+        """
+        Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+        - Publication status (success/failure)
+        - Any errors or issues encountered during posting
+        - Platform url to view the published post
+        """
         from .resources.social_post_results import AsyncSocialPostResultsResourceWithStreamingResponse
 
         return AsyncSocialPostResultsResourceWithStreamingResponse(self._client.social_post_results)
 
     @cached_property
     def social_accounts(self) -> social_accounts.AsyncSocialAccountsResourceWithStreamingResponse:
+        """Social accounts represent platform-specific accounts (e.g.
+
+        Twitter, LinkedIn, Facebook) that are used for publishing posts.
+        Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+        """
         from .resources.social_accounts import AsyncSocialAccountsResourceWithStreamingResponse
 
         return AsyncSocialAccountsResourceWithStreamingResponse(self._client.social_accounts)
 
     @cached_property
     def social_account_feeds(self) -> social_account_feeds.AsyncSocialAccountFeedsResourceWithStreamingResponse:
+        """
+        The social account feed is every post made for the social account, including posts not made through our API.
+        Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+        Details will include:
+         - Post information including caption, url, media, etc..
+         - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+        Note: Currently the following platforms are supported:
+         - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+         - **Facebook**
+         - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+         - **TikTok Business**,
+         - **Youtube**
+         - **Threads**
+         - **X (Twitter)**
+         - **Bluesky**, Bluesky does not expose views or impressions through their API.
+         - **Pinterest**
+         - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+        """
         from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithStreamingResponse
 
         return AsyncSocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)

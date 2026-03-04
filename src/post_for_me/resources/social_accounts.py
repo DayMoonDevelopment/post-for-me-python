@@ -34,6 +34,12 @@ __all__ = ["SocialAccountsResource", "AsyncSocialAccountsResource"]
 
 
 class SocialAccountsResource(SyncAPIResource):
+    """Social accounts represent platform-specific accounts (e.g.
+
+    Twitter, LinkedIn, Facebook) that are used for publishing posts.
+    Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+    """
+
     @cached_property
     def with_raw_response(self) -> SocialAccountsResourceWithRawResponse:
         """
@@ -385,6 +391,12 @@ class SocialAccountsResource(SyncAPIResource):
 
 
 class AsyncSocialAccountsResource(AsyncAPIResource):
+    """Social accounts represent platform-specific accounts (e.g.
+
+    Twitter, LinkedIn, Facebook) that are used for publishing posts.
+    Each social account has a unique `id` that can be referenced when creating or scheduling posts to specify which platforms the content should be published to.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncSocialAccountsResourceWithRawResponse:
         """
