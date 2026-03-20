@@ -94,7 +94,8 @@ class SocialPostsResource(SyncAPIResource):
 
           is_draft: If isDraft is set then the post will not be processed
 
-          media: Array of media URLs associated with the post
+          media: Array of media associated with the post. If multiple media items are provided
+              and the placement is `stories`, individual posts are created per media item.
 
           platform_configurations: Platform-specific configurations for the post
 
@@ -196,7 +197,8 @@ class SocialPostsResource(SyncAPIResource):
 
           is_draft: If isDraft is set then the post will not be processed
 
-          media: Array of media URLs associated with the post
+          media: Array of media associated with the post. If multiple media items are provided
+              and the placement is `stories`, individual posts are created per media item.
 
           platform_configurations: Platform-specific configurations for the post
 
@@ -395,7 +397,8 @@ class AsyncSocialPostsResource(AsyncAPIResource):
 
           is_draft: If isDraft is set then the post will not be processed
 
-          media: Array of media URLs associated with the post
+          media: Array of media associated with the post. If multiple media items are provided
+              and the placement is `stories`, individual posts are created per media item.
 
           platform_configurations: Platform-specific configurations for the post
 
@@ -497,7 +500,8 @@ class AsyncSocialPostsResource(AsyncAPIResource):
 
           is_draft: If isDraft is set then the post will not be processed
 
-          media: Array of media URLs associated with the post
+          media: Array of media associated with the post. If multiple media items are provided
+              and the placement is `stories`, individual posts are created per media item.
 
           platform_configurations: Platform-specific configurations for the post
 
