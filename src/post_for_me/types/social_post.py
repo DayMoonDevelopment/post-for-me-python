@@ -244,7 +244,7 @@ class SocialPost(BaseModel):
     """Provided unique identifier of the post"""
 
     media: Optional[List[Media]] = None
-    """Array of media URLs associated with the post"""
+    """Array of media associated with the post"""
 
     platform_configurations: Optional[PlatformConfigurationsDto] = None
     """Platform-specific configurations for the post"""

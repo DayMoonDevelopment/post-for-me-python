@@ -6,7 +6,7 @@ import httpx
 
 from ..types import social_post_result_list_params
 from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -23,6 +23,13 @@ __all__ = ["SocialPostResultsResource", "AsyncSocialPostResultsResource"]
 
 
 class SocialPostResultsResource(SyncAPIResource):
+    """
+    Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+    - Publication status (success/failure)
+    - Any errors or issues encountered during posting
+    - Platform url to view the published post
+    """
+
     @cached_property
     def with_raw_response(self) -> SocialPostResultsResourceWithRawResponse:
         """
@@ -68,7 +75,7 @@ class SocialPostResultsResource(SyncAPIResource):
         if not id:
             raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return self._get(
-            f"/v1/social-post-results/{id}",
+            path_template("/v1/social-post-results/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -138,6 +145,13 @@ class SocialPostResultsResource(SyncAPIResource):
 
 
 class AsyncSocialPostResultsResource(AsyncAPIResource):
+    """
+    Post results represent the outcome of publishing content to various social media platforms. They provide comprehensive information including:
+    - Publication status (success/failure)
+    - Any errors or issues encountered during posting
+    - Platform url to view the published post
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncSocialPostResultsResourceWithRawResponse:
         """
@@ -183,7 +197,7 @@ class AsyncSocialPostResultsResource(AsyncAPIResource):
         if not id:
             raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return await self._get(
-            f"/v1/social-post-results/{id}",
+            path_template("/v1/social-post-results/{id}", id=id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),

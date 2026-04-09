@@ -9,7 +9,7 @@ import httpx
 
 from ..types import social_account_feed_list_params
 from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -25,6 +25,27 @@ __all__ = ["SocialAccountFeedsResource", "AsyncSocialAccountFeedsResource"]
 
 
 class SocialAccountFeedsResource(SyncAPIResource):
+    """
+    The social account feed is every post made for the social account, including posts not made through our API.
+    Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+    Details will include:
+     - Post information including caption, url, media, etc..
+     - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+    Note: Currently the following platforms are supported:
+     - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+     - **Facebook**
+     - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+     - **TikTok Business**,
+     - **Youtube**
+     - **Threads**
+     - **X (Twitter)**
+     - **Bluesky**, Bluesky does not expose views or impressions through their API.
+     - **Pinterest**
+     - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+    """
+
     @cached_property
     def with_raw_response(self) -> SocialAccountFeedsResourceWithRawResponse:
         """
@@ -94,7 +115,7 @@ class SocialAccountFeedsResource(SyncAPIResource):
         if not social_account_id:
             raise ValueError(f"Expected a non-empty value for `social_account_id` but received {social_account_id!r}")
         return self._get(
-            f"/v1/social-account-feeds/{social_account_id}",
+            path_template("/v1/social-account-feeds/{social_account_id}", social_account_id=social_account_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -117,6 +138,27 @@ class SocialAccountFeedsResource(SyncAPIResource):
 
 
 class AsyncSocialAccountFeedsResource(AsyncAPIResource):
+    """
+    The social account feed is every post made for the social account, including posts not made through our API.
+    Use this endpoint to get the platform details for any post made under the connected account. To use this endpoint accounts must be connected with the **"feeds" permission**.
+
+    Details will include:
+     - Post information including caption, url, media, etc..
+     - When passing **expand=metrics**, Metrics information including views, likes, follows, etc..
+
+    Note: Currently the following platforms are supported:
+     - **Instagram**, may take up to 48 hours for some metrics to be avaialbe
+     - **Facebook**
+     - **TikTok**, consumer API exposes less analytics for more details connect through TikTok Business
+     - **TikTok Business**,
+     - **Youtube**
+     - **Threads**
+     - **X (Twitter)**
+     - **Bluesky**, Bluesky does not expose views or impressions through their API.
+     - **Pinterest**
+     - **LinkedIn**, metrics are only available for company pages. LinkedIn has currently stopped giving permission for personal page analytics, we are on the waitlist for when they resume.
+    """
+
     @cached_property
     def with_raw_response(self) -> AsyncSocialAccountFeedsResourceWithRawResponse:
         """
@@ -186,7 +228,7 @@ class AsyncSocialAccountFeedsResource(AsyncAPIResource):
         if not social_account_id:
             raise ValueError(f"Expected a non-empty value for `social_account_id` but received {social_account_id!r}")
         return await self._get(
-            f"/v1/social-account-feeds/{social_account_id}",
+            path_template("/v1/social-account-feeds/{social_account_id}", social_account_id=social_account_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,

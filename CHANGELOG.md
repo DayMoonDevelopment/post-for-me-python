@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.14.0 (2026-04-08)
+
+Full Changelog: [v1.13.0...v1.14.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.13.0...v1.14.0)
+
+### Features
+
+* **api:** api update ([6493cff](https://github.com/DayMoonDevelopment/post-for-me-python/commit/6493cff6ece9776a1dd7284d93e5c9ae8dbcd1a3))
+* **api:** api update ([b91a784](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b91a78432b0ae3b6cf3efa32b526204a5a3092cf))
+* **internal:** implement indices array format for query and form serialization ([623f551](https://github.com/DayMoonDevelopment/post-for-me-python/commit/623f551f101d34f423c3fcdb790f48dac371516f))
+
+
+### Bug Fixes
+
+* **client:** preserve hardcoded query params when merging with user params ([d129c09](https://github.com/DayMoonDevelopment/post-for-me-python/commit/d129c09679437a7e2d9d00b9795dc555b2cbdff4))
+* **deps:** bump minimum typing-extensions version ([f80fc21](https://github.com/DayMoonDevelopment/post-for-me-python/commit/f80fc219beaf2a79a312e32ea542926277608506))
+* **pydantic:** do not pass `by_alias` unless set ([39ebd98](https://github.com/DayMoonDevelopment/post-for-me-python/commit/39ebd9853f5f44b40baf3452e5f84d3e2d08f980))
+* sanitize endpoint path params ([c24a027](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c24a0271af9b71201a93d881836ce0059d5e4782))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([3bd82af](https://github.com/DayMoonDevelopment/post-for-me-python/commit/3bd82afdfd9faf055e778c6ef056e07f1554fb62))
+* **ci:** skip uploading artifacts on stainless-internal branches ([2978ba7](https://github.com/DayMoonDevelopment/post-for-me-python/commit/2978ba728315992f4ab21fad7f6315b8ff5cd363))
+* **internal:** codegen related update ([43838e2](https://github.com/DayMoonDevelopment/post-for-me-python/commit/43838e2b82ae232299d10b37f87bf429b0f21472))
+* **internal:** tweak CI branches ([6251172](https://github.com/DayMoonDevelopment/post-for-me-python/commit/625117263a7863bba2f632de36a3ac23adee4be5))
+* **internal:** update gitignore ([022cf8c](https://github.com/DayMoonDevelopment/post-for-me-python/commit/022cf8c10f6accd06d21f50faf9f81adefa5c8c1))
+
 ## 1.13.0 (2026-02-25)
 
 Full Changelog: [v1.12.0...v1.13.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.12.0...v1.13.0)

@@ -40,6 +40,7 @@ __all__ = [
     "MetricsPinterestPostMetricsDto",
     "MetricsPinterestPostMetricsDto_90d",
     "MetricsPinterestPostMetricsDtoLifetimeMetrics",
+    "PlatformData",
 ]
 
 
@@ -788,6 +789,13 @@ Metrics: TypeAlias = Union[
 ]
 
 
+class PlatformData(BaseModel):
+    """Platform-specific data for the post"""
+
+    title: str
+    """Title of the post"""
+
+
 class PlatformPost(BaseModel):
     caption: str
     """Caption or text content of the post"""
@@ -818,6 +826,9 @@ class PlatformPost(BaseModel):
 
     metrics: Optional[Metrics] = None
     """Post metrics and analytics data"""
+
+    platform_data: Optional[PlatformData] = None
+    """Platform-specific data for the post"""
 
     posted_at: Optional[datetime] = None
     """Date the post was published"""
