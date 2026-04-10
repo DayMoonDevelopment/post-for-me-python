@@ -70,3 +70,9 @@ class FacebookConfigurationDtoParam(TypedDict, total=False):
 
     placement: Optional[Literal["reels", "stories", "timeline"]]
     """Facebook post placement"""
+
+    set_caption_for_each_image: Optional[bool]
+    """
+    If true, include the caption on each image in a carousel upload; if false, only
+    include it on the final carousel post
+    """
