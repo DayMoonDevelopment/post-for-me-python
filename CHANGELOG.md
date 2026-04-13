@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.15.0 (2026-04-11)
+
+Full Changelog: [v1.14.0...v1.15.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.14.0...v1.15.0)
+
+### Features
+
+* **api:** api update ([dfe7a39](https://github.com/DayMoonDevelopment/post-for-me-python/commit/dfe7a397758b92059c2def1325a5e03d294fbb3a))
+
+
+### Bug Fixes
+
+* ensure file data are only sent as 1 parameter ([c6d61de](https://github.com/DayMoonDevelopment/post-for-me-python/commit/c6d61de594f18fedf8cd66d72257e2e1b7d621e8))
+
 ## 1.14.0 (2026-04-08)
 
 Full Changelog: [v1.13.0...v1.14.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.13.0...v1.14.0)

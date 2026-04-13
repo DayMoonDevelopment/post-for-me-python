@@ -81,6 +81,7 @@ class TestSocialPosts:
                         "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
+                        "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "title": "title",
                         "trial_reel_type": "manual",
@@ -150,6 +151,7 @@ class TestSocialPosts:
                         }
                     ],
                     "placement": "reels",
+                    "set_caption_for_each_image": True,
                 },
                 "instagram": {
                     "caption": {},
@@ -486,6 +488,7 @@ class TestSocialPosts:
                         "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
+                        "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "title": "title",
                         "trial_reel_type": "manual",
@@ -555,6 +558,7 @@ class TestSocialPosts:
                         }
                     ],
                     "placement": "reels",
+                    "set_caption_for_each_image": True,
                 },
                 "instagram": {
                     "caption": {},
@@ -948,6 +952,7 @@ class TestAsyncSocialPosts:
                         "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
+                        "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "title": "title",
                         "trial_reel_type": "manual",
@@ -1017,6 +1022,7 @@ class TestAsyncSocialPosts:
                         }
                     ],
                     "placement": "reels",
+                    "set_caption_for_each_image": True,
                 },
                 "instagram": {
                     "caption": {},
@@ -1353,6 +1359,7 @@ class TestAsyncSocialPosts:
                         "privacy_status": "public",
                         "quote_tweet_id": "quote_tweet_id",
                         "reply_settings": "following",
+                        "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "title": "title",
                         "trial_reel_type": "manual",
@@ -1422,6 +1429,7 @@ class TestAsyncSocialPosts:
                         }
                     ],
                     "placement": "reels",
+                    "set_caption_for_each_image": True,
                 },
                 "instagram": {
                     "caption": {},

@@ -193,6 +193,12 @@ class AccountConfigurationConfiguration(TypedDict, total=False):
     reply_settings: Optional[Literal["following", "mentionedUsers", "subscribers", "verified"]]
     """Who can reply to the tweet"""
 
+    set_caption_for_each_image: Optional[bool]
+    """
+    If true, include the caption on each image in a Facebook carousel upload; if
+    false, only include it on the final carousel post
+    """
+
     share_to_feed: Optional[bool]
     """If false Instagram video posts will only be shown in the Reels tab"""
 
