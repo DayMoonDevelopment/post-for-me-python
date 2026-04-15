@@ -67,3 +67,6 @@ class PinterestConfigurationDto(BaseModel):
 
     media: Optional[List[Media]] = None
     """Overrides the `media` from the post"""
+
+    title: Optional[str] = None
+    """Overrides the `title` from the post for Pinterest"""

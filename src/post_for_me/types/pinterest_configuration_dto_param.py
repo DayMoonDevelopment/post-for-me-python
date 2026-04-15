@@ -69,3 +69,6 @@ class PinterestConfigurationDtoParam(TypedDict, total=False):
 
     media: Optional[Iterable[Media]]
     """Overrides the `media` from the post"""
+
+    title: Optional[str]
+    """Overrides the `title` from the post for Pinterest"""
