@@ -167,7 +167,7 @@ class AccountConfigurationConfiguration(BaseModel):
     """If false Instagram video posts will only be shown in the Reels tab"""
 
     title: Optional[str] = None
-    """Overrides the `title` from the post"""
+    """Overrides the `title` from the post (Pinterest, TikTok, YouTube)"""
 
     trial_reel_type: Optional[Literal["manual", "performance"]] = None
     """Instagram trial reel type, when passed will be created as a trial reel.

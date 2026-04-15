@@ -219,6 +219,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -626,6 +627,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -1090,6 +1092,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -1497,6 +1500,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
