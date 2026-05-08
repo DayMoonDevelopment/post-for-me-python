@@ -7,6 +7,7 @@ from datetime import datetime
 from typing_extensions import Literal, Required, Annotated, TypedDict
 
 from .._utils import PropertyInfo
+from .social_account_metadata_param import SocialAccountMetadataParam
 
 __all__ = ["SocialAccountCreateParams"]
 
@@ -40,7 +41,7 @@ class SocialAccountCreateParams(TypedDict, total=False):
     external_id: Optional[str]
     """The external id of the social account"""
 
-    metadata: object
+    metadata: SocialAccountMetadataParam
     """The metadata of the social account"""
 
     refresh_token: Optional[str]

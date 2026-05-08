@@ -35,12 +35,22 @@ from ._base_client import (
 )
 
 if TYPE_CHECKING:
-    from .resources import media, social_posts, social_accounts, social_post_results, social_account_feeds
+    from .resources import (
+        media,
+        webhooks,
+        social_posts,
+        social_accounts,
+        social_post_results,
+        social_account_feeds,
+        social_post_previews,
+    )
     from .resources.media import MediaResource, AsyncMediaResource
+    from .resources.webhooks import WebhooksResource, AsyncWebhooksResource
     from .resources.social_posts import SocialPostsResource, AsyncSocialPostsResource
     from .resources.social_accounts import SocialAccountsResource, AsyncSocialAccountsResource
     from .resources.social_post_results import SocialPostResultsResource, AsyncSocialPostResultsResource
     from .resources.social_account_feeds import SocialAccountFeedsResource, AsyncSocialAccountFeedsResource
+    from .resources.social_post_previews import SocialPostPreviewsResource, AsyncSocialPostPreviewsResource
 
 __all__ = [
     "Timeout",
@@ -194,6 +204,45 @@ class PostForMe(SyncAPIClient):
         from .resources.social_account_feeds import SocialAccountFeedsResource
 
         return SocialAccountFeedsResource(self)
+
+    @cached_property
+    def webhooks(self) -> WebhooksResource:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import WebhooksResource
+
+        return WebhooksResource(self)
+
+    @cached_property
+    def social_post_previews(self) -> SocialPostPreviewsResource:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import SocialPostPreviewsResource
+
+        return SocialPostPreviewsResource(self)
 
     @cached_property
     def with_raw_response(self) -> PostForMeWithRawResponse:
@@ -450,6 +499,45 @@ class AsyncPostForMe(AsyncAPIClient):
         return AsyncSocialAccountFeedsResource(self)
 
     @cached_property
+    def webhooks(self) -> AsyncWebhooksResource:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import AsyncWebhooksResource
+
+        return AsyncWebhooksResource(self)
+
+    @cached_property
+    def social_post_previews(self) -> AsyncSocialPostPreviewsResource:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import AsyncSocialPostPreviewsResource
+
+        return AsyncSocialPostPreviewsResource(self)
+
+    @cached_property
     def with_raw_response(self) -> AsyncPostForMeWithRawResponse:
         return AsyncPostForMeWithRawResponse(self)
 
@@ -645,6 +733,45 @@ class PostForMeWithRawResponse:
 
         return SocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
 
+    @cached_property
+    def webhooks(self) -> webhooks.WebhooksResourceWithRawResponse:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import WebhooksResourceWithRawResponse
+
+        return WebhooksResourceWithRawResponse(self._client.webhooks)
+
+    @cached_property
+    def social_post_previews(self) -> social_post_previews.SocialPostPreviewsResourceWithRawResponse:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import SocialPostPreviewsResourceWithRawResponse
+
+        return SocialPostPreviewsResourceWithRawResponse(self._client.social_post_previews)
+
 
 class AsyncPostForMeWithRawResponse:
     _client: AsyncPostForMe
@@ -728,6 +855,45 @@ class AsyncPostForMeWithRawResponse:
         from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithRawResponse
 
         return AsyncSocialAccountFeedsResourceWithRawResponse(self._client.social_account_feeds)
+
+    @cached_property
+    def webhooks(self) -> webhooks.AsyncWebhooksResourceWithRawResponse:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import AsyncWebhooksResourceWithRawResponse
+
+        return AsyncWebhooksResourceWithRawResponse(self._client.webhooks)
+
+    @cached_property
+    def social_post_previews(self) -> social_post_previews.AsyncSocialPostPreviewsResourceWithRawResponse:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import AsyncSocialPostPreviewsResourceWithRawResponse
+
+        return AsyncSocialPostPreviewsResourceWithRawResponse(self._client.social_post_previews)
 
 
 class PostForMeWithStreamedResponse:
@@ -813,6 +979,45 @@ class PostForMeWithStreamedResponse:
 
         return SocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)
 
+    @cached_property
+    def webhooks(self) -> webhooks.WebhooksResourceWithStreamingResponse:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import WebhooksResourceWithStreamingResponse
+
+        return WebhooksResourceWithStreamingResponse(self._client.webhooks)
+
+    @cached_property
+    def social_post_previews(self) -> social_post_previews.SocialPostPreviewsResourceWithStreamingResponse:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import SocialPostPreviewsResourceWithStreamingResponse
+
+        return SocialPostPreviewsResourceWithStreamingResponse(self._client.social_post_previews)
+
 
 class AsyncPostForMeWithStreamedResponse:
     _client: AsyncPostForMe
@@ -896,6 +1101,45 @@ class AsyncPostForMeWithStreamedResponse:
         from .resources.social_account_feeds import AsyncSocialAccountFeedsResourceWithStreamingResponse
 
         return AsyncSocialAccountFeedsResourceWithStreamingResponse(self._client.social_account_feeds)
+
+    @cached_property
+    def webhooks(self) -> webhooks.AsyncWebhooksResourceWithStreamingResponse:
+        """Webhooks enable you to subscribe to certain events.
+
+        This involves Post for Me making a POST request to the URL of any webhooks you create.
+        Only the events you subscribe to will be sent to your webhook URL.
+
+        ## Payload
+        When an event happens that your webhook is subscribed to, we will make a POST request with the following JSON body
+
+        ```
+            {
+                "event_type": "",
+                "data": {}
+            }
+        ```
+
+        The event_type will be the event that triggered the webhook POST, data will be the resulting entity from the event
+
+        ## Security
+        To verify the POST to your webhook URL is from us we will include a secret in the header "Post-For-Me-Webhook-Secret".
+        When you create a webhook you will receive the secret in the response.
+
+        ## Retries
+        If your server fails to respond with a 2XX code, requests to it will be retried with exponential backoff around 8 times over the course of just over a day.
+        """
+        from .resources.webhooks import AsyncWebhooksResourceWithStreamingResponse
+
+        return AsyncWebhooksResourceWithStreamingResponse(self._client.webhooks)
+
+    @cached_property
+    def social_post_previews(self) -> social_post_previews.AsyncSocialPostPreviewsResourceWithStreamingResponse:
+        """
+        Social Post Previews allow you to see what a Social Post will create for each account in the post.
+        """
+        from .resources.social_post_previews import AsyncSocialPostPreviewsResourceWithStreamingResponse
+
+        return AsyncSocialPostPreviewsResourceWithStreamingResponse(self._client.social_post_previews)
 
 
 Client = PostForMe

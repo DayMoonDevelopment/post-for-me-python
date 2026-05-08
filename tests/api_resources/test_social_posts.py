@@ -11,8 +11,8 @@ from post_for_me import PostForMe, AsyncPostForMe
 from tests.utils import assert_matches_type
 from post_for_me.types import (
     SocialPost,
+    DeleteEntityResponse,
     SocialPostListResponse,
-    SocialPostDeleteResponse,
 )
 from post_for_me._utils import parse_datetime
 
@@ -853,7 +853,7 @@ class TestSocialPosts:
         social_post = client.social_posts.delete(
             "id",
         )
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -865,7 +865,7 @@ class TestSocialPosts:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         social_post = response.parse()
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -877,7 +877,7 @@ class TestSocialPosts:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             social_post = response.parse()
-            assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+            assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -1726,7 +1726,7 @@ class TestAsyncSocialPosts:
         social_post = await async_client.social_posts.delete(
             "id",
         )
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -1738,7 +1738,7 @@ class TestAsyncSocialPosts:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         social_post = await response.parse()
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -1750,7 +1750,7 @@ class TestAsyncSocialPosts:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             social_post = await response.parse()
-            assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+            assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 

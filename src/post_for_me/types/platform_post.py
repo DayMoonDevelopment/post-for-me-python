@@ -7,6 +7,12 @@ from typing_extensions import TypeAlias
 from pydantic import Field as FieldInfo
 
 from .._models import BaseModel
+from .pinterest_metrics_window import PinterestMetricsWindow
+from .youtube_post_platform_data import YoutubePostPlatformData
+from .facebook_video_retention_graph import FacebookVideoRetentionGraph
+from .facebook_activity_by_action_type import FacebookActivityByActionType
+from .facebook_video_view_time_by_demographic import FacebookVideoViewTimeByDemographic
+from .tiktok_business_video_metric_percentage import TiktokBusinessVideoMetricPercentage
 
 __all__ = [
     "PlatformPost",
@@ -16,20 +22,11 @@ __all__ = [
     "MetricsTikTokBusinessMetricsDtoAudienceCountry",
     "MetricsTikTokBusinessMetricsDtoAudienceGender",
     "MetricsTikTokBusinessMetricsDtoAudienceType",
-    "MetricsTikTokBusinessMetricsDtoEngagementLike",
     "MetricsTikTokBusinessMetricsDtoImpressionSource",
-    "MetricsTikTokBusinessMetricsDtoVideoViewRetention",
     "MetricsTikTokPostMetricsDto",
     "MetricsInstagramPostMetricsDto",
     "MetricsYouTubePostMetricsDto",
     "MetricsFacebookPostMetricsDto",
-    "MetricsFacebookPostMetricsDtoActivityByActionType",
-    "MetricsFacebookPostMetricsDtoActivityByActionTypeUnique",
-    "MetricsFacebookPostMetricsDtoVideoRetentionGraphAutoplayed",
-    "MetricsFacebookPostMetricsDtoVideoRetentionGraphClickedToPlay",
-    "MetricsFacebookPostMetricsDtoVideoViewTimeByAgeGender",
-    "MetricsFacebookPostMetricsDtoVideoViewTimeByCountry",
-    "MetricsFacebookPostMetricsDtoVideoViewTimeByRegion",
     "MetricsTwitterPostMetricsDto",
     "MetricsTwitterPostMetricsDtoNonPublicMetrics",
     "MetricsTwitterPostMetricsDtoOrganicMetrics",
@@ -38,9 +35,6 @@ __all__ = [
     "MetricsLinkedInPostMetricsDto",
     "MetricsBlueskyPostMetricsDto",
     "MetricsPinterestPostMetricsDto",
-    "MetricsPinterestPostMetricsDto_90d",
-    "MetricsPinterestPostMetricsDtoLifetimeMetrics",
-    "PlatformData",
 ]
 
 
@@ -76,28 +70,12 @@ class MetricsTikTokBusinessMetricsDtoAudienceType(BaseModel):
     """Type of audience"""
 
 
-class MetricsTikTokBusinessMetricsDtoEngagementLike(BaseModel):
-    percentage: float
-    """Percentage value for the metric"""
-
-    second: str
-    """Time in seconds for the metric"""
-
-
 class MetricsTikTokBusinessMetricsDtoImpressionSource(BaseModel):
     impression_source: str
     """Name of the impression source"""
 
     percentage: float
     """Percentage of impressions from this source"""
-
-
-class MetricsTikTokBusinessMetricsDtoVideoViewRetention(BaseModel):
-    percentage: float
-    """Percentage value for the metric"""
-
-    second: str
-    """Time in seconds for the metric"""
 
 
 class MetricsTikTokBusinessMetricsDto(BaseModel):
@@ -128,7 +106,7 @@ class MetricsTikTokBusinessMetricsDto(BaseModel):
     email_clicks: float
     """Number of email clicks"""
 
-    engagement_likes: List[MetricsTikTokBusinessMetricsDtoEngagementLike]
+    engagement_likes: List[TiktokBusinessVideoMetricPercentage]
     """Engagement likes data by percentage and time"""
 
     favorites: float
@@ -164,7 +142,7 @@ class MetricsTikTokBusinessMetricsDto(BaseModel):
     total_time_watched: float
     """Total time watched in seconds"""
 
-    video_view_retention: List[MetricsTikTokBusinessMetricsDtoVideoViewRetention]
+    video_view_retention: List[TiktokBusinessVideoMetricPercentage]
     """Video view retention data by percentage and time"""
 
     video_views: float
@@ -318,67 +296,11 @@ class MetricsYouTubePostMetricsDto(BaseModel):
     """Number of times the video was removed from playlists"""
 
 
-class MetricsFacebookPostMetricsDtoActivityByActionType(BaseModel):
-    action_type: str
-    """Action type (e.g., like, comment, share)"""
-
-    value: float
-    """Number of actions"""
-
-
-class MetricsFacebookPostMetricsDtoActivityByActionTypeUnique(BaseModel):
-    action_type: str
-    """Action type (e.g., like, comment, share)"""
-
-    value: float
-    """Number of actions"""
-
-
-class MetricsFacebookPostMetricsDtoVideoRetentionGraphAutoplayed(BaseModel):
-    rate: float
-    """Percentage of viewers at this time"""
-
-    time: float
-    """Time in seconds"""
-
-
-class MetricsFacebookPostMetricsDtoVideoRetentionGraphClickedToPlay(BaseModel):
-    rate: float
-    """Percentage of viewers at this time"""
-
-    time: float
-    """Time in seconds"""
-
-
-class MetricsFacebookPostMetricsDtoVideoViewTimeByAgeGender(BaseModel):
-    key: str
-    """Demographic key (e.g., age_gender, region, country)"""
-
-    value: float
-    """Total view time in milliseconds"""
-
-
-class MetricsFacebookPostMetricsDtoVideoViewTimeByCountry(BaseModel):
-    key: str
-    """Demographic key (e.g., age_gender, region, country)"""
-
-    value: float
-    """Total view time in milliseconds"""
-
-
-class MetricsFacebookPostMetricsDtoVideoViewTimeByRegion(BaseModel):
-    key: str
-    """Demographic key (e.g., age_gender, region, country)"""
-
-    value: float
-    """Total view time in milliseconds"""
-
-
 class MetricsFacebookPostMetricsDto(BaseModel):
-    activity_by_action_type: Optional[List[MetricsFacebookPostMetricsDtoActivityByActionType]] = None
+    activity_by_action_type: Optional[List[FacebookActivityByActionType]] = None
     """Total activity breakdown by action type"""
 
-    activity_by_action_type_unique: Optional[List[MetricsFacebookPostMetricsDtoActivityByActionTypeUnique]] = None
+    activity_by_action_type_unique: Optional[List[FacebookActivityByActionType]] = None
     """Unique users activity breakdown by action type"""
 
     comments: Optional[float] = None
@@ -447,12 +369,10 @@ class MetricsFacebookPostMetricsDto(BaseModel):
     video_length: Optional[float] = None
     """Length of the video in milliseconds"""
 
-    video_retention_graph_autoplayed: Optional[List[MetricsFacebookPostMetricsDtoVideoRetentionGraphAutoplayed]] = None
+    video_retention_graph_autoplayed: Optional[List[FacebookVideoRetentionGraph]] = None
     """Video retention graph for autoplayed views"""
 
-    video_retention_graph_clicked_to_play: Optional[
-        List[MetricsFacebookPostMetricsDtoVideoRetentionGraphClickedToPlay]
-    ] = None
+    video_retention_graph_clicked_to_play: Optional[List[FacebookVideoRetentionGraph]] = None
     """Video retention graph for clicked-to-play views"""
 
     video_social_actions_unique: Optional[float] = None
@@ -461,16 +381,16 @@ class MetricsFacebookPostMetricsDto(BaseModel):
     video_view_time: Optional[float] = None
     """Total time video was viewed in milliseconds"""
 
-    video_view_time_by_age_gender: Optional[List[MetricsFacebookPostMetricsDtoVideoViewTimeByAgeGender]] = None
+    video_view_time_by_age_gender: Optional[List[FacebookVideoViewTimeByDemographic]] = None
     """Video view time breakdown by age and gender"""
 
-    video_view_time_by_country: Optional[List[MetricsFacebookPostMetricsDtoVideoViewTimeByCountry]] = None
+    video_view_time_by_country: Optional[List[FacebookVideoViewTimeByDemographic]] = None
     """Video view time breakdown by country"""
 
     video_view_time_by_distribution_type: Optional[object] = None
     """Video view time breakdown by distribution type"""
 
-    video_view_time_by_region: Optional[List[MetricsFacebookPostMetricsDtoVideoViewTimeByRegion]] = None
+    video_view_time_by_region: Optional[List[FacebookVideoViewTimeByDemographic]] = None
     """Video view time breakdown by region"""
 
     video_view_time_organic: Optional[float] = None
@@ -675,103 +595,11 @@ class MetricsBlueskyPostMetricsDto(BaseModel):
     """Number of reposts of the post"""
 
 
-class MetricsPinterestPostMetricsDto_90d(BaseModel):
-    """Last 90 days of Pin metrics"""
-
-    comment: Optional[float] = None
-    """Number of comments on the Pin"""
-
-    impression: Optional[float] = None
-    """Number of times the Pin was shown (impressions)"""
-
-    last_updated: Optional[str] = None
-    """The last time Pinterest updated these metrics"""
-
-    outbound_click: Optional[float] = None
-    """Number of clicks from the Pin to an external destination (outbound clicks)"""
-
-    pin_click: Optional[float] = None
-    """Number of clicks on the Pin to view it in closeup (Pin clicks)"""
-
-    profile_visit: Optional[object] = None
-    """Number of visits to the author's profile driven from the Pin"""
-
-    reaction: Optional[float] = None
-    """Total number of reactions on the Pin"""
-
-    save: Optional[float] = None
-    """Number of saves of the Pin"""
-
-    user_follow: Optional[object] = None
-    """Number of follows driven from the Pin"""
-
-    video_10s_views: Optional[float] = None
-    """Number of video views of at least 10 seconds"""
-
-    video_average_time: Optional[float] = None
-    """Average watch time for the video"""
-
-    video_p95_views: Optional[float] = None
-    """Number of video views that reached 95% completion"""
-
-    video_total_time: Optional[float] = None
-    """Total watch time for the video"""
-
-    video_views: Optional[float] = None
-    """Number of video views"""
-
-
-class MetricsPinterestPostMetricsDtoLifetimeMetrics(BaseModel):
-    """Lifetime Pin metrics"""
-
-    comment: Optional[float] = None
-    """Number of comments on the Pin"""
-
-    impression: Optional[float] = None
-    """Number of times the Pin was shown (impressions)"""
-
-    last_updated: Optional[str] = None
-    """The last time Pinterest updated these metrics"""
-
-    outbound_click: Optional[float] = None
-    """Number of clicks from the Pin to an external destination (outbound clicks)"""
-
-    pin_click: Optional[float] = None
-    """Number of clicks on the Pin to view it in closeup (Pin clicks)"""
-
-    profile_visit: Optional[object] = None
-    """Number of visits to the author's profile driven from the Pin"""
-
-    reaction: Optional[float] = None
-    """Total number of reactions on the Pin"""
-
-    save: Optional[float] = None
-    """Number of saves of the Pin"""
-
-    user_follow: Optional[object] = None
-    """Number of follows driven from the Pin"""
-
-    video_10s_views: Optional[float] = None
-    """Number of video views of at least 10 seconds"""
-
-    video_average_time: Optional[float] = None
-    """Average watch time for the video"""
-
-    video_p95_views: Optional[float] = None
-    """Number of video views that reached 95% completion"""
-
-    video_total_time: Optional[float] = None
-    """Total watch time for the video"""
-
-    video_views: Optional[float] = None
-    """Number of video views"""
-
-
 class MetricsPinterestPostMetricsDto(BaseModel):
-    api_90d: Optional[MetricsPinterestPostMetricsDto_90d] = FieldInfo(alias="90d", default=None)
+    api_90d: Optional[PinterestMetricsWindow] = FieldInfo(alias="90d", default=None)
     """Last 90 days of Pin metrics"""
 
-    lifetime_metrics: Optional[MetricsPinterestPostMetricsDtoLifetimeMetrics] = None
+    lifetime_metrics: Optional[PinterestMetricsWindow] = None
     """Lifetime Pin metrics"""
 
 
@@ -787,13 +615,6 @@ Metrics: TypeAlias = Union[
     MetricsBlueskyPostMetricsDto,
     MetricsPinterestPostMetricsDto,
 ]
-
-
-class PlatformData(BaseModel):
-    """Platform-specific data for the post"""
-
-    title: str
-    """Title of the post"""
 
 
 class PlatformPost(BaseModel):
@@ -827,7 +648,7 @@ class PlatformPost(BaseModel):
     metrics: Optional[Metrics] = None
     """Post metrics and analytics data"""
 
-    platform_data: Optional[PlatformData] = None
+    platform_data: Optional[YoutubePostPlatformData] = None
     """Platform-specific data for the post"""
 
     posted_at: Optional[datetime] = None

@@ -2,9 +2,9 @@
 
 from .._models import BaseModel
 
-__all__ = ["SocialPostDeleteResponse"]
+__all__ = ["DeleteEntityResponse"]
 
 
-class SocialPostDeleteResponse(BaseModel):
+class DeleteEntityResponse(BaseModel):
     success: bool
     """Whether or not the entity was deleted"""
