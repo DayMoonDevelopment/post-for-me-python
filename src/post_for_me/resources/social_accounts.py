@@ -27,6 +27,7 @@ from .._response import (
 from .._base_client import make_request_options
 from ..types.social_account import SocialAccount
 from ..types.social_account_list_response import SocialAccountListResponse
+from ..types.social_account_metadata_param import SocialAccountMetadataParam
 from ..types.social_account_disconnect_response import SocialAccountDisconnectResponse
 from ..types.social_account_create_auth_url_response import SocialAccountCreateAuthURLResponse
 
@@ -78,7 +79,7 @@ class SocialAccountsResource(SyncAPIResource):
         ],
         user_id: str,
         external_id: Optional[str] | Omit = omit,
-        metadata: object | Omit = omit,
+        metadata: SocialAccountMetadataParam | Omit = omit,
         refresh_token: Optional[str] | Omit = omit,
         refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
         username: Optional[str] | Omit = omit,
@@ -435,7 +436,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         ],
         user_id: str,
         external_id: Optional[str] | Omit = omit,
-        metadata: object | Omit = omit,
+        metadata: SocialAccountMetadataParam | Omit = omit,
         refresh_token: Optional[str] | Omit = omit,
         refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
         username: Optional[str] | Omit = omit,
