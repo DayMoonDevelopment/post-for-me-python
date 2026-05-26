@@ -49,6 +49,7 @@ class TestSocialPosts:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -334,6 +335,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
@@ -459,6 +461,7 @@ class TestSocialPosts:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -744,6 +747,7 @@ class TestSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
@@ -926,6 +930,7 @@ class TestAsyncSocialPosts:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -1211,6 +1216,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
@@ -1336,6 +1342,7 @@ class TestAsyncSocialPosts:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -1621,6 +1628,7 @@ class TestAsyncSocialPosts:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
