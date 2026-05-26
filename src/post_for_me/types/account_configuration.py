@@ -22,6 +22,13 @@ class Configuration(BaseModel):
     allow_stitch: Optional[bool] = None
     """Allow stitch on TikTok"""
 
+    audio_name: Optional[str] = None
+    """Display name for the audio track on Instagram Reels.
+
+    Only honored on Reels uploads, and only when the audio is original (Meta
+    silently ignores it on licensed/fingerprinted tracks).
+    """
+
     auto_add_music: Optional[bool] = None
     """Will automatically add music to photo posts on TikTok"""
 

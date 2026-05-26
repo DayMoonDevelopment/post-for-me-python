@@ -43,6 +43,7 @@ class TestSocialPosts:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -154,6 +155,7 @@ class TestSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -451,6 +453,7 @@ class TestSocialPosts:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -562,6 +565,7 @@ class TestSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -916,6 +920,7 @@ class TestAsyncSocialPosts:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -1027,6 +1032,7 @@ class TestAsyncSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -1324,6 +1330,7 @@ class TestAsyncSocialPosts:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -1435,6 +1442,7 @@ class TestAsyncSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",

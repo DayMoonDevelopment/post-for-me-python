@@ -12,6 +12,13 @@ __all__ = ["InstagramConfigurationDtoParam"]
 
 
 class InstagramConfigurationDtoParam(TypedDict, total=False):
+    audio_name: Optional[str]
+    """Display name for the audio track on Instagram Reels.
+
+    Only honored on Reels uploads, and only when the audio is original (Meta
+    silently ignores it on licensed/fingerprinted tracks).
+    """
+
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 

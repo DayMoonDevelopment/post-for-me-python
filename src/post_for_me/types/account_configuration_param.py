@@ -24,6 +24,13 @@ class Configuration(TypedDict, total=False):
     allow_stitch: Optional[bool]
     """Allow stitch on TikTok"""
 
+    audio_name: Optional[str]
+    """Display name for the audio track on Instagram Reels.
+
+    Only honored on Reels uploads, and only when the audio is original (Meta
+    silently ignores it on licensed/fingerprinted tracks).
+    """
+
     auto_add_music: Optional[bool]
     """Will automatically add music to photo posts on TikTok"""
 

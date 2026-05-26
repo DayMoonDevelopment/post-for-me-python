@@ -10,6 +10,13 @@ __all__ = ["InstagramConfigurationDto"]
 
 
 class InstagramConfigurationDto(BaseModel):
+    audio_name: Optional[str] = None
+    """Display name for the audio track on Instagram Reels.
+
+    Only honored on Reels uploads, and only when the audio is original (Meta
+    silently ignores it on licensed/fingerprinted tracks).
+    """
+
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 
