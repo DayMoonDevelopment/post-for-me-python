@@ -51,6 +51,7 @@ class TestSocialPostPreviews:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -160,6 +161,7 @@ class TestSocialPostPreviews:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -439,6 +441,7 @@ class TestAsyncSocialPostPreviews:
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
@@ -548,6 +551,7 @@ class TestAsyncSocialPostPreviews:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
