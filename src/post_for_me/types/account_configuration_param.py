@@ -49,6 +49,14 @@ class Configuration(TypedDict, total=False):
     community_id: str
     """Id of the twitter community to post to"""
 
+    contains_synthetic_media: Optional[bool]
+    """
+    If true, marks the YouTube video as containing altered or synthetic content per
+    YouTube's disclosure policy. Sets status.containsSyntheticMedia on the
+    videos.insert call; YouTube adds a "How this content was made" label to the
+    description automatically.
+    """
+
     disclose_branded_content: Optional[bool]
     """Disclose branded content on TikTok"""
 

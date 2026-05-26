@@ -57,6 +57,7 @@ class TestSocialPostPreviews:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -340,6 +341,7 @@ class TestSocialPostPreviews:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
@@ -447,6 +449,7 @@ class TestAsyncSocialPostPreviews:
                         "caption": {},
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
                         "is_ai_generated": True,
@@ -730,6 +733,7 @@ class TestAsyncSocialPostPreviews:
                 },
                 "youtube": {
                     "caption": {},
+                    "contains_synthetic_media": True,
                     "made_for_kids": True,
                     "media": [
                         {
