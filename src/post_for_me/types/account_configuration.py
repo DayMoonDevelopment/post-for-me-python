@@ -1,6 +1,6 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-from typing import List, Optional
+from typing import Dict, List, Optional
 from typing_extensions import Literal
 
 from .._models import BaseModel
@@ -12,6 +12,13 @@ __all__ = ["AccountConfiguration", "Configuration"]
 
 class Configuration(BaseModel):
     """Configuration for the social account"""
+
+    localizations: Optional[Dict[str, object]] = None
+    """Per-language localizations for the video title and description.
+
+    Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the
+    YouTube Data API videos resource.
+    """
 
     allow_comment: Optional[bool] = None
     """Allow comments on TikTok"""
@@ -38,6 +45,12 @@ class Configuration(BaseModel):
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 
+    category_id: Optional[str] = None
+    """
+    YouTube video category id (maps to snippet.categoryId; see YouTube Data API
+    videoCategories.list)
+    """
+
     collaborators: Optional[List[List[object]]] = None
     """
     List of page ids or users to invite as collaborators for a Video Reel (Instagram
@@ -55,11 +68,23 @@ class Configuration(BaseModel):
     description automatically.
     """
 
+    default_language: Optional[str] = None
+    """Default language of the video (BCP-47 language tag, e.g.
+
+    "en"). Maps to snippet.defaultLanguage.
+    """
+
     disclose_branded_content: Optional[bool] = None
     """Disclose branded content on TikTok"""
 
     disclose_your_brand: Optional[bool] = None
     """Disclose your brand on TikTok"""
+
+    embeddable: Optional[bool] = None
+    """If true the video can be embedded on other websites (maps to status.embeddable).
+
+    Defaults to true.
+    """
 
     is_ai_generated: Optional[bool] = None
     """Flag content as AI generated on TikTok"""
@@ -68,6 +93,12 @@ class Configuration(BaseModel):
     """
     Will create a draft upload to TikTok, posting will need to be completed from
     within the app
+    """
+
+    license: Optional[Literal["youtube", "creativeCommon"]] = None
+    """The video's license (maps to status.license).
+
+    "youtube" is the standard YouTube license; "creativeCommon" is Creative Commons.
     """
 
     link: Optional[str] = None
@@ -97,8 +128,26 @@ class Configuration(BaseModel):
     public, unlisted)
     """
 
+    public_stats_viewable: Optional[bool] = None
+    """
+    If true, the extended video statistics are publicly viewable (maps to
+    status.publicStatsViewable). Defaults to true.
+    """
+
+    publish_at: Optional[str] = None
+    """ISO 8601 datetime at which the video should be published.
+
+    Only honoured when privacy_status is "private" (maps to status.publishAt).
+    """
+
     quote_tweet_id: Optional[str] = None
     """Id of the tweet you want to quote"""
+
+    recording_date: Optional[str] = None
+    """
+    ISO 8601 date (YYYY-MM-DD) or datetime when the video was recorded (maps to
+    recordingDetails.recordingDate).
+    """
 
     reply_settings: Optional[Literal["following", "mentionedUsers", "subscribers", "verified"]] = None
     """Who can reply to the tweet"""
@@ -111,6 +160,9 @@ class Configuration(BaseModel):
 
     share_to_feed: Optional[bool] = None
     """If false Instagram video posts will only be shown in the Reels tab"""
+
+    tags: Optional[List[str]] = None
+    """YouTube video tags"""
 
     title: Optional[str] = None
     """Overrides the `title` from the post (Pinterest, TikTok, YouTube)"""
