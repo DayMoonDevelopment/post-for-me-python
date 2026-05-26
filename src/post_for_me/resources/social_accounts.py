@@ -312,7 +312,11 @@ class SocialAccountsResource(SyncAPIResource):
         Generates a URL that initiates the authentication flow for a user's social media
         account. When visited, the user is redirected to the selected social platform's
         login/authorization page. Upon successful authentication, they are redirected
-        back to your application
+        back to your application.
+
+        For Quickstart projects using Post for Me system credentials,
+        `redirect_url_override` is not accepted. Configure the project redirect URL in
+        the dashboard instead.
 
         Args:
           platform: The social account provider
@@ -327,7 +331,7 @@ class SocialAccountsResource(SyncAPIResource):
           redirect_url_override: Override the default redirect URL for the OAuth flow. If provided, this URL will
               be used instead of our redirect URL. Make sure this URL is included in your
               app's authorized redirect urls. This override will not work when using our
-              system credientals.
+              system credentials; configure the project redirect URL in the dashboard instead.
 
           extra_headers: Send extra headers
 
@@ -669,7 +673,11 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         Generates a URL that initiates the authentication flow for a user's social media
         account. When visited, the user is redirected to the selected social platform's
         login/authorization page. Upon successful authentication, they are redirected
-        back to your application
+        back to your application.
+
+        For Quickstart projects using Post for Me system credentials,
+        `redirect_url_override` is not accepted. Configure the project redirect URL in
+        the dashboard instead.
 
         Args:
           platform: The social account provider
@@ -684,7 +692,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
           redirect_url_override: Override the default redirect URL for the OAuth flow. If provided, this URL will
               be used instead of our redirect URL. Make sure this URL is included in your
               app's authorized redirect urls. This override will not work when using our
-              system credientals.
+              system credentials; configure the project redirect URL in the dashboard instead.
 
           extra_headers: Send extra headers
 
