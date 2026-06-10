@@ -99,6 +99,7 @@ class TestSocialPostPreviews:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -215,6 +216,7 @@ class TestSocialPostPreviews:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -510,6 +512,7 @@ class TestAsyncSocialPostPreviews:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -626,6 +629,7 @@ class TestAsyncSocialPostPreviews:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],

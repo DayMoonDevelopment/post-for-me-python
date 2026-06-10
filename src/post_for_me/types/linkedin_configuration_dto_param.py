@@ -16,3 +16,6 @@ class LinkedinConfigurationDtoParam(TypedDict, total=False):
 
     media: Optional[Iterable[SocialPostMediaParam]]
     """Overrides the `media` from the post"""
+
+    reshare_post_id: Optional[str]
+    """LinkedIn UGC post id to reshare. The caption is used as the reshare commentary."""
