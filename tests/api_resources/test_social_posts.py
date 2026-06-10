@@ -91,6 +91,7 @@ class TestSocialPosts:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -209,6 +210,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -522,6 +524,7 @@ class TestSocialPosts:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -640,6 +643,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -1010,6 +1014,7 @@ class TestAsyncSocialPosts:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -1128,6 +1133,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -1441,6 +1447,7 @@ class TestAsyncSocialPosts:
                         "quote_tweet_id": "quote_tweet_id",
                         "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
                         "tags": ["string"],
@@ -1559,6 +1566,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],

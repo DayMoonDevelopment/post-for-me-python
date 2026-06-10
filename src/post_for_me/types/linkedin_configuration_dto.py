@@ -14,3 +14,6 @@ class LinkedinConfigurationDto(BaseModel):
 
     media: Optional[List[SocialPostMedia]] = None
     """Overrides the `media` from the post"""
+
+    reshare_post_id: Optional[str] = None
+    """LinkedIn UGC post id to reshare. The caption is used as the reshare commentary."""

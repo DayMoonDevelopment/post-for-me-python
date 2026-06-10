@@ -152,6 +152,9 @@ class Configuration(BaseModel):
     reply_settings: Optional[Literal["following", "mentionedUsers", "subscribers", "verified"]] = None
     """Who can reply to the tweet"""
 
+    reshare_post_id: Optional[str] = None
+    """LinkedIn UGC post id to reshare. The caption is used as the reshare commentary."""
+
     set_caption_for_each_image: Optional[bool] = None
     """
     If true, include the caption on each image in a Facebook carousel upload; if
