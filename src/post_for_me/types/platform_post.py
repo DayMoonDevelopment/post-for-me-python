@@ -306,23 +306,11 @@ class MetricsFacebookPostMetricsDto(BaseModel):
     comments: Optional[float] = None
     """Number of comments (from post object)"""
 
-    fan_reach: Optional[float] = None
-    """Number of fans who saw the post"""
-
     media_views: Optional[float] = None
     """Number of times the photo or video was viewed"""
 
-    nonviral_reach: Optional[float] = None
-    """Number of people who saw the post via non-viral distribution"""
-
-    organic_reach: Optional[float] = None
-    """Number of people who saw the post via organic distribution"""
-
-    paid_reach: Optional[float] = None
-    """Number of people who saw the post via paid distribution"""
-
     reach: Optional[float] = None
-    """Total number of unique people who saw the post"""
+    """Total number of unique people who viewed the post media"""
 
     reactions_anger: Optional[float] = None
     """Number of anger reactions"""
@@ -420,26 +408,11 @@ class MetricsFacebookPostMetricsDto(BaseModel):
     video_views_organic: Optional[float] = None
     """Number of times video was viewed for 3+ seconds organically"""
 
-    video_views_organic_unique: Optional[float] = None
-    """Number of unique people who viewed the video for 3+ seconds organically"""
-
     video_views_paid: Optional[float] = None
     """Number of times video was viewed for 3+ seconds via paid distribution"""
 
-    video_views_paid_unique: Optional[float] = None
-    """
-    Number of unique people who viewed the video for 3+ seconds via paid
-    distribution
-    """
-
     video_views_sound_on: Optional[float] = None
     """Number of times video was viewed with sound on"""
-
-    video_views_unique: Optional[float] = None
-    """Number of unique people who viewed the video for 3+ seconds"""
-
-    viral_reach: Optional[float] = None
-    """Number of people who saw the post in News Feed via viral reach"""
 
 
 class MetricsTwitterPostMetricsDtoNonPublicMetrics(BaseModel):
