@@ -16,6 +16,7 @@ __all__ = [
     "PlatformDataThreads",
     "PlatformDataTiktok",
     "PlatformDataTiktokBusiness",
+    "PlatformDataX",
     "PlatformDataYoutube",
 ]
 
@@ -149,6 +150,16 @@ class PlatformDataTiktokBusiness(TypedDict, total=False):
     """
 
 
+class PlatformDataX(TypedDict, total=False):
+    """Additional data for connecting X accounts"""
+
+    connection_type: Required[Literal["oauth1", "oauth2"]]
+    """
+    The type of connection; oauth1 for OAuth 1.0a app credentials, oauth2 for OAuth
+    2.0 app credentials.
+    """
+
+
 class PlatformDataYoutube(TypedDict, total=False):
     """Additional data for connecting YouTube accounts"""
 
@@ -188,6 +199,9 @@ class PlatformData(TypedDict, total=False):
 
     tiktok_business: PlatformDataTiktokBusiness
     """Additional data for connecting TikTok Business accounts"""
+
+    x: PlatformDataX
+    """Additional data for connecting X accounts"""
 
     youtube: PlatformDataYoutube
     """Additional data for connecting YouTube accounts"""
