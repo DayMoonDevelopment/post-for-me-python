@@ -8,11 +8,17 @@ from typing_extensions import Literal, Required, TypedDict
 from .._types import SequenceNotStr
 from .social_post_media_param import SocialPostMediaParam
 
-__all__ = ["YoutubeConfigurationDtoParam"]
+__all__ = ["YoutubeConfigurationDtoParam", "Localizations"]
+
+
+class Localizations(TypedDict, total=False):
+    description: Optional[str]
+
+    title: Optional[str]
 
 
 class YoutubeConfigurationDtoParam(TypedDict, total=False):
-    localizations: Required[Optional[Dict[str, object]]]
+    localizations: Required[Optional[Dict[str, Localizations]]]
     """Per-language localizations for the video title and description.
 
     Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the

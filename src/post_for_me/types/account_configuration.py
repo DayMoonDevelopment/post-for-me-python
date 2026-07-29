@@ -7,13 +7,19 @@ from .._models import BaseModel
 from .twitter_poll import TwitterPoll
 from .social_post_media import SocialPostMedia
 
-__all__ = ["AccountConfiguration", "Configuration"]
+__all__ = ["AccountConfiguration", "Configuration", "ConfigurationLocalizations"]
+
+
+class ConfigurationLocalizations(BaseModel):
+    description: Optional[str] = None
+
+    title: Optional[str] = None
 
 
 class Configuration(BaseModel):
     """Configuration for the social account"""
 
-    localizations: Optional[Dict[str, object]] = None
+    localizations: Optional[Dict[str, ConfigurationLocalizations]] = None
     """Per-language localizations for the video title and description.
 
     Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the

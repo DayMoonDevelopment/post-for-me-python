@@ -6,11 +6,17 @@ from typing_extensions import Literal
 from .._models import BaseModel
 from .social_post_media import SocialPostMedia
 
-__all__ = ["YoutubeConfigurationDto"]
+__all__ = ["YoutubeConfigurationDto", "Localizations"]
+
+
+class Localizations(BaseModel):
+    description: Optional[str] = None
+
+    title: Optional[str] = None
 
 
 class YoutubeConfigurationDto(BaseModel):
-    localizations: Optional[Dict[str, object]] = None
+    localizations: Optional[Dict[str, Localizations]] = None
     """Per-language localizations for the video title and description.
 
     Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the
