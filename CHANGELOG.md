@@ -1,5 +1,42 @@
 # Changelog
 
+## 1.16.0 (2026-07-29)
+
+Full Changelog: [v1.15.0...v1.16.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.15.0...v1.16.0)
+
+### Features
+
+* **api:** api update ([d986edb](https://github.com/DayMoonDevelopment/post-for-me-python/commit/d986edb031b0da6905244fc165bd71ada65021b3))
+* **api:** api update ([a9128cd](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a9128cd83124c062fa4aedad493a5e932625317a))
+* **api:** api update ([9126799](https://github.com/DayMoonDevelopment/post-for-me-python/commit/91267998e29ab7bb23ca35137876acd07b6dd4f0))
+* **api:** api update ([3cd4c5a](https://github.com/DayMoonDevelopment/post-for-me-python/commit/3cd4c5a6c3daa6c99e8ca2fb1c2d2ede18492f4c))
+* **api:** api update ([9ea9ae4](https://github.com/DayMoonDevelopment/post-for-me-python/commit/9ea9ae4ec6e16e000b4a8e889d0760fd02182d64))
+* **api:** api update ([655cdb9](https://github.com/DayMoonDevelopment/post-for-me-python/commit/655cdb983a785bb2299a193f4a4aa008135b671e))
+* **api:** api update ([192ddf9](https://github.com/DayMoonDevelopment/post-for-me-python/commit/192ddf96f352d64e4873af35aaa0bbc395c0f19f))
+* **api:** api update ([b1f30b9](https://github.com/DayMoonDevelopment/post-for-me-python/commit/b1f30b9bfb9aaafcd8d2e6ce232eddec6392baad))
+* **api:** api update ([836ea67](https://github.com/DayMoonDevelopment/post-for-me-python/commit/836ea6730f3902793fbd6f2c2658408f14fdd26a))
+* **api:** manual updates ([d04ba06](https://github.com/DayMoonDevelopment/post-for-me-python/commit/d04ba064d3473551fbb9f5fa58f7e0746e4e964a))
+* **internal/types:** support eagerly validating pydantic iterators ([e452557](https://github.com/DayMoonDevelopment/post-for-me-python/commit/e452557c17b3a855f1721b22c31d866b3c820ca7))
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([0a6ea65](https://github.com/DayMoonDevelopment/post-for-me-python/commit/0a6ea65dd685ffa545ead18c6de38ddafaa7c026))
+* support setting headers via env ([2aa1883](https://github.com/DayMoonDevelopment/post-for-me-python/commit/2aa18833f588027ae62e86d4d4e9e376cb509405))
+
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([66a4a79](https://github.com/DayMoonDevelopment/post-for-me-python/commit/66a4a79e88650652dcc5fd7653edc5110c5f4590))
+* use correct field name format for multipart file arrays ([8165256](https://github.com/DayMoonDevelopment/post-for-me-python/commit/8165256e26d948d2be4711116ed30004007ba6bf))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([897e06a](https://github.com/DayMoonDevelopment/post-for-me-python/commit/897e06a740ac67aaacd96fc1c70a2cb07407d02a))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([0c3c4f0](https://github.com/DayMoonDevelopment/post-for-me-python/commit/0c3c4f06ec91632e5b34d0651c058f4b2ad51065))
+* **internal:** reformat pyproject.toml ([a1ee9d9](https://github.com/DayMoonDevelopment/post-for-me-python/commit/a1ee9d96ce4e823150ef165b857ce5e839beea3f))
+
 ## 1.15.0 (2026-04-11)
 
 Full Changelog: [v1.14.0...v1.15.0](https://github.com/DayMoonDevelopment/post-for-me-python/compare/v1.14.0...v1.15.0)
