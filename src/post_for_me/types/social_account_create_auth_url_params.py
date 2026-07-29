@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Iterable
+from typing import List
 from typing_extensions import Literal, Required, TypedDict
+
+from .._types import SequenceNotStr
 
 __all__ = [
     "SocialAccountCreateAuthURLParams",
@@ -61,7 +63,7 @@ class PlatformDataBluesky(TypedDict, total=False):
 class PlatformDataFacebook(TypedDict, total=False):
     """Additional data for connecting facebook accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: public_profile, pages_show_list, pages_read_engagement,
@@ -78,7 +80,7 @@ class PlatformDataInstagram(TypedDict, total=False):
     using login with facebook.
     """
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default instagram scopes: instagram_business_basic,
@@ -97,7 +99,7 @@ class PlatformDataLinkedin(TypedDict, total=False):
     you are using the Community API
     """
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default personal scopes: openid, w_member_social, profile, email. Default
@@ -109,7 +111,7 @@ class PlatformDataLinkedin(TypedDict, total=False):
 class PlatformDataPinterest(TypedDict, total=False):
     """Additional data for connecting Pinterest accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: boards:read, boards:write, pins:read, pins:write,
@@ -120,7 +122,7 @@ class PlatformDataPinterest(TypedDict, total=False):
 class PlatformDataThreads(TypedDict, total=False):
     """Additional data for connecting Threads accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: threads_basic, threads_content_publish
@@ -130,7 +132,7 @@ class PlatformDataThreads(TypedDict, total=False):
 class PlatformDataTiktok(TypedDict, total=False):
     """Additional data for connecting TikTok accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: user.info.basic, video.list, video.upload, video.publish
@@ -140,7 +142,7 @@ class PlatformDataTiktok(TypedDict, total=False):
 class PlatformDataTiktokBusiness(TypedDict, total=False):
     """Additional data for connecting TikTok Business accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: user.info.basic, user.info.username, user.info.stats,
@@ -163,7 +165,7 @@ class PlatformDataX(TypedDict, total=False):
 class PlatformDataYoutube(TypedDict, total=False):
     """Additional data for connecting YouTube accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: https://www.googleapis.com/auth/youtube.force-ssl,

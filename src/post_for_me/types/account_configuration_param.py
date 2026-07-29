@@ -9,13 +9,19 @@ from .._types import SequenceNotStr
 from .twitter_poll_param import TwitterPollParam
 from .social_post_media_param import SocialPostMediaParam
 
-__all__ = ["AccountConfigurationParam", "Configuration"]
+__all__ = ["AccountConfigurationParam", "Configuration", "ConfigurationLocalizations"]
+
+
+class ConfigurationLocalizations(TypedDict, total=False):
+    description: Optional[str]
+
+    title: Optional[str]
 
 
 class Configuration(TypedDict, total=False):
     """Configuration for the social account"""
 
-    localizations: Required[Optional[Dict[str, object]]]
+    localizations: Required[Optional[Dict[str, ConfigurationLocalizations]]]
     """Per-language localizations for the video title and description.
 
     Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the

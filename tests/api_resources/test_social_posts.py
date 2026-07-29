@@ -40,7 +40,12 @@ class TestSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -345,7 +350,12 @@ class TestSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,
@@ -473,7 +483,12 @@ class TestSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -778,7 +793,12 @@ class TestSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,
@@ -963,7 +983,12 @@ class TestAsyncSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -1268,7 +1293,12 @@ class TestAsyncSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,
@@ -1396,7 +1426,12 @@ class TestAsyncSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -1701,7 +1736,12 @@ class TestAsyncSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,

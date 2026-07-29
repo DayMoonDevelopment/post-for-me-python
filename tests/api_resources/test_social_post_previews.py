@@ -48,7 +48,12 @@ class TestSocialPostPreviews:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -351,7 +356,12 @@ class TestSocialPostPreviews:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,
@@ -461,7 +471,12 @@ class TestAsyncSocialPostPreviews:
             account_configurations=[
                 {
                     "configuration": {
-                        "localizations": {"foo": "bar"},
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
@@ -764,7 +779,12 @@ class TestAsyncSocialPostPreviews:
                     "reply_settings": "following",
                 },
                 "youtube": {
-                    "localizations": {"foo": "bar"},
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
                     "category_id": "category_id",
                     "contains_synthetic_media": True,
