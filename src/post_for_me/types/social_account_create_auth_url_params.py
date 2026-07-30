@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Iterable
+from typing import List
 from typing_extensions import Literal, Required, TypedDict
+
+from .._types import SequenceNotStr
 
 __all__ = [
     "SocialAccountCreateAuthURLParams",
@@ -16,6 +18,7 @@ __all__ = [
     "PlatformDataThreads",
     "PlatformDataTiktok",
     "PlatformDataTiktokBusiness",
+    "PlatformDataX",
     "PlatformDataYoutube",
 ]
 
@@ -42,7 +45,8 @@ class SocialAccountCreateAuthURLParams(TypedDict, total=False):
 
     If provided, this URL will be used instead of our redirect URL. Make sure this
     URL is included in your app's authorized redirect urls. This override will not
-    work when using our system credientals.
+    work when using our system credentials; configure the project redirect URL in
+    the dashboard instead.
     """
 
 
@@ -59,7 +63,7 @@ class PlatformDataBluesky(TypedDict, total=False):
 class PlatformDataFacebook(TypedDict, total=False):
     """Additional data for connecting facebook accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: public_profile, pages_show_list, pages_read_engagement,
@@ -76,7 +80,7 @@ class PlatformDataInstagram(TypedDict, total=False):
     using login with facebook.
     """
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default instagram scopes: instagram_business_basic,
@@ -91,11 +95,11 @@ class PlatformDataLinkedin(TypedDict, total=False):
     connection_type: Required[Literal["personal", "organization"]]
     """
     The type of connection; If using our provided credentials always use
-    "organization". If using your own crednetials then only use "organization" if
+    "organization". If using your own credentials then only use "organization" if
     you are using the Community API
     """
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default personal scopes: openid, w_member_social, profile, email. Default
@@ -107,7 +111,7 @@ class PlatformDataLinkedin(TypedDict, total=False):
 class PlatformDataPinterest(TypedDict, total=False):
     """Additional data for connecting Pinterest accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: boards:read, boards:write, pins:read, pins:write,
@@ -118,7 +122,7 @@ class PlatformDataPinterest(TypedDict, total=False):
 class PlatformDataThreads(TypedDict, total=False):
     """Additional data for connecting Threads accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: threads_basic, threads_content_publish
@@ -128,7 +132,7 @@ class PlatformDataThreads(TypedDict, total=False):
 class PlatformDataTiktok(TypedDict, total=False):
     """Additional data for connecting TikTok accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: user.info.basic, video.list, video.upload, video.publish
@@ -138,7 +142,7 @@ class PlatformDataTiktok(TypedDict, total=False):
 class PlatformDataTiktokBusiness(TypedDict, total=False):
     """Additional data for connecting TikTok Business accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: user.info.basic, user.info.username, user.info.stats,
@@ -148,10 +152,20 @@ class PlatformDataTiktokBusiness(TypedDict, total=False):
     """
 
 
+class PlatformDataX(TypedDict, total=False):
+    """Additional data for connecting X accounts"""
+
+    connection_type: Required[Literal["oauth1", "oauth2"]]
+    """
+    The type of connection; oauth1 for OAuth 1.0a app credentials, oauth2 for OAuth
+    2.0 app credentials.
+    """
+
+
 class PlatformDataYoutube(TypedDict, total=False):
     """Additional data for connecting YouTube accounts"""
 
-    permission_overrides: Iterable[Iterable[object]]
+    permission_overrides: SequenceNotStr[str]
     """Override the default permissions/scopes requested during OAuth.
 
     Default scopes: https://www.googleapis.com/auth/youtube.force-ssl,
@@ -187,6 +201,9 @@ class PlatformData(TypedDict, total=False):
 
     tiktok_business: PlatformDataTiktokBusiness
     """Additional data for connecting TikTok Business accounts"""
+
+    x: PlatformDataX
+    """Additional data for connecting X accounts"""
 
     youtube: PlatformDataYoutube
     """Additional data for connecting YouTube accounts"""

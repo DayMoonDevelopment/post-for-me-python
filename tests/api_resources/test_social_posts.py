@@ -11,8 +11,8 @@ from post_for_me import PostForMe, AsyncPostForMe
 from tests.utils import assert_matches_type
 from post_for_me.types import (
     SocialPost,
+    DeleteEntityResponse,
     SocialPostListResponse,
-    SocialPostDeleteResponse,
 )
 from post_for_me._utils import parse_datetime
 
@@ -40,18 +40,30 @@ class TestSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "category_id": "category_id",
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
+                        "default_language": "default_language",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
+                        "embeddable": True,
                         "is_ai_generated": True,
                         "is_draft": True,
+                        "license": "youtube",
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
@@ -79,10 +91,15 @@ class TestSocialPosts:
                             "reply_settings": "following",
                         },
                         "privacy_status": "public",
+                        "public_stats_viewable": True,
+                        "publish_at": "publish_at",
                         "quote_tweet_id": "quote_tweet_id",
+                        "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
+                        "tags": ["string"],
                         "title": "title",
                         "trial_reel_type": "manual",
                     },
@@ -154,6 +171,7 @@ class TestSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -197,6 +215,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -219,6 +238,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -330,7 +350,19 @@ class TestSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
+                    "category_id": "category_id",
+                    "contains_synthetic_media": True,
+                    "default_language": "default_language",
+                    "description": "description",
+                    "embeddable": True,
+                    "license": "youtube",
                     "made_for_kids": True,
                     "media": [
                         {
@@ -350,6 +382,10 @@ class TestSocialPosts:
                         }
                     ],
                     "privacy_status": "public",
+                    "public_stats_viewable": True,
+                    "publish_at": "publish_at",
+                    "recording_date": "recording_date",
+                    "tags": ["string"],
                     "title": "title",
                 },
             },
@@ -447,18 +483,30 @@ class TestSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "category_id": "category_id",
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
+                        "default_language": "default_language",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
+                        "embeddable": True,
                         "is_ai_generated": True,
                         "is_draft": True,
+                        "license": "youtube",
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
@@ -486,10 +534,15 @@ class TestSocialPosts:
                             "reply_settings": "following",
                         },
                         "privacy_status": "public",
+                        "public_stats_viewable": True,
+                        "publish_at": "publish_at",
                         "quote_tweet_id": "quote_tweet_id",
+                        "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
+                        "tags": ["string"],
                         "title": "title",
                         "trial_reel_type": "manual",
                     },
@@ -561,6 +614,7 @@ class TestSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -604,6 +658,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -626,6 +681,7 @@ class TestSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -737,7 +793,19 @@ class TestSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
+                    "category_id": "category_id",
+                    "contains_synthetic_media": True,
+                    "default_language": "default_language",
+                    "description": "description",
+                    "embeddable": True,
+                    "license": "youtube",
                     "made_for_kids": True,
                     "media": [
                         {
@@ -757,6 +825,10 @@ class TestSocialPosts:
                         }
                     ],
                     "privacy_status": "public",
+                    "public_stats_viewable": True,
+                    "publish_at": "publish_at",
+                    "recording_date": "recording_date",
+                    "tags": ["string"],
                     "title": "title",
                 },
             },
@@ -851,7 +923,7 @@ class TestSocialPosts:
         social_post = client.social_posts.delete(
             "id",
         )
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -863,7 +935,7 @@ class TestSocialPosts:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         social_post = response.parse()
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -875,7 +947,7 @@ class TestSocialPosts:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             social_post = response.parse()
-            assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+            assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -911,18 +983,30 @@ class TestAsyncSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "category_id": "category_id",
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
+                        "default_language": "default_language",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
+                        "embeddable": True,
                         "is_ai_generated": True,
                         "is_draft": True,
+                        "license": "youtube",
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
@@ -950,10 +1034,15 @@ class TestAsyncSocialPosts:
                             "reply_settings": "following",
                         },
                         "privacy_status": "public",
+                        "public_stats_viewable": True,
+                        "publish_at": "publish_at",
                         "quote_tweet_id": "quote_tweet_id",
+                        "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
+                        "tags": ["string"],
                         "title": "title",
                         "trial_reel_type": "manual",
                     },
@@ -1025,6 +1114,7 @@ class TestAsyncSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -1068,6 +1158,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -1090,6 +1181,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -1201,7 +1293,19 @@ class TestAsyncSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
+                    "category_id": "category_id",
+                    "contains_synthetic_media": True,
+                    "default_language": "default_language",
+                    "description": "description",
+                    "embeddable": True,
+                    "license": "youtube",
                     "made_for_kids": True,
                     "media": [
                         {
@@ -1221,6 +1325,10 @@ class TestAsyncSocialPosts:
                         }
                     ],
                     "privacy_status": "public",
+                    "public_stats_viewable": True,
+                    "publish_at": "publish_at",
+                    "recording_date": "recording_date",
+                    "tags": ["string"],
                     "title": "title",
                 },
             },
@@ -1318,18 +1426,30 @@ class TestAsyncSocialPosts:
             account_configurations=[
                 {
                     "configuration": {
+                        "localizations": {
+                            "foo": {
+                                "description": "description",
+                                "title": "title",
+                            }
+                        },
                         "allow_comment": True,
                         "allow_duet": True,
                         "allow_stitch": True,
+                        "audio_name": "audio_name",
                         "auto_add_music": True,
                         "board_ids": ["string"],
                         "caption": {},
+                        "category_id": "category_id",
                         "collaborators": [[{}]],
                         "community_id": "community_id",
+                        "contains_synthetic_media": True,
+                        "default_language": "default_language",
                         "disclose_branded_content": True,
                         "disclose_your_brand": True,
+                        "embeddable": True,
                         "is_ai_generated": True,
                         "is_draft": True,
+                        "license": "youtube",
                         "link": "link",
                         "location": "location",
                         "made_for_kids": True,
@@ -1357,10 +1477,15 @@ class TestAsyncSocialPosts:
                             "reply_settings": "following",
                         },
                         "privacy_status": "public",
+                        "public_stats_viewable": True,
+                        "publish_at": "publish_at",
                         "quote_tweet_id": "quote_tweet_id",
+                        "recording_date": "recording_date",
                         "reply_settings": "following",
+                        "reshare_post_id": "reshare_post_id",
                         "set_caption_for_each_image": True,
                         "share_to_feed": True,
+                        "tags": ["string"],
                         "title": "title",
                         "trial_reel_type": "manual",
                     },
@@ -1432,6 +1557,7 @@ class TestAsyncSocialPosts:
                     "set_caption_for_each_image": True,
                 },
                 "instagram": {
+                    "audio_name": "audio_name",
                     "caption": {},
                     "collaborators": ["string"],
                     "location": "location",
@@ -1475,6 +1601,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "reshare_post_id": "reshare_post_id",
                 },
                 "pinterest": {
                     "board_ids": ["string"],
@@ -1497,6 +1624,7 @@ class TestAsyncSocialPosts:
                             "thumbnail_url": {},
                         }
                     ],
+                    "title": "title",
                 },
                 "threads": {
                     "caption": {},
@@ -1608,7 +1736,19 @@ class TestAsyncSocialPosts:
                     "reply_settings": "following",
                 },
                 "youtube": {
+                    "localizations": {
+                        "foo": {
+                            "description": "description",
+                            "title": "title",
+                        }
+                    },
                     "caption": {},
+                    "category_id": "category_id",
+                    "contains_synthetic_media": True,
+                    "default_language": "default_language",
+                    "description": "description",
+                    "embeddable": True,
+                    "license": "youtube",
                     "made_for_kids": True,
                     "media": [
                         {
@@ -1628,6 +1768,10 @@ class TestAsyncSocialPosts:
                         }
                     ],
                     "privacy_status": "public",
+                    "public_stats_viewable": True,
+                    "publish_at": "publish_at",
+                    "recording_date": "recording_date",
+                    "tags": ["string"],
                     "title": "title",
                 },
             },
@@ -1722,7 +1866,7 @@ class TestAsyncSocialPosts:
         social_post = await async_client.social_posts.delete(
             "id",
         )
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -1734,7 +1878,7 @@ class TestAsyncSocialPosts:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         social_post = await response.parse()
-        assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+        assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
     @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
@@ -1746,7 +1890,7 @@ class TestAsyncSocialPosts:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             social_post = await response.parse()
-            assert_matches_type(SocialPostDeleteResponse, social_post, path=["response"])
+            assert_matches_type(DeleteEntityResponse, social_post, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 

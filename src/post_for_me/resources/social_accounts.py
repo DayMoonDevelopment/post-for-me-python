@@ -27,6 +27,7 @@ from .._response import (
 from .._base_client import make_request_options
 from ..types.social_account import SocialAccount
 from ..types.social_account_list_response import SocialAccountListResponse
+from ..types.social_account_metadata_param import SocialAccountMetadataParam
 from ..types.social_account_disconnect_response import SocialAccountDisconnectResponse
 from ..types.social_account_create_auth_url_response import SocialAccountCreateAuthURLResponse
 
@@ -78,7 +79,7 @@ class SocialAccountsResource(SyncAPIResource):
         ],
         user_id: str,
         external_id: Optional[str] | Omit = omit,
-        metadata: object | Omit = omit,
+        metadata: SocialAccountMetadataParam | Omit = omit,
         refresh_token: Optional[str] | Omit = omit,
         refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
         username: Optional[str] | Omit = omit,
@@ -311,7 +312,11 @@ class SocialAccountsResource(SyncAPIResource):
         Generates a URL that initiates the authentication flow for a user's social media
         account. When visited, the user is redirected to the selected social platform's
         login/authorization page. Upon successful authentication, they are redirected
-        back to your application
+        back to your application.
+
+        For Quickstart projects using Post for Me system credentials,
+        `redirect_url_override` is not accepted. Configure the project redirect URL in
+        the dashboard instead.
 
         Args:
           platform: The social account provider
@@ -326,7 +331,7 @@ class SocialAccountsResource(SyncAPIResource):
           redirect_url_override: Override the default redirect URL for the OAuth flow. If provided, this URL will
               be used instead of our redirect URL. Make sure this URL is included in your
               app's authorized redirect urls. This override will not work when using our
-              system credientals.
+              system credentials; configure the project redirect URL in the dashboard instead.
 
           extra_headers: Send extra headers
 
@@ -435,7 +440,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         ],
         user_id: str,
         external_id: Optional[str] | Omit = omit,
-        metadata: object | Omit = omit,
+        metadata: SocialAccountMetadataParam | Omit = omit,
         refresh_token: Optional[str] | Omit = omit,
         refresh_token_expires_at: Union[str, datetime, None] | Omit = omit,
         username: Optional[str] | Omit = omit,
@@ -668,7 +673,11 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
         Generates a URL that initiates the authentication flow for a user's social media
         account. When visited, the user is redirected to the selected social platform's
         login/authorization page. Upon successful authentication, they are redirected
-        back to your application
+        back to your application.
+
+        For Quickstart projects using Post for Me system credentials,
+        `redirect_url_override` is not accepted. Configure the project redirect URL in
+        the dashboard instead.
 
         Args:
           platform: The social account provider
@@ -683,7 +692,7 @@ class AsyncSocialAccountsResource(AsyncAPIResource):
           redirect_url_override: Override the default redirect URL for the OAuth flow. If provided, this URL will
               be used instead of our redirect URL. Make sure this URL is included in your
               app's authorized redirect urls. This override will not work when using our
-              system credientals.
+              system credentials; configure the project redirect URL in the dashboard instead.
 
           extra_headers: Send extra headers
 

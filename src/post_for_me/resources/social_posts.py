@@ -25,8 +25,10 @@ from .._response import (
 )
 from .._base_client import make_request_options
 from ..types.social_post import SocialPost
+from ..types.delete_entity_response import DeleteEntityResponse
+from ..types.social_post_media_param import SocialPostMediaParam
 from ..types.social_post_list_response import SocialPostListResponse
-from ..types.social_post_delete_response import SocialPostDeleteResponse
+from ..types.account_configuration_param import AccountConfigurationParam
 from ..types.platform_configurations_dto_param import PlatformConfigurationsDtoParam
 
 __all__ = ["SocialPostsResource", "AsyncSocialPostsResource"]
@@ -67,10 +69,10 @@ class SocialPostsResource(SyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]] | Omit = omit,
+        account_configurations: Optional[Iterable[AccountConfigurationParam]] | Omit = omit,
         external_id: Optional[str] | Omit = omit,
         is_draft: Optional[bool] | Omit = omit,
-        media: Optional[Iterable[social_post_create_params.Media]] | Omit = omit,
+        media: Optional[Iterable[SocialPostMediaParam]] | Omit = omit,
         platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
         scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -170,10 +172,10 @@ class SocialPostsResource(SyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]] | Omit = omit,
+        account_configurations: Optional[Iterable[AccountConfigurationParam]] | Omit = omit,
         external_id: Optional[str] | Omit = omit,
         is_draft: Optional[bool] | Omit = omit,
-        media: Optional[Iterable[social_post_update_params.Media]] | Omit = omit,
+        media: Optional[Iterable[SocialPostMediaParam]] | Omit = omit,
         platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
         scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -311,7 +313,7 @@ class SocialPostsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SocialPostDeleteResponse:
+    ) -> DeleteEntityResponse:
         """
         Delete Post
 
@@ -331,7 +333,7 @@ class SocialPostsResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SocialPostDeleteResponse,
+            cast_to=DeleteEntityResponse,
         )
 
 
@@ -370,10 +372,10 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_create_params.AccountConfiguration]] | Omit = omit,
+        account_configurations: Optional[Iterable[AccountConfigurationParam]] | Omit = omit,
         external_id: Optional[str] | Omit = omit,
         is_draft: Optional[bool] | Omit = omit,
-        media: Optional[Iterable[social_post_create_params.Media]] | Omit = omit,
+        media: Optional[Iterable[SocialPostMediaParam]] | Omit = omit,
         platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
         scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -473,10 +475,10 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         *,
         caption: str,
         social_accounts: SequenceNotStr[str],
-        account_configurations: Optional[Iterable[social_post_update_params.AccountConfiguration]] | Omit = omit,
+        account_configurations: Optional[Iterable[AccountConfigurationParam]] | Omit = omit,
         external_id: Optional[str] | Omit = omit,
         is_draft: Optional[bool] | Omit = omit,
-        media: Optional[Iterable[social_post_update_params.Media]] | Omit = omit,
+        media: Optional[Iterable[SocialPostMediaParam]] | Omit = omit,
         platform_configurations: Optional[PlatformConfigurationsDtoParam] | Omit = omit,
         scheduled_at: Union[str, datetime, None] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -614,7 +616,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
-    ) -> SocialPostDeleteResponse:
+    ) -> DeleteEntityResponse:
         """
         Delete Post
 
@@ -634,7 +636,7 @@ class AsyncSocialPostsResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SocialPostDeleteResponse,
+            cast_to=DeleteEntityResponse,
         )
 
 

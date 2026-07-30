@@ -2,71 +2,104 @@
 
 from __future__ import annotations
 
-from typing import Iterable, Optional
+from typing import Dict, Iterable, Optional
 from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["YoutubeConfigurationDtoParam", "Media", "MediaTag"]
+from .._types import SequenceNotStr
+from .social_post_media_param import SocialPostMediaParam
+
+__all__ = ["YoutubeConfigurationDtoParam", "Localizations"]
 
 
-class MediaTag(TypedDict, total=False):
-    id: Required[str]
-    """Facebook User ID, Instagram Username or Instagram product id to tag"""
+class Localizations(TypedDict, total=False):
+    description: Optional[str]
 
-    platform: Required[Literal["facebook", "instagram"]]
-    """The platform for the tags"""
-
-    type: Required[Literal["user", "product"]]
-    """
-    The type of tag, user to tag accounts, product to tag products (only supported
-    for instagram)
-    """
-
-    x: float
-    """
-    Percentage distance from left edge of the image, Not required for videos or
-    stories
-    """
-
-    y: float
-    """
-    Percentage distance from top edge of the image, Not required for videos or
-    stories
-    """
-
-
-class Media(TypedDict, total=False):
-    url: Required[str]
-    """Public URL of the media"""
-
-    skip_processing: Optional[bool]
-    """
-    If true the media will not be processed at all and instead be posted as is, this
-    may increase chance of post failure if media does not meet platform's
-    requirements. Best used for larger files.
-    """
-
-    tags: Optional[Iterable[MediaTag]]
-    """List of tags to attach to the media"""
-
-    thumbnail_timestamp_ms: Optional[object]
-    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
-
-    thumbnail_url: Optional[object]
-    """Public URL of the thumbnail for the media"""
+    title: Optional[str]
 
 
 class YoutubeConfigurationDtoParam(TypedDict, total=False):
+    localizations: Required[Optional[Dict[str, Localizations]]]
+    """Per-language localizations for the video title and description.
+
+    Keys are BCP-47 language tags (e.g. "fr", "es"). Maps to localizations on the
+    YouTube Data API videos resource.
+    """
+
     caption: Optional[object]
     """Overrides the `caption` from the post"""
 
-    made_for_kids: Optional[bool]
-    """If true will notify YouTube the video is intended for kids, defaults to false"""
+    category_id: Optional[str]
+    """
+    YouTube video category id (maps to snippet.categoryId; see YouTube Data API
+    videoCategories.list)
+    """
 
-    media: Optional[Iterable[Media]]
+    contains_synthetic_media: Optional[bool]
+    """
+    If true, marks the video as containing altered or synthetic content per
+    YouTube's disclosure policy (maps to status.containsSyntheticMedia). YouTube
+    adds a "How this content was made" label to the description automatically.
+    """
+
+    default_language: Optional[str]
+    """Default language of the video (BCP-47 language tag, e.g.
+
+    "en"). Maps to snippet.defaultLanguage.
+    """
+
+    description: Optional[str]
+    """Description for the YouTube video (maps to snippet.description).
+
+    Falls back to the post caption when not provided.
+    """
+
+    embeddable: Optional[bool]
+    """If true the video can be embedded on other websites (maps to status.embeddable).
+
+    Defaults to true.
+    """
+
+    license: Optional[Literal["youtube", "creativeCommon"]]
+    """The video's license (maps to status.license).
+
+    "youtube" is the standard YouTube license; "creativeCommon" is Creative Commons.
+    """
+
+    made_for_kids: Optional[bool]
+    """
+    If true will notify YouTube the video is intended for kids (maps to
+    status.selfDeclaredMadeForKids), defaults to false
+    """
+
+    media: Optional[Iterable[SocialPostMediaParam]]
     """Overrides the `media` from the post"""
 
     privacy_status: Optional[Literal["public", "private", "unlisted"]]
-    """Sets the privacy status of the video, will default to public"""
+    """
+    Sets the privacy status of the video (maps to status.privacyStatus), will
+    default to public
+    """
+
+    public_stats_viewable: Optional[bool]
+    """
+    If true, the extended video statistics are publicly viewable (maps to
+    status.publicStatsViewable). Defaults to true.
+    """
+
+    publish_at: Optional[str]
+    """ISO 8601 datetime at which the video should be published.
+
+    Only honoured when privacy_status is "private" (maps to status.publishAt).
+    """
+
+    recording_date: Optional[str]
+    """
+    ISO 8601 date (YYYY-MM-DD) or datetime when the video was recorded (maps to
+    recordingDetails.recordingDate).
+    """
+
+    tags: Optional[SequenceNotStr[str]]
+    """YouTube video tags (maps to snippet.tags)"""
 
     title: Optional[str]
-    """Overrides the `title` from the post"""
+    """Overrides the `title` from the post (maps to snippet.title)"""

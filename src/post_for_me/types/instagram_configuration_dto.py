@@ -4,58 +4,19 @@ from typing import List, Optional
 from typing_extensions import Literal
 
 from .._models import BaseModel
+from .social_post_media import SocialPostMedia
 
-__all__ = ["InstagramConfigurationDto", "Media", "MediaTag"]
-
-
-class MediaTag(BaseModel):
-    id: str
-    """Facebook User ID, Instagram Username or Instagram product id to tag"""
-
-    platform: Literal["facebook", "instagram"]
-    """The platform for the tags"""
-
-    type: Literal["user", "product"]
-    """
-    The type of tag, user to tag accounts, product to tag products (only supported
-    for instagram)
-    """
-
-    x: Optional[float] = None
-    """
-    Percentage distance from left edge of the image, Not required for videos or
-    stories
-    """
-
-    y: Optional[float] = None
-    """
-    Percentage distance from top edge of the image, Not required for videos or
-    stories
-    """
-
-
-class Media(BaseModel):
-    url: str
-    """Public URL of the media"""
-
-    skip_processing: Optional[bool] = None
-    """
-    If true the media will not be processed at all and instead be posted as is, this
-    may increase chance of post failure if media does not meet platform's
-    requirements. Best used for larger files.
-    """
-
-    tags: Optional[List[MediaTag]] = None
-    """List of tags to attach to the media"""
-
-    thumbnail_timestamp_ms: Optional[object] = None
-    """Timestamp in milliseconds of frame to use as thumbnail for the media"""
-
-    thumbnail_url: Optional[object] = None
-    """Public URL of the thumbnail for the media"""
+__all__ = ["InstagramConfigurationDto"]
 
 
 class InstagramConfigurationDto(BaseModel):
+    audio_name: Optional[str] = None
+    """Display name for the audio track on Instagram Reels.
+
+    Only honored on Reels uploads, and only when the audio is original (Meta
+    silently ignores it on licensed/fingerprinted tracks).
+    """
+
     caption: Optional[object] = None
     """Overrides the `caption` from the post"""
 
@@ -65,7 +26,7 @@ class InstagramConfigurationDto(BaseModel):
     location: Optional[str] = None
     """Page id with a location that you want to tag the image or video with"""
 
-    media: Optional[List[Media]] = None
+    media: Optional[List[SocialPostMedia]] = None
     """Overrides the `media` from the post"""
 
     placement: Optional[Literal["reels", "stories", "timeline"]] = None
